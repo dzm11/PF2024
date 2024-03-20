@@ -32,7 +32,7 @@ body {
     }
 
     .wrapper {
-        max-width: 3200px;
+        max-width: 2600px;
         margin: 0 auto;
 
         .container {
@@ -271,6 +271,7 @@ body {
                             display: flex;
                             justify-content: space-between;
                             margin-bottom: 0.5rem;
+                            align-items: center;
 
                             h2 {
                                 color: var(--42);
@@ -287,6 +288,12 @@ body {
                                 padding: 1.25rem 2rem 1.25rem 2.375rem;
                                 border-radius: 64px;
                                 border: solid 1px var(--92);
+                                transition: all .1s ease-in;
+
+                                &:hover{
+                                    border: solid 1px var(--22);
+                                    background-color: var(--22);
+                                }
                             }
                         }
 
@@ -298,7 +305,22 @@ body {
                                 position: relative;
                                 overflow: hidden;
                                 border-radius: 3rem;
-                                will-change: transform;
+                                will-change: scale;
+                                &::after{
+                                    background-color: var(--12);
+                                    opacity: 0;
+                                    content: '';
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    transition: all .4s ease-in-out;
+
+                                }
+                                &:hover::after{
+                                    opacity: .1;
+                                }
 
                                 &:hover {
                                     .hover-container {
@@ -306,7 +328,7 @@ body {
                                     }
 
                                     img {
-                                        opacity: .6;
+                                        // opacity: .6;
                                         scale: 1.05;
                                     }
                                 }
@@ -325,6 +347,7 @@ body {
                                     opacity: 0;
                                     transition: opacity .2s ease-in-out;
                                     overflow: hidden;
+                                    z-index: 2;
 
 
 

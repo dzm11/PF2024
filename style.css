@@ -24,7 +24,7 @@ p {
 h1 {
   font-family: var(--ff-primary);
   color: var(--82);
-  font-size: 4.5rem;
+  font-size: clamp(2.2rem, 1.4831rem + 3.1861vw, 4.5rem);
   line-height: 100%;
   letter-spacing: 1%;
 }
@@ -268,7 +268,7 @@ body section {
   padding: 2rem 1.75rem;
 }
 body .wrapper {
-  max-width: 3200px;
+  max-width: 2600px;
   margin: 0 auto;
 }
 body .wrapper .container .hero {
@@ -474,6 +474,7 @@ body .wrapper .container main section.section .latest-project .header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
+  align-items: center;
 }
 body .wrapper .container main section.section .latest-project .header h2 {
   color: var(--42);
@@ -490,6 +491,11 @@ body .wrapper .container main section.section .latest-project .header button {
   padding: 1.25rem 2rem 1.25rem 2.375rem;
   border-radius: 64px;
   border: solid 1px var(--92);
+  transition: all 0.1s ease-in;
+}
+body .wrapper .container main section.section .latest-project .header button:hover {
+  border: solid 1px var(--22);
+  background-color: var(--22);
 }
 body .wrapper .container main section.section .latest-project .row {
   display: flex;
@@ -499,13 +505,26 @@ body .wrapper .container main section.section .latest-project .row .project {
   position: relative;
   overflow: hidden;
   border-radius: 3rem;
-  will-change: transform;
+  will-change: scale;
+}
+body .wrapper .container main section.section .latest-project .row .project::after {
+  background-color: var(--12);
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.4s ease-in-out;
+}
+body .wrapper .container main section.section .latest-project .row .project:hover::after {
+  opacity: 0.1;
 }
 body .wrapper .container main section.section .latest-project .row .project:hover .hover-container {
   opacity: 1;
 }
 body .wrapper .container main section.section .latest-project .row .project:hover img {
-  opacity: 0.6;
   scale: 1.05;
 }
 body .wrapper .container main section.section .latest-project .row .project img {
@@ -521,6 +540,7 @@ body .wrapper .container main section.section .latest-project .row .project .hov
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
   overflow: hidden;
+  z-index: 2;
 }
 body .wrapper .container main section.section .latest-project .row .project .hover-container-content {
   display: flex;
