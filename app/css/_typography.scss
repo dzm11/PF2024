@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'ClashDisplay-Medium';
+    src: url('/app/fonts/ClashDisplay-Medium.woff2') format('woff2'),
+    url('/app/fonts/ClashDisplay-Medium.woff') format('woff'),
+    url('/app/fonts/ClashDisplay-Medium.ttf') format('ttf');
+         font-weight: 500;
+         font-display: swap;
+         font-style: normal;
+  }
+  
+
+:root {
+    --ff-secondary: 'Bricolage Grotesque', sans-serif;
+    --ff-primary: 'ClashDisplay-Medium', sans-serif;
+    --ff-body:var(--ff-primary);
+    --ff-heading:var(--ff-secondary);
+
+    --fs-header-1:clamp(2.5rem, 1.9273rem + 2.5455vw, 6rem); //clamp calculator
+    --fs-header-2:clamp(2rem, 1.6727rem + 1.4545vw, 4rem);
+    --fs-header-3:clamp(1.75rem, 1.5455rem + 0.9091vw, 3rem);
+    --fs-header-4:clamp(1.5rem, 1.4182rem + 0.3636vw, 2rem);
+
+    --fs-paragraph: 1rem;
+}
+
+p{
+    color: var(--82);
+}
+h1{
+    font-family: var(--ff-primary);
+    color: var(--82);
+    font-size: 4.5rem;
+    line-height: 100%;
+    letter-spacing: 1%;
+}
+
+h2{
+    font-family: var(--ff-primary);
+    font-size: 3rem;
+}
+
+h3{
+    font-family: var(--ff-primary);
+    font-size: 2.5rem;
+}
+
+h4{    font-family: var(--ff-primary);
+    font-size: 2rem;
+}

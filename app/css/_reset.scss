@@ -1,0 +1,156 @@
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+// Form inputs default
+input,
+textarea{
+  border: none;
+  background-color: var(--15);
+  color: var(--48);
+  font-size: var(--fs-header-5);
+}
+
+button{
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+// li { list-style-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iV2Fyc3R3YV8xIiBkYXRhLW5hbWU9IldhcnN0d2EgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMyIgaGVpZ2h0PSIzIiB2aWV3Qm94PSIwIDAgMyAzIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjMWMxZDIwOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Y2lyY2xlIGNsYXNzPSJjbHMtMSIgY3g9IjEuNSIgY3k9IjEuNSIgcj0iMS41Ii8+Cjwvc3ZnPg==);
+// background-size: 20px; } 
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+html,
+body{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  min-height: 100svh;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a{
+  text-decoration: none;
+  color: var(--92);
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-inline-size: 100%;
+  block-size: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+  font-style: italic;
+  vertical-align: middle;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: var(--82);
+  background: var(--42);
+}
+
+::selection {
+  color: var(--82);
+  background: var(--42);
+}
+
+ul {
+  list-style-position: outside;
+
+  @media (max-width: 45rem) {
+      & {
+          list-style-position: inside;
+
+      }
+  }
+  li::marker{
+      content: '';
+  }
+  li{
+      display: block;
+      p{
+          display: list-item;
+      }
+  }
+}
+
+.prevent-select {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+}
+
+.performance{
+  contain: content;
+  content-visibility: auto;
+}
+
+.not-allow{
+  cursor: not-allowed;
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+}
+
+picture{
+  overflow: hidden;
+}
