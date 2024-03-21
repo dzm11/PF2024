@@ -19,18 +19,6 @@ function addAnimation(){
     });
 }
 
-//Copy to clipboard
-
-// let text = document.getElementById('myText').innerHTML;
-// const copyContent = async () => {
-//   try {
-//     await navigator.clipboard.writeText(text);
-//     console.log('Content copied to clipboard');
-//   } catch (err) {
-//     console.error('Failed to copy: ', err);
-//   }
-// }
-
 async function copyContent() {
     try {
       await navigator.clipboard.writeText('Hello@melon.studio');

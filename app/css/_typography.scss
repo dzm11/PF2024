@@ -31,7 +31,13 @@ h1{
     color: var(--82);
     font-size: clamp(2.2rem, 1.4831rem + 3.1861vw, 4.5rem);
     line-height: 100%;
-    letter-spacing: 1%;
+    letter-spacing: 1px;
+    @media (max-width: 45rem) { /* 720px */
+        & {
+            line-height: 110%;
+            font-size: 32px;
+        }
+    }
 }
 
 h2{

@@ -51,29 +51,29 @@ body {
                     }
                 }
 
-                .circle-gradient {
-                    width: 1154px;
-                    height: 1154px;
-                    position: absolute;
-                    right: 193px;
-                    top: -400px;
-                    border-radius: 1154px;
-                    background: radial-gradient(50% 50% at 50% 50%, #C992F3 0%, rgba(28, 30, 32, 0.00) 100%);
-                    filter: blur(20px);
-                    z-index: -1;
-                }
+                // .circle-gradient {
+                //     width: 1154px;
+                //     height: 1154px;
+                //     position: absolute;
+                //     right: 193px;
+                //     top: -400px;
+                //     border-radius: 1154px;
+                //     background: radial-gradient(50% 50% at 50% 50%, #C992F3 0%, rgba(28, 30, 32, 0.00) 100%);
+                //     filter: blur(20px);
+                //     z-index: -1;
+                // }
 
-                .circle-gradient-2 {
-                    width: 526px;
-                    height: 526px;
-                    position: absolute;
-                    right: 162px;
-                    top: 313px;
-                    border-radius: 526px;
-                    background: radial-gradient(50% 50% at 50% 50%, #3D74AC 0%, #1B1D1F 100%);
-                    filter: blur(100px);
-                    z-index: -1;
-                }
+                // .circle-gradient-2 {
+                //     width: 526px;
+                //     height: 526px;
+                //     position: absolute;
+                //     right: 162px;
+                //     top: 313px;
+                //     border-radius: 526px;
+                //     background: radial-gradient(50% 50% at 50% 50%, #3D74AC 0%, #1B1D1F 100%);
+                //     filter: blur(100px);
+                //     z-index: -1;
+                // }
 
                 header {
                     display: flex;
@@ -89,7 +89,11 @@ body {
                             align-items: center;
                             justify-content: flex-end;
                             gap: 2rem;
-
+                            @media (max-width: 53rem) {
+                                & {
+                                    display: none;     
+                                }
+                            }
                             li {
                                 font-size: 1rem;
                                 cursor: pointer;
@@ -153,6 +157,14 @@ body {
                     gap: 2.5rem;
                     height: 100%;
                     justify-content: flex-end;
+                    @media (max-width: 45rem) { /* 720px */
+                        & {
+                            gap: 1.5rem;
+                            .status{
+                                font-size: 14px;
+                            }
+                        }
+                    }
 
 
                     .status {
@@ -210,8 +222,8 @@ body {
 
                             img {
                                 margin-inline: 1rem;
-                                width: 78px;
-                                aspect-ratio: 1;
+                                width: 1em;
+                                height: 1em;
                             }
                         }
                     }
@@ -315,7 +327,7 @@ body {
                                     left: 0;
                                     right: 0;
                                     bottom: 0;
-                                    transition: all .4s ease-in-out;
+                                    transition: all .2s ease-in-out;
 
                                 }
                                 &:hover::after{

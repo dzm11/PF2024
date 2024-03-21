@@ -78,10 +78,10 @@
                     </nav>
 
                 </header>
-                <div class="circle-gradient">
+                <!-- <div class="circle-gradient">
                 </div>
                 <div class="circle-gradient-2">
-                </div>
+                </div> -->
 
                 <div class="hero__content">
 
@@ -258,7 +258,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="di"></div>
                         <div class="col">
                             <div class="services-element">
                                 <div class="icon"><img src="./app/img/stats.svg" alt=""></div>
@@ -298,6 +297,96 @@
                         </div>
                         <div class="insights__section">
                             <div class="insights__section--carousel">
+                                <div class="insight">
+                                    <div class="insight__box">
+                                        <div class="insight__box--img"><img src="./app/img/Insight-1.jpg" alt=""></div>
+                                        <div class="insight__box--title">
+                                            <div class="content">
+                                                <div class="title">Jak wygląda poprawnie zaprojektowany system
+                                                    filtrowania? - Kinderkraft e-commerce</div>
+                                                <div class="category">Ecommerce case study</div>
+                                            </div>
+                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="insight">
+                                    <div class="insight__box">
+                                        <div class="insight__box--img"><img src="./app/img/Insight-2.jpg" alt=""></div>
+                                        <div class="insight__box--title">
+                                            <div class="content">
+                                                <div class="title">Futrzasty brand hero inspirowany rzeczywistością
+                                                </div>
+                                                <div class="category">Ecommerce case study</div>
+                                            </div>
+                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="insight">
+                                    <div class="insight__box">
+                                        <div class="insight__box--img"><img src="./app/img/Insight-3.jpg" alt=""></div>
+                                        <div class="insight__box--title">
+                                            <div class="content">
+                                                <div class="title">ChatGPT ujawnia wszystko: Od umysłu AI do tajników
+                                                    cyfrowego świata! - wywiad z ChatGPT</div>
+                                                <div class="category">Ecommerce case study</div>
+                                            </div>
+                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="insight">
+                                    <div class="insight__box">
+                                        <div class="insight__box--img"><img src="./app/img/Insight-1.jpg" alt=""></div>
+                                        <div class="insight__box--title">
+                                            <div class="content">
+                                                <div class="title">Jak wygląda poprawnie zaprojektowany system
+                                                    filtrowania? - Kinderkraft e-commerce</div>
+                                                <div class="category">Ecommerce case study</div>
+                                            </div>
+                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="insight">
+                                    <div class="insight__box">
+                                        <div class="insight__box--img"><img src="./app/img/Insight-2.jpg" alt=""></div>
+                                        <div class="insight__box--title">
+                                            <div class="content">
+                                                <div class="title">Futrzasty brand hero inspirowany rzeczywistością
+                                                </div>
+                                                <div class="category">Ecommerce case study</div>
+                                            </div>
+                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="insight">
+                                    <div class="insight__box">
+                                        <div class="insight__box--img"><img src="./app/img/Insight-3.jpg" alt=""></div>
+                                        <div class="insight__box--title">
+                                            <div class="content">
+                                                <div class="title">ChatGPT ujawnia wszystko: Od umysłu AI do tajników
+                                                    cyfrowego świata! - wywiad z ChatGPT</div>
+                                                <div class="category">Ecommerce case study</div>
+                                            </div>
+                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="insight">
                                     <div class="insight__box">
                                         <div class="insight__box--img"><img src="./app/img/Insight-1.jpg" alt=""></div>
@@ -483,6 +572,10 @@
     </div>
     <script src="./app/script/script.js"></script>
     <script>
+        let mm = gsap.matchMedia();
+
+        mm.revert();
+
         // use a script tag or an external JS file
         document.addEventListener("DOMContentLoaded", (event) => {
             gsap.registerPlugin(ScrollTrigger)
@@ -497,23 +590,64 @@
                         // trigger element - viewport
                         start: "bottom top",
                         end: "bottom bottom",
-                        scrub: 1
+                        scrub: 1.5
                     }
                 });
-                tl.fromTo(targetElement, {
-                    y: "0%",
-                    width: "calc(100% - 3.5rem)",
-                    margin: "0 auto",
-                    duration: 1
-                },
-                {
-                    width: "auto"
-                });
+                    tl.fromTo(targetElement, {
+                        y: "0%",
+                        width: "calc(100% - 3.5rem)",
+                        margin: "50px 0 0 0",
+                        duration: 1
+                    },
+                        {
+                            width: "auto",
+                            margin: "0"
+                        });
+
+
+                // mm.add("(max-width: 1560px)", () => {
+                //     tl.fromTo(targetElement, {
+                //         y: "15%",
+                //         width: "calc(100% - 3.5rem)",
+                //         margin: "0 auto",
+                //         duration: 1
+                //     },
+                //         {
+                //             width: "auto"
+                //         });
+
+                // });
+
+                // mm.add("(max-width: 1000px)", () => {
+                //     tl.fromTo(targetElement, {
+                //         y: "30%",
+                //         width: "calc(100% - 3.5rem)",
+                //         margin: "0 auto",
+                //         duration: 1
+                //     },
+                //         {
+                //             width: "auto"
+                //         });
+
+                // });
+                // mm.add("(max-width: 668px)", () => {
+                //     tl.fromTo(targetElement, {
+                //         y: "35%",
+                //         width: "calc(100% - 3.5rem)",
+                //         margin: "0 auto",
+                //         duration: 1
+                //     },
+                //         {
+                //             width: "auto"
+                //         });
+
+                // });
+
             });
         });
         ScrollTrigger.defaults({
-  markers: false
-});
+            markers: false
+        });
     </script>
     <script>
         const lenis = new Lenis()
@@ -530,7 +664,6 @@
 
         gsap.ticker.lagSmoothing(0)
     </script>
-
 </body>
 
 </html>
