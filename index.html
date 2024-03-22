@@ -16,6 +16,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/gh/rick-liruixin/body-scroll-lock-upgrade@v1.1.0/lib/index.umd.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -45,36 +47,48 @@
                     </svg>
                 </div>
                 <header>
-                    <nav>
-                        <ul>
-                            <li>
-                                <div class="list-container">
-                                    <a href="#">About me</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list-container">
-                                    <a href="#">Work <sup>(5)</sup></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list-container">
-                                    <a href="#">Insight <sup>(10)</sup></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list-container">
-                                    <a href="#">Contact</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon" id="myText" onclick="copyContent()">
-                                    <img src="./app/img/copy.svg" alt="">
-                                    Hello@melon.studio
-                                </div>
 
-                            </li>
-                        </ul>
+                    <nav>
+                        <span id="nav-label" hidden>Navigation</span>
+                        <button class="topnav__open" aria-expanded="false" aria-labelledby="nav-label" id="btnOpen">
+                            <img src="./app/img/menu.svg" alt="" width="24px" height="24px">
+                            <p>Menu</p>
+                        </button>
+                        <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
+                            <button class="topnav__close">
+                                <img src="./app/img/Close.svg" alt="" width="32px" height="32px" id="btnClose" aria-label="Close">
+                            </button>
+                            <ul>
+                                <li>
+                                    <div class="list-container">
+                                        <a href="#">About me</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-container">
+                                        <a href="#">Work <sup>(5)</sup></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-container">
+                                        <a href="#">Insight <sup>(10)</sup></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-container">
+                                        <a href="#">Contact</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon" id="myText" onclick="copyContent()">
+                                        <img src="./app/img/copy.svg" alt="">
+                                        Hello@melon.studio
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+
                     </nav>
 
                 </header>
@@ -593,16 +607,16 @@
                         scrub: 1.5
                     }
                 });
-                    tl.fromTo(targetElement, {
-                        y: "0%",
-                        width: "calc(100% - 3.5rem)",
-                        margin: "50px 0 0 0",
-                        duration: 1
-                    },
-                        {
-                            width: "auto",
-                            margin: "0"
-                        });
+                tl.fromTo(targetElement, {
+                    y: "0%",
+                    width: "calc(100% - 3.5rem)",
+                    margin: "50px 0 0 0",
+                    duration: 1
+                },
+                    {
+                        width: "auto",
+                        margin: "0"
+                    });
 
 
                 // mm.add("(max-width: 1560px)", () => {

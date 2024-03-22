@@ -300,16 +300,64 @@ body .wrapper .container .hero header {
   position: fixed;
   right: 28px;
 }
+body .wrapper .container .hero header nav .topnav__open[aria-expanded=true] + .topnav__menu {
+  transform: translate(0px, 0px);
+}
+body .wrapper .container .hero header nav button.topnav__open {
+  display: none;
+}
+@media (max-width: 53rem) {
+  body .wrapper .container .hero header nav button.topnav__open {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 64px;
+    background: none;
+    border: 1px solid var(--92);
+    color: var(--92);
+    gap: 0.5rem;
+  }
+}
+body .wrapper .container .hero header nav .topnav__close {
+  display: none;
+}
+@media (max-width: 53rem) {
+  body .wrapper .container .hero header nav .topnav__menu {
+    position: fixed;
+    inset: 0;
+    background-color: var(--12);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 1.75rem;
+    transform: translate(100vw, 0);
+    transition: all 0.2s ease-in-out;
+  }
+  body .wrapper .container .hero header nav .topnav__menu button {
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+  body .wrapper .container .hero header nav .topnav__menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  body .wrapper .container .hero header nav .topnav__menu ul li {
+    font-size: 4rem;
+  }
+  body .wrapper .container .hero header nav .topnav__menu ul li .list-container a sup {
+    font-size: 20px;
+  }
+  body .wrapper .container .hero header nav .topnav__menu ul li:last-of-type {
+    display: none;
+  }
+}
 body .wrapper .container .hero header nav ul {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 2rem;
-}
-@media (max-width: 53rem) {
-  body .wrapper .container .hero header nav ul {
-    display: none;
-  }
 }
 body .wrapper .container .hero header nav ul li {
   font-size: 1rem;
@@ -365,7 +413,9 @@ body .wrapper .container .hero__content {
   justify-content: flex-end;
 }
 @media (max-width: 45rem) {
-  body .wrapper .container .hero__content { /* 720px */ }
+  body .wrapper .container .hero__content {
+    /* 720px */
+  }
   body .wrapper .container .hero__content {
     gap: 1.5rem;
   }
@@ -416,7 +466,7 @@ body .wrapper .container .hero__content .status .circle:after {
   animation: pulse-dot 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
 }
 body .wrapper .container .hero__content--header {
-  max-width: 1515px;
+  max-width: 1540px;
   color: var(--42);
 }
 body .wrapper .container .hero__content--header span.inside {
