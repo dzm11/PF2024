@@ -92,10 +92,6 @@
                     </nav>
 
                 </header>
-                <!-- <div class="circle-gradient">
-                </div>
-                <div class="circle-gradient-2">
-                </div> -->
 
                 <div class="hero__content">
 
@@ -257,44 +253,47 @@
                 </section>
                 <section class="section">
                     <div class="services">
-                        <div class="col">
+                        <div class="services__heading">
                             <h3>What can I do to <span class="empower">consistently and effectively </span>support your
                                 business?</h3>
                         </div>
-                        <div class="col">
-                            <div class="services-element">
-                                <div class="icon"><img src="./app/img/signature.svg" alt=""></div>
-                                <div class="services-content">
-                                    <div class="title">Branding</div>
-                                    <div class="definition">I love creating branding, especially logos, icons and key
-                                        visuals. I designed branding elements for e.g. for Lidl, Anna Lewandowska,
-                                        Kindekraft, John Dog and many other brands.</div>
+                        <div class="services__section">
+                            <div class="col">
+                                <div class="services-element">
+                                    <div class="icon"><img src="./app/img/signature.svg" alt=""></div>
+                                    <div class="services-content">
+                                        <div class="title">Branding</div>
+                                        <div class="definition">I love creating branding, especially logos, icons and key
+                                            visuals. I designed branding elements for e.g. for Lidl, Anna Lewandowska,
+                                            Kindekraft, John Dog and many other brands.</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="services-element">
-                                <div class="icon"><img src="./app/img/stats.svg" alt=""></div>
-                                <div class="services-content">
-                                    <div class="title">UX Design</div>
-                                    <div class="definition">I create lo-fi mock-ups, conduct internal workshops, analyze
-                                        data, create personas, and propose A/B test hypotheses to improve sales
-                                        effectiveness.</div>
+                            <div class="col">
+                                <div class="services-element">
+                                    <div class="icon"><img src="./app/img/stats.svg" alt=""></div>
+                                    <div class="services-content">
+                                        <div class="title">UX Design</div>
+                                        <div class="definition">I create lo-fi mock-ups, conduct internal workshops, analyze
+                                            data, create personas, and propose A/B test hypotheses to improve sales
+                                            effectiveness.</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div class="services-element">
-                                <div class="icon"><img src="./app/img/bezier-pointer.svg" alt=""></div>
-                                <div class="services-content">
-                                    <div class="title">Branding</div>
-                                    <div class="definition">I am proficient in Figma, Adobe XD, and Atomic Design for
-                                        design systems. I review developer implementations, analyze data, and apply my
-                                        years of graphic design experience to create modern, aesthetic User Interfaces.
+                            <div class="col">
+                                <div class="services-element">
+                                    <div class="icon"><img src="./app/img/bezier-pointer.svg" alt=""></div>
+                                    <div class="services-content">
+                                        <div class="title">Branding</div>
+                                        <div class="definition">I am proficient in Figma, Adobe XD, and Atomic Design for
+                                            design systems. I review developer implementations, analyze data, and apply my
+                                            years of graphic design experience to create modern, aesthetic User Interfaces.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                 </section>
@@ -598,6 +597,8 @@
                 let triggerElement = $(this);
                 let targetElement = $(".menu-logo");
 
+                
+
                 let tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: triggerElement,
@@ -607,6 +608,8 @@
                         scrub: 1.5
                     }
                 });
+                mm.add("(min-width: 53rem)", () => {
+
                 tl.fromTo(targetElement, {
                     y: "0%",
                     width: "calc(100% - 3.5rem)",
@@ -617,6 +620,7 @@
                         width: "auto",
                         margin: "0"
                     });
+                });
 
 
                 // mm.add("(max-width: 1560px)", () => {

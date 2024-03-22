@@ -29,6 +29,11 @@ body {
 
     section {
         padding: 2rem 1.75rem;
+        @media (max-width: 45rem) { /* 720px */
+            & {
+                padding: 2rem 1rem;
+            }
+        }
     }
 
     .wrapper {
@@ -46,35 +51,22 @@ body {
                     position: fixed;
                     image-rendering: pixelated;
                     z-index: 999;
+                    top: 2rem;
+                    left: 1.75rem;
+                    @media (max-width: 45rem) {
+                        & {
+                            left: 1rem;
+                            height: 50px;
+                            display: grid;
+                            place-items: center;
+                        }
+                    }
+                    
 
                     svg {
                         width: 100%;
                     }
                 }
-
-                // .circle-gradient {
-                //     width: 1154px;
-                //     height: 1154px;
-                //     position: absolute;
-                //     right: 193px;
-                //     top: -400px;
-                //     border-radius: 1154px;
-                //     background: radial-gradient(50% 50% at 50% 50%, #C992F3 0%, rgba(28, 30, 32, 0.00) 100%);
-                //     filter: blur(20px);
-                //     z-index: -1;
-                // }
-
-                // .circle-gradient-2 {
-                //     width: 526px;
-                //     height: 526px;
-                //     position: absolute;
-                //     right: 162px;
-                //     top: 313px;
-                //     border-radius: 526px;
-                //     background: radial-gradient(50% 50% at 50% 50%, #3D74AC 0%, #1B1D1F 100%);
-                //     filter: blur(100px);
-                //     z-index: -1;
-                // }
 
                 header {
                     display: flex;
@@ -83,6 +75,12 @@ body {
                     z-index: 999;
                     position: fixed;
                     right: 28px;
+                    @media (max-width: 45rem) {
+                        & {
+                            right: 16px;
+
+                        }
+                    }
 
                     nav {
                         .topnav__open[aria-expanded=true] + .topnav__menu {
@@ -343,6 +341,11 @@ body {
                                 display: flex;
                                 flex-wrap: nowrap;
                                 animation: scroll 30s reverse linear infinite;
+                                @media (max-width: 45rem) { /* 720px */
+                                    & {
+                                        animation: scroll 10s reverse linear infinite;
+                                    }
+                                }
 
                                 img {
                                     max-inline-size: none;
@@ -543,54 +546,63 @@ body {
                         display: flex;
                         gap: 2rem;
 
-                        &:first-child {
+                        @media (max-width: 82.5rem) {
+                            & {
+flex-direction: column;                            }
+                        }
+                        &__heading{
                             h3 {
                                 line-height: 120%;
                                 color: var(--42);
-                            }
-                        }
-
-                        .col+.col {
-                            background: var(--15);
-                        }
-
-                        .col {
-                            padding: 2.5rem 2rem 2rem 2rem;
-                            border-radius: 32px;
-                            width: 100%;
-
-                            .services-element {
-                                display: flex;
-                                flex-direction: column;
-                                gap: 2rem;
-
-                                .icon {
-                                    padding: 1rem;
-                                    border-radius: 16px;
-                                    background-color: var(--92);
-                                    width: fit-content;
-                                }
-
-                                .services-content {
-                                    display: flex;
-                                    flex-direction: column;
-                                    gap: 0.75rem;
-
-                                    .title {
-                                        font-size: 20px;
-                                        font-weight: 500;
-                                        line-height: 100%;
-                                        color: var(--92);
-                                    }
-
-                                    .definition {
-                                        font-size: 1rem;
-                                        color: var(--52);
-                                        line-height: 150%;
-                                    }
+                                @media (max-width: 82.5rem) {
+                                    & {
+        max-width: 670px;                            }
                                 }
                             }
                         }
+&__section{
+display: flex;
+gap: 2rem;
+    .col {
+        padding: 2.5rem 2rem 2rem 2rem;
+        border-radius: 32px;
+        width: 100%;
+        background: var(--15);
+
+
+        .services-element {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            .icon {
+                padding: 1rem;
+                border-radius: 16px;
+                background-color: var(--92);
+                width: fit-content;
+            }
+
+            .services-content {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+
+                .title {
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 100%;
+                    color: var(--92);
+                }
+
+                .definition {
+                    font-size: 1rem;
+                    color: var(--52);
+                    line-height: 150%;
+                }
+            }
+        }
+    }
+}
                     }
 
                     .insights {
@@ -708,6 +720,11 @@ body {
                     .experience {
                         display: flex;
                         gap: 2rem;
+                        @media (max-width: 82.5rem) {
+                                & {
+                                    flex-direction: column;
+                                }
+                            }
 
                         .header {
                             // flex: 1 0 0;
@@ -715,6 +732,11 @@ body {
                             gap: 0.5rem;
                             display: flex;
                             flex-direction: column;
+                            @media (max-width: 82.5rem) {
+                                & {
+                                    max-width: 580px;
+                                }
+                            }
 
                             h2 {
                                 color: var(--82);

@@ -1,3 +1,7 @@
+///////////////
+//Mobile Menu
+///////////////
+
 const btnOpen = document.querySelector("#btnOpen");
 const btnClose = document.querySelector("#btnClose");
 const media = window.matchMedia("(max-width: 53rem)")
@@ -7,11 +11,11 @@ const html= document.querySelector("html");
 
 function setupTopNav(e){
   if (e.matches){
-    console.log("mobile")
+    // console.log("mobile")
 topNavMenu.setAttribute("inert", "");
 topNavMenu.style.transition = "none";
 } else{
-  console.log("dektop")
+  // console.log("dektop")
   topNavMenu.removeAttribute("inert");
   }
 }
@@ -40,6 +44,10 @@ function closeMobileMenu(){
 btnOpen.addEventListener("click", openMobileMenu)
 btnClose.addEventListener("click", closeMobileMenu)
 
+///////////////
+//Logo Carousel
+///////////////
+
 const scrollers = document.querySelectorAll(".logo-wrapper")
 
 if(!window.matchMedia("(prefer-reduced-motion: reduce)").matches){
@@ -60,6 +68,11 @@ function addAnimation(){
         })
     });
 }
+
+
+///////////////
+//Copy Content
+///////////////
 
 async function copyContent() {
     try {

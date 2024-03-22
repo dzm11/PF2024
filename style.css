@@ -10,11 +10,6 @@
   --ff-primary: "ClashDisplay-Medium", sans-serif;
   --ff-body:var(--ff-primary);
   --ff-heading:var(--ff-secondary);
-  --fs-header-1:clamp(2.5rem, 1.9273rem + 2.5455vw, 6rem);
-  --fs-header-2:clamp(2rem, 1.6727rem + 1.4545vw, 4rem);
-  --fs-header-3:clamp(1.75rem, 1.5455rem + 0.9091vw, 3rem);
-  --fs-header-4:clamp(1.5rem, 1.4182rem + 0.3636vw, 2rem);
-  --fs-paragraph: 1rem;
 }
 
 p {
@@ -38,17 +33,17 @@ h1 {
 
 h2 {
   font-family: var(--ff-primary);
-  font-size: 3rem;
+  font-size: clamp(2rem, 1.6883rem + 1.3853vw, 3rem);
 }
 
 h3 {
   font-family: var(--ff-primary);
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 1.5162rem + 1.039vw, 2.5rem);
 }
 
 h4 {
   font-family: var(--ff-primary);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 1.3442rem + 0.6926vw, 2rem);
 }
 
 /* Box sizing rules */
@@ -274,6 +269,12 @@ body {
 body section {
   padding: 2rem 1.75rem;
 }
+@media (max-width: 45rem) {
+  body section { /* 720px */ }
+  body section {
+    padding: 2rem 1rem;
+  }
+}
 body .wrapper {
   max-width: 2600px;
   margin: 0 auto;
@@ -288,6 +289,16 @@ body .wrapper .container .hero .menu-logo {
   position: fixed;
   image-rendering: pixelated;
   z-index: 999;
+  top: 2rem;
+  left: 1.75rem;
+}
+@media (max-width: 45rem) {
+  body .wrapper .container .hero .menu-logo {
+    left: 1rem;
+    height: 50px;
+    display: grid;
+    place-items: center;
+  }
 }
 body .wrapper .container .hero .menu-logo svg {
   width: 100%;
@@ -299,6 +310,11 @@ body .wrapper .container .hero header {
   z-index: 999;
   position: fixed;
   right: 28px;
+}
+@media (max-width: 45rem) {
+  body .wrapper .container .hero header {
+    right: 16px;
+  }
 }
 body .wrapper .container .hero header nav .topnav__open[aria-expanded=true] + .topnav__menu {
   transform: translate(0px, 0px);
@@ -511,6 +527,12 @@ body .wrapper .container main section.section .worked-with .logo-wrapper[data-an
   flex-wrap: nowrap;
   animation: scroll 30s reverse linear infinite;
 }
+@media (max-width: 45rem) {
+  body .wrapper .container main section.section .worked-with .logo-wrapper[data-animated=true] .logos { /* 720px */ }
+  body .wrapper .container main section.section .worked-with .logo-wrapper[data-animated=true] .logos {
+    animation: scroll 10s reverse linear infinite;
+  }
+}
 body .wrapper .container main section.section .worked-with .logo-wrapper[data-animated=true] .logos img {
   max-inline-size: none;
 }
@@ -670,42 +692,54 @@ body .wrapper .container main section.section .services {
   display: flex;
   gap: 2rem;
 }
-body .wrapper .container main section.section .services:first-child h3 {
+@media (max-width: 82.5rem) {
+  body .wrapper .container main section.section .services {
+    flex-direction: column;
+  }
+}
+body .wrapper .container main section.section .services__heading h3 {
   line-height: 120%;
   color: var(--42);
 }
-body .wrapper .container main section.section .services .col + .col {
-  background: var(--15);
+@media (max-width: 82.5rem) {
+  body .wrapper .container main section.section .services__heading h3 {
+    max-width: 670px;
+  }
 }
-body .wrapper .container main section.section .services .col {
+body .wrapper .container main section.section .services__section {
+  display: flex;
+  gap: 2rem;
+}
+body .wrapper .container main section.section .services__section .col {
   padding: 2.5rem 2rem 2rem 2rem;
   border-radius: 32px;
   width: 100%;
+  background: var(--15);
 }
-body .wrapper .container main section.section .services .col .services-element {
+body .wrapper .container main section.section .services__section .col .services-element {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-body .wrapper .container main section.section .services .col .services-element .icon {
+body .wrapper .container main section.section .services__section .col .services-element .icon {
   padding: 1rem;
   border-radius: 16px;
   background-color: var(--92);
   width: -moz-fit-content;
   width: fit-content;
 }
-body .wrapper .container main section.section .services .col .services-element .services-content {
+body .wrapper .container main section.section .services__section .col .services-element .services-content {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
-body .wrapper .container main section.section .services .col .services-element .services-content .title {
+body .wrapper .container main section.section .services__section .col .services-element .services-content .title {
   font-size: 20px;
   font-weight: 500;
   line-height: 100%;
   color: var(--92);
 }
-body .wrapper .container main section.section .services .col .services-element .services-content .definition {
+body .wrapper .container main section.section .services__section .col .services-element .services-content .definition {
   font-size: 1rem;
   color: var(--52);
   line-height: 150%;
@@ -803,11 +837,21 @@ body .wrapper .container main section.section .experience {
   display: flex;
   gap: 2rem;
 }
+@media (max-width: 82.5rem) {
+  body .wrapper .container main section.section .experience {
+    flex-direction: column;
+  }
+}
 body .wrapper .container main section.section .experience .header {
   max-width: 32%;
   gap: 0.5rem;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 82.5rem) {
+  body .wrapper .container main section.section .experience .header {
+    max-width: 580px;
+  }
 }
 body .wrapper .container main section.section .experience .header h2 {
   color: var(--82);
