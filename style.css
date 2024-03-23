@@ -270,7 +270,9 @@ body section {
   padding: 2rem 1.75rem;
 }
 @media (max-width: 45rem) {
-  body section { /* 720px */ }
+  body section {
+    /* 720px */
+  }
   body section {
     padding: 2rem 1rem;
   }
@@ -504,6 +506,13 @@ body .wrapper .container main section.section .worked-with {
   gap: 2.5rem;
   color: var(--42);
 }
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .worked-with {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
 body .wrapper .container main section.section .worked-with h4 {
   white-space: nowrap;
 }
@@ -528,7 +537,9 @@ body .wrapper .container main section.section .worked-with .logo-wrapper[data-an
   animation: scroll 30s reverse linear infinite;
 }
 @media (max-width: 45rem) {
-  body .wrapper .container main section.section .worked-with .logo-wrapper[data-animated=true] .logos { /* 720px */ }
+  body .wrapper .container main section.section .worked-with .logo-wrapper[data-animated=true] .logos {
+    /* 720px */
+  }
   body .wrapper .container main section.section .worked-with .logo-wrapper[data-animated=true] .logos {
     animation: scroll 10s reverse linear infinite;
   }
@@ -572,11 +583,26 @@ body .wrapper .container main section.section .latest-project .row {
   display: flex;
   gap: 1.5rem;
 }
+@media (max-width: 82.5rem) {
+  body .wrapper .container main section.section .latest-project .row .project-1 img {
+    height: 100%;
+  }
+}
 body .wrapper .container main section.section .latest-project .row .project {
   position: relative;
   overflow: hidden;
-  border-radius: 3rem;
   will-change: scale;
+}
+@media (max-width: 82.5rem) {
+  body .wrapper .container main section.section .latest-project .row .project {
+    flex-direction: column;
+    height: 100%;
+  }
+}
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .latest-project .row .project {
+    border-radius: 1rem;
+  }
 }
 body .wrapper .container main section.section .latest-project .row .project::after {
   background-color: var(--12);
@@ -598,10 +624,29 @@ body .wrapper .container main section.section .latest-project .row .project:hove
 body .wrapper .container main section.section .latest-project .row .project:hover img {
   scale: 1.05;
 }
+body .wrapper .container main section.section .latest-project .row .project .img-box {
+  overflow: hidden;
+  will-change: scale;
+  display: flex;
+  height: 100%;
+  border-radius: 3rem;
+}
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .latest-project .row .project .img-box {
+    max-height: 480px;
+  }
+}
 body .wrapper .container main section.section .latest-project .row .project img {
   border-radius: 3rem;
   transition: scale 0.5s ease;
   opacity: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .latest-project .row .project img {
+    border-radius: 1rem;
+  }
 }
 body .wrapper .container main section.section .latest-project .row .project .hover-container {
   position: absolute;
@@ -613,6 +658,15 @@ body .wrapper .container main section.section .latest-project .row .project .hov
   overflow: hidden;
   z-index: 2;
 }
+@media (max-width: 82.5rem) {
+  body .wrapper .container main section.section .latest-project .row .project .hover-container {
+    opacity: 1;
+    padding: 20px 8px;
+    overflow: visible;
+    transition: none;
+    position: static;
+  }
+}
 body .wrapper .container main section.section .latest-project .row .project .hover-container-content {
   display: flex;
   align-items: center;
@@ -622,6 +676,14 @@ body .wrapper .container main section.section .latest-project .row .project .hov
   background: radial-gradient(740.63% 225.28% at 7.95% 70.62%, rgba(28, 30, 32, 0.6) 0%, rgba(152, 158, 165, 0.6) 100%);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
+}
+@media (max-width: 82.5rem) {
+  body .wrapper .container main section.section .latest-project .row .project .hover-container-content {
+    padding: 0;
+    background: none;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+  }
 }
 body .wrapper .container main section.section .latest-project .row .project .hover-container-content .title-container {
   display: flex;
@@ -663,6 +725,22 @@ body .wrapper .container main section.section .latest-project .row .project .hov
 body .wrapper .container main section.section .latest-project .row .project .hover-container-content button .learn-more {
   padding-inline-start: 0.5rem;
 }
+@media (max-width: 82.5rem) {
+  body .wrapper .container main section.section .latest-project .row .project .hover-container-content button .learn-more {
+    display: none;
+  }
+}
+@media (max-width: 82.5rem) {
+  body .wrapper .container main section.section .latest-project .row-1 .project-1,
+  body .wrapper .container main section.section .latest-project .row-1 .project-2 {
+    width: 100%;
+  }
+}
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .latest-project .row-1 {
+    flex-direction: column;
+  }
+}
 body .wrapper .container main section.section .latest-project .row-1 .project-1 {
   display: flex;
   flex-grow: 2;
@@ -670,6 +748,11 @@ body .wrapper .container main section.section .latest-project .row-1 .project-1 
 body .wrapper .container main section.section .latest-project .row-1 .project-2 {
   display: flex;
   flex-grow: 1;
+}
+@media (max-width: 82.5rem) {
+  body .wrapper .container main section.section .latest-project .row-2 {
+    flex-direction: column;
+  }
 }
 body .wrapper .container main section.section .latest-project .row-2 .col {
   display: flex;
@@ -679,6 +762,11 @@ body .wrapper .container main section.section .latest-project .row-2 .col {
 body .wrapper .container main section.section .latest-project .row-2 .col .inner-row {
   display: flex;
   gap: 2rem;
+}
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .latest-project .row-2 .col .inner-row {
+    flex-direction: column;
+  }
 }
 body .wrapper .container main section.section .latest-project .row-2 .col .inner-row .project-4,
 body .wrapper .container main section.section .latest-project .row-2 .col .inner-row .project-5 {
@@ -709,6 +797,14 @@ body .wrapper .container main section.section .services__heading h3 {
 body .wrapper .container main section.section .services__section {
   display: flex;
   gap: 2rem;
+}
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .services__section {
+    flex-direction: column;
+  }
+  body .wrapper .container main section.section .services__section .col {
+    padding: 2rem;
+  }
 }
 body .wrapper .container main section.section .services__section .col {
   padding: 2.5rem 2rem 2rem 2rem;
@@ -777,12 +873,14 @@ body .wrapper .container main section.section .insights .header .navigation butt
 body .wrapper .container main section.section .insights__section--carousel {
   display: flex;
   gap: 2rem;
+  overflow: hidden;
 }
 body .wrapper .container main section.section .insights__section--carousel .insight {
   width: 100%;
   border-radius: 1.5rem;
   overflow: hidden;
   z-index: 1;
+  min-width: 31%;
 }
 body .wrapper .container main section.section .insights__section--carousel .insight__box {
   position: relative;
@@ -871,10 +969,12 @@ body .wrapper .container main section.section .experience .companies__element {
   background-color: var(--15);
   padding: 1rem 2rem 1rem 1rem;
   border-radius: 24px;
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  align-items: center;
+}
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .experience .companies__element {
+    border-radius: 16px;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+  }
 }
 body .wrapper .container main section.section .experience .companies__element .details {
   display: flex;
@@ -886,23 +986,65 @@ body .wrapper .container main section.section .experience .companies__element .d
   height: 72px;
   border-radius: 1rem;
 }
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .experience .companies__element .details img {
+    width: 56px;
+    height: 56px;
+    border-radius: 0.5rem;
+  }
+}
 body .wrapper .container main section.section .experience .companies__element .details img.webmetric {
   background-color: #0C1E30;
   padding: 20px 16px 24px 20px;
+}
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .experience .companies__element .details img.webmetric {
+    padding: 14px 12px 18px 16px;
+  }
 }
 body .wrapper .container main section.section .experience .companies__element .details img.froggly {
   background-color: #F5C71B;
   padding: 0.625rem;
 }
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .experience .companies__element .details img.froggly {
+    padding: 0.25rem;
+  }
+}
 body .wrapper .container main section.section .experience .companies__element .details img.GPD {
   background-image: url(./app/img/GPD-BG.png);
   padding: 0.75rem;
+}
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .experience .companies__element .details img.GPD {
+    padding: 0.5rem;
+  }
 }
 body .wrapper .container main section.section .experience .companies__element .details img.pitbull {
   background-color: #1C1D20;
   padding: 1rem;
 }
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .experience .companies__element .details img.pitbull {
+    padding: 0.5rem;
+  }
+}
 body .wrapper .container main section.section .experience .companies__element .details__name {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width: 45rem) {
+  body .wrapper .container main section.section .experience .companies__element .details__name {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+  }
+}
+body .wrapper .container main section.section .experience .companies__element .details__name--left {
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
@@ -913,10 +1055,20 @@ body .wrapper .container main section.section .experience .companies__element .d
   color: var(--92);
   line-height: 100%;
 }
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .experience .companies__element .details__name .name {
+    font-size: 16px;
+  }
+}
 body .wrapper .container main section.section .experience .companies__element .details__name .position {
   font-size: 1rem;
   font-weight: 300;
   line-height: 100%;
+}
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .experience .companies__element .details__name .position {
+    font-size: 14px;
+  }
 }
 body .wrapper .container main section.section .experience .companies__element .details__name .position p {
   color: var(--52) !important;
