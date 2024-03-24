@@ -139,9 +139,20 @@ body {
                                     ul {
                                         flex-direction: column;
                                         align-items: flex-start;
+                                        gap: 0;
+                                        @media (max-width: 27.5rem) {
+                                            & {
+                                                gap: 1rem;
+                                            }
+                                        }
 
                                         li {
                                             font-size: 4rem;
+                                            @media (max-width: 27.5rem) {
+                                                & {
+                                                    font-size: 3rem;
+                                                }
+                                            }
 
                                             .list-container {
                                                 a {
@@ -336,6 +347,7 @@ body {
 
                         .logo-wrapper {
                             max-width: 2000px;
+                            width: 100%;
 
                             .logos {
                                 gap: 3rem;
@@ -350,6 +362,15 @@ body {
                             overflow: hidden;
                             mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
 
+                            @media (max-width: 45rem) {
+
+                                /* 720px */
+                                & {
+                                    mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+
+                                }
+                            }
+
                             .logos {
                                 display: flex;
                                 flex-wrap: nowrap;
@@ -360,6 +381,13 @@ body {
                                     /* 720px */
                                     & {
                                         animation: scroll 10s reverse linear infinite;
+
+                                        .logo {
+                                            img {
+
+                                                height: 36px;
+                                            }
+                                        }
                                     }
                                 }
 
@@ -380,6 +408,12 @@ body {
                             justify-content: space-between;
                             margin-bottom: 0.5rem;
                             align-items: center;
+                            @media (max-width: 45rem) {
+                                & {
+                                    margin-bottom: 0;
+                                    justify-content:flex-start;
+                                }
+                            }
 
                             h2 {
                                 color: var(--42);
@@ -397,10 +431,34 @@ body {
                                 border-radius: 64px;
                                 border: solid 1px var(--92);
                                 transition: all .1s ease-in;
+                                @media (max-width: 45rem) {
+                                    & {
+                                        border: none;
+                                        padding: 14px;
+                                        transition: none
+                                        img{
+                                            height: 32px;
+                                        }
+                                    }
+                                }
+                                span.latest-project-button{
+                                    @media (max-width: 45rem) {
+                                        & {
+                                            display: none;
+                                        }
+                                    }
+                                }
 
                                 &:hover {
                                     border: solid 1px var(--22);
                                     background-color: var(--22);
+
+                                    @media (max-width: 45rem) {
+                                        & {
+                                            border: none;
+                                            background:none;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -468,32 +526,36 @@ body {
                                     }
                                 }
 
-                                .img-box{
+                                .img-box {
                                     overflow: hidden;
                                     will-change: scale;
                                     display: flex;
                                     height: 100%;
                                     border-radius: 3rem;
+
                                     @media (max-width: 53rem) {
                                         & {
+                                            height: 400px;
+                                            border-radius: 2rem;
+                                        }
+                                    }
 
-                                        max-height: 480px;
+                                    @media (max-width: 45rem) {
+                                        & {
+                                            height: 260px;
+                                            border-radius: 1rem;
+
                                         }
                                     }
 
                                 }
 
                                 img {
-                                    border-radius: 3rem;
                                     transition: scale .5s ease;
                                     opacity: 1;
                                     object-fit: cover;
+                                    width: 100%;
 
-                                    @media (max-width: 53rem) {
-                                        & {
-                                            border-radius: 1rem;
-                                        }
-                                    }
                                 }
 
                                 .hover-container {
@@ -579,10 +641,16 @@ body {
 
                                             .learn-more {
                                                 padding-inline-start: 0.5rem;
+
                                                 @media (max-width: 82.5rem) {
                                                     & {
                                                         display: none;
                                                     }
+                                                }
+
+                                                img {
+                                                    width: auto;
+
                                                 }
                                             }
                                         }
@@ -629,6 +697,18 @@ body {
                                 }
                             }
 
+                            @media (max-width: 82.5rem) {
+                                & {
+                                    .project-2 {
+                                        .img-box {
+
+                                            max-height: 600px;
+                                        }
+
+                                    }
+                                }
+                            }
+
                             .col {
                                 display: flex;
                                 flex-direction: column;
@@ -638,11 +718,13 @@ body {
                                 .inner-row {
                                     display: flex;
                                     gap: 2rem;
+
                                     @media (max-width: 53rem) {
                                         & {
                                             flex-direction: column;
                                         }
                                     }
+
                                     .project-4,
                                     .project-5 {
                                         width: 100%;
@@ -682,10 +764,12 @@ body {
                         &__section {
                             display: flex;
                             gap: 2rem;
+
                             @media (max-width: 53rem) {
                                 & {
                                     flex-direction: column;
-                                    .col{
+
+                                    .col {
                                         padding: 2rem;
                                     }
                                 }
@@ -696,6 +780,15 @@ body {
                                 border-radius: 32px;
                                 width: 100%;
                                 background: var(--15);
+                                @media (max-width: 45rem) {
+                                    & {
+                                        border-radius: 16px;
+                                    }
+                                }
+                                @media (max-width: 35rem) {
+                                    & {
+padding: 1.5rem;                                    }
+                                }
 
 
                                 .services-element {
@@ -708,6 +801,14 @@ body {
                                         border-radius: 16px;
                                         background-color: var(--92);
                                         width: fit-content;
+                                        @media (max-width: 45rem) {
+                                            & {
+                                                border-radius: 8px;
+                                                img{
+                                                    width: 32px;
+                                                }
+                                            }
+                                        }
                                     }
 
                                     .services-content {
@@ -743,6 +844,20 @@ body {
                             justify-content: space-between;
                             align-items: center;
                             color: var(--42);
+                            @media (max-width: 35rem) {
+                                & {
+                                    h2{
+
+                                        line-height: 80%;
+                                        .header-break{
+                                            display: block;
+                                        }
+                                    }
+                                }
+                            }
+                            .header-break{
+                                display: none;
+                            }
 
                             sup {
                                 font-size: 1.5rem;
@@ -781,6 +896,11 @@ body {
                                     overflow: hidden;
                                     z-index: 1;
                                     min-width: 31%;
+                                    @media (max-width: 45rem) {
+                                        & {
+                                            border-radius: 16px;
+                                        }
+                                    }
 
 
                                     &__box {
@@ -912,6 +1032,7 @@ body {
                                         width: 72px;
                                         height: 72px;
                                         border-radius: 1rem;
+
                                         @media (max-width: 53rem) {
                                             & {
                                                 width: 56px;
@@ -924,9 +1045,11 @@ body {
                                     img.webmetric {
                                         background-color: #0C1E30;
                                         padding: 20px 16px 24px 20px;
+
                                         @media (max-width: 53rem) {
                                             & {
-                                                padding: 14px 12px 18px 16px;                                            }
+                                                padding: 14px 12px 18px 16px;
+                                            }
                                         }
 
                                     }
@@ -934,6 +1057,7 @@ body {
                                     img.froggly {
                                         background-color: #F5C71B;
                                         padding: 0.625rem;
+
                                         @media (max-width: 53rem) {
                                             & {
                                                 padding: 0.25rem;
@@ -944,6 +1068,7 @@ body {
                                     img.GPD {
                                         background-image: url(./app/img/GPD-BG.png);
                                         padding: 0.75rem;
+
                                         @media (max-width: 53rem) {
                                             & {
                                                 padding: 0.5rem;
@@ -954,6 +1079,7 @@ body {
                                     img.pitbull {
                                         background-color: #1C1D20;
                                         padding: 1rem;
+
                                         @media (max-width: 53rem) {
                                             & {
                                                 padding: 0.5rem;
@@ -974,21 +1100,24 @@ body {
                                                 display: flex;
                                                 flex-direction: column;
                                                 gap: 4px;
-                                            align-items: flex-start;                                          }
+                                                align-items: flex-start;
+                                            }
                                         }
 
 
-                                        &--left{
+                                        &--left {
                                             display: flex;
                                             flex-direction: column;
                                             gap: 0.375rem;
 
                                         }
+
                                         .name {
                                             font-size: 20px;
                                             font-weight: 500;
                                             color: var(--92);
                                             line-height: 100%;
+
                                             @media (max-width: 53rem) {
                                                 & {
                                                     font-size: 16px;
@@ -1000,6 +1129,7 @@ body {
                                             font-size: 1rem;
                                             font-weight: 300;
                                             line-height: 100%;
+
                                             @media (max-width: 53rem) {
                                                 & {
                                                     font-size: 14px;
@@ -1026,6 +1156,12 @@ body {
 
             footer {
                 padding: 2rem 1.75rem;
+                @media (max-width: 45rem) {
+                    & {
+                        padding: 2rem 1rem;
+                    }
+                }
+
 
                 .footer-bg {
                     background: radial-gradient(137.45% 110.02% at 98.97% 1.47%, #34383C 0%, #242629 100%), #242629;
@@ -1034,10 +1170,27 @@ body {
                     display: flex;
                     flex-direction: column;
                     gap: 200px;
+                    @media (max-width: 69rem) {
+                        & {
+                            gap: 50px;
+                        }
+                    }
+                    @media (max-width: 45rem) {
+                        & {
+                            padding: 1.5rem 1.75rem;
+                            border-radius: 16px;
+                        }
+                    }
 
                     .footer__content {
                         display: flex;
                         justify-content: space-between;
+                        @media (max-width: 69rem) {
+                            & {
+                                flex-direction: column;
+                                gap: 3rem;
+                            }
+                        }
 
                         .header {
                             display: flex;
@@ -1047,6 +1200,11 @@ body {
 
                             h1 {
                                 color: var(--42);
+                                @media (max-width: 69rem) {
+                                    & {
+                                        max-width: 600px;
+                                    }
+                                }
                             }
 
                             line-height: 100%;
@@ -1055,6 +1213,12 @@ body {
                                 display: flex;
                                 gap: 1.5rem;
                                 align-items: center;
+                                @media (max-width: 35rem) {
+                                        & {
+                                            flex-direction: column;
+                                            align-items: flex-start;
+                                        }
+                                    }
 
                                 button {
                                     display: flex;
@@ -1071,6 +1235,13 @@ body {
                                     gap: 0.5rem;
                                     font-weight: 500;
                                     color: var(--92);
+                                    align-items: center;
+                                    @media (max-width: 45rem) {
+                                        & {
+                                            flex-direction: column;
+                                            align-items: flex-start;
+                                        }
+                                    }
 
                                     &--action {
                                         display: flex;
@@ -1088,6 +1259,17 @@ body {
                             flex-direction: column;
                             align-items: flex-end;
                             gap: 2rem;
+                            @media (max-width: 69rem) {
+                                & {
+                                    flex-direction: row;
+                                }
+                            }
+                            @media (max-width: 45rem) {
+                                & {
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                }
+                            }
 
                             &__spotify {
                                 display: flex;
@@ -1204,11 +1386,24 @@ body {
                         align-items: center;
                         padding-block-start: 2.5rem;
                         border-block-start: 1px solid var(--22);
+                        @media (max-width: 69rem) {
+                            & {
+                                flex-direction: column-reverse;
+                                gap: 1.5rem;
+                            }
+                        }
 
                         .footer__info {
                             display: flex;
                             width: 100%;
                             justify-content: space-between;
+                            @media (max-width: 27.5rem) {
+                                & {
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    gap: 1.5rem
+                                }
+                            }
 
                             &--version {
                                 display: flex;
@@ -1225,6 +1420,11 @@ body {
                                     line-height: 100%;
                                     font-weight: 500;
                                     color: var(--92);
+                                    @media (max-width: 27.5rem) {
+                                        & {
+                                            font-size: 14px;
+                                        }
+                                    }
                                 }
 
                             }
@@ -1244,6 +1444,11 @@ body {
                                     line-height: 100%;
                                     font-weight: 500;
                                     color: var(--92);
+                                    @media (max-width: 27.5rem) {
+                                        & {
+                                            font-size: 14px;
+                                        }
+                                    }
                                 }
 
                             }
@@ -1253,6 +1458,11 @@ body {
                             width: 100%;
                             display: flex;
                             justify-content: flex-end;
+                            @media (max-width: 69rem) {
+                                & {
+                                    justify-content: flex-start;
+                                }
+                            }
 
                             &--link {
                                 display: flex;
@@ -1269,13 +1479,21 @@ body {
 
                                 .links {
                                     display: flex;
-                                    gap: 2rem;
+                                    // gap: 2rem;
+                                    flex-wrap: wrap;
+                                    column-gap: 2rem;
+                                    row-gap: 1.25rem;
 
                                     * {
                                         display: flex;
                                         align-items: center;
                                         gap: 0.5rem;
                                         color: var(--92);
+                                        @media (max-width: 27.5rem) {
+                                            & {
+                                                font-size: 14px;
+                                            }
+                                        }
                                     }
                                 }
                             }
