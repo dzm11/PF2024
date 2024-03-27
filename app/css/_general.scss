@@ -1,4 +1,3 @@
-//
 html.lenis,
 html.lenis body {
     height: auto;
@@ -20,7 +19,7 @@ html.lenis body {
     pointer-events: none;
 }
 
-//
+
 
 body {
     font-family: var(--ff-secondary);
@@ -917,12 +916,15 @@ body {
                         &__section {
                             width: 100%;
                             margin: 0 auto;
+                            border-radius: 1.5rem;
+                            overflow: hidden;
 
                             &--carousel {
                                 display: flex;
 
-                                gap: 24px;
-
+                                .splide__slide{
+                                    padding-inline: 1rem;
+                                }
                                 .insight {
                                     width: 100%;
                                     border-radius: 1.5rem;

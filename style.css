@@ -987,10 +987,14 @@ body .wrapper .container main section.section .insights .header .navigation butt
 body .wrapper .container main section.section .insights__section {
   width: 100%;
   margin: 0 auto;
+  border-radius: 1.5rem;
+  overflow: hidden;
 }
 body .wrapper .container main section.section .insights__section--carousel {
   display: flex;
-  gap: 24px;
+}
+body .wrapper .container main section.section .insights__section--carousel .splide__slide {
+  padding-inline: 1rem;
 }
 body .wrapper .container main section.section .insights__section--carousel .insight {
   width: 100%;
