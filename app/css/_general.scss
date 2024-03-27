@@ -1192,6 +1192,11 @@ body {
 
                                 .date {
                                     color: var(--62);
+                                    @media (max-width: 45rem) {
+                                        & {
+font-size: 14px;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -1204,7 +1209,7 @@ body {
 
                 @media (max-width: 45rem) {
                     & {
-                        padding: 2rem 1rem;
+                        padding: 2rem 1rem 1rem 1rem;
                     }
                 }
 

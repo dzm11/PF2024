@@ -1209,12 +1209,17 @@ body .wrapper .container main section.section .experience .companies__element .d
 body .wrapper .container main section.section .experience .companies__element .date {
   color: var(--62);
 }
+@media (max-width: 45rem) {
+  body .wrapper .container main section.section .experience .companies__element .date {
+    font-size: 14px;
+  }
+}
 body .wrapper .container footer {
   padding: 2rem 1.75rem;
 }
 @media (max-width: 45rem) {
   body .wrapper .container footer {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
   }
 }
 body .wrapper .container footer .footer-bg {
