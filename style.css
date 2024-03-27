@@ -1035,6 +1035,12 @@ body .wrapper .container main section.section .insights__section--carousel .insi
   height: 110px;
   width: 100%;
 }
+@media (max-width: 35rem) {
+  body .wrapper .container main section.section .insights__section--carousel .insight__box--title {
+    height: auto;
+    padding: 1rem;
+  }
+}
 body .wrapper .container main section.section .insights__section--carousel .insight__box--title .content {
   display: flex;
   flex-direction: column;
@@ -1049,6 +1055,11 @@ body .wrapper .container main section.section .insights__section--carousel .insi
   line-height: 100%;
   font-size: 1rem;
   color: var(--62);
+}
+@media (max-width: 35rem) {
+  body .wrapper .container main section.section .insights__section--carousel .insight__box--title .content .category {
+    display: none;
+  }
 }
 body .wrapper .container main section.section .insights__section--carousel .insight__box--title .insight__box--icon img {
   max-inline-size: none;

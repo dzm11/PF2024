@@ -908,9 +908,6 @@ body {
                                     border-radius: 64px;
                                 }
 
-                                button.navigation-disabled {
-                                }
-
                                 button.navigation-active {
                                     border: solid 1px var(--92);
                                 }
@@ -974,6 +971,12 @@ body {
                                             padding-inline: 2.5rem;
                                             height: 110px;
                                             width: 100%;
+                                            @media (max-width: 35rem) {
+                                                & {
+                                                    height: auto;
+                                                    padding: 1rem;
+                                                }
+                                            }
 
                                             .content {
                                                 display: flex;
@@ -990,6 +993,11 @@ body {
                                                     line-height: 100%;
                                                     font-size: 1rem;
                                                     color: var(--62);
+                                                    @media (max-width: 35rem) {
+                                                        & {
+                                                            display: none;
+                                                        }
+                                                    }
                                                 }
                                             }
 
