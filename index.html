@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
+
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
 
@@ -21,6 +23,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -56,7 +60,8 @@
                         </button>
                         <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
                             <button class="topnav__close">
-                                <img src="./app/img/Close.svg" alt="" width="32px" height="32px" id="btnClose" aria-label="Close">
+                                <img src="./app/img/Close.svg" alt="" width="32px" height="32px" id="btnClose"
+                                    aria-label="Close">
                             </button>
                             <ul>
                                 <li>
@@ -128,7 +133,8 @@
                     <div class="latest-project">
                         <div class="header">
                             <h2>Latest <span class="empower">Projects</span></h2>
-                            <button><span class="latest-project-button">Check out all </span><img src="./app/img/chevron-right-small.svg" alt="">
+                            <button><span class="latest-project-button">Check out all </span><img
+                                    src="./app/img/chevron-right-small.svg" alt="">
                             </button>
                         </div>
                         <div class="row row-1">
@@ -156,7 +162,7 @@
                             </div>
                             <div class="project project-2">
                                 <div class="img-box">
-                                <img src="./app/img/Project-2.jpg" alt="">
+                                    <img src="./app/img/Project-2.jpg" alt="">
                                 </div>
                                 <div class="hover-container">
                                     <div class="hover-container-content">
@@ -178,8 +184,8 @@
                             <div class="col">
                                 <div class="inner-row">
                                     <div class="project project-3">
-                                                                        <div class="img-box">
-                                        <img src="./app/img/Project-3.jpg" alt="">
+                                        <div class="img-box">
+                                            <img src="./app/img/Project-3.jpg" alt="">
                                         </div>
                                         <div class="hover-container">
                                             <div class="hover-container-content">
@@ -202,7 +208,7 @@
                                 <div class="inner-row">
                                     <div class="project project-4">
                                         <div class="img-box">
-                                        <img src="./app/img/Project-4.jpg" alt="">
+                                            <img src="./app/img/Project-4.jpg" alt="">
                                         </div>
                                         <div class="hover-container">
                                             <div class="hover-container-content">
@@ -220,7 +226,7 @@
                                     </div>
                                     <div class="project project-5">
                                         <div class="img-box">
-                                        <img src="./app/img/Project-5.jpg" alt="">
+                                            <img src="./app/img/Project-5.jpg" alt="">
                                         </div>
                                         <div class="hover-container">
                                             <div class="hover-container-content">
@@ -240,8 +246,8 @@
                             </div>
                             <div class="col">
                                 <div class="project project-2">
-                                                                    <div class="img-box">
-                                    <img src="./app/img/Project-6.jpg" alt="">
+                                    <div class="img-box">
+                                        <img src="./app/img/Project-6.jpg" alt="">
                                     </div>
                                     <div class="hover-container">
                                         <div class="hover-container-content">
@@ -276,7 +282,8 @@
                                     <div class="icon"><img src="./app/img/signature.svg" alt=""></div>
                                     <div class="services-content">
                                         <div class="title">Branding</div>
-                                        <div class="definition">I love creating branding, especially logos, icons and key
+                                        <div class="definition">I love creating branding, especially logos, icons and
+                                            key
                                             visuals. I designed branding elements for e.g. for Lidl, Anna Lewandowska,
                                             Kindekraft, John Dog and many other brands.</div>
                                     </div>
@@ -287,7 +294,8 @@
                                     <div class="icon"><img src="./app/img/stats.svg" alt=""></div>
                                     <div class="services-content">
                                         <div class="title">UX Design</div>
-                                        <div class="definition">I create lo-fi mock-ups, conduct internal workshops, analyze
+                                        <div class="definition">I create lo-fi mock-ups, conduct internal workshops,
+                                            analyze
                                             data, create personas, and propose A/B test hypotheses to improve sales
                                             effectiveness.</div>
                                     </div>
@@ -298,9 +306,12 @@
                                     <div class="icon"><img src="./app/img/bezier-pointer.svg" alt=""></div>
                                     <div class="services-content">
                                         <div class="title">UI Design</div>
-                                        <div class="definition">I am proficient in Figma, Adobe XD, and Atomic Design for
-                                            design systems. I review developer implementations, analyze data, and apply my
-                                            years of graphic design experience to create modern, aesthetic User Interfaces.
+                                        <div class="definition">I am proficient in Figma, Adobe XD, and Atomic Design
+                                            for
+                                            design systems. I review developer implementations, analyze data, and apply
+                                            my
+                                            years of graphic design experience to create modern, aesthetic User
+                                            Interfaces.
                                         </div>
                                     </div>
                                 </div>
@@ -311,150 +322,152 @@
 
                 </section>
                 <section class="section">
-                    <div class="insights">
+                    <div class="insights splide" aria-labelledby="carousel-heading">
                         <div class="header">
-                            <h2>Latest <br class="header-break"><span class="empower">Insights <sup>(7)</sup></h2>
-                            <div class="navigation">
-                                <button class="navigation-disabled"><img src="./app/img/chevron-left-small.svg"
+                            <h2 id="carousel-heading">Latest <br class="header-break"><span class="empower">Insights <sup>(7)</sup></h2>
+                            <div class="navigation splide__arrows">
+                                <button class="navigation-active splide__arrow splide__arrow--prev"><img src="./app/img/chevron-right-small.svg"
                                         alt=""></button>
-                                <button class="navigation-active"><img src="./app/img/chevron-right-small.svg"
+                                <button class="navigation-active splide__arrow splide__arrow--next"><img src="./app/img/chevron-right-small.svg"
                                         alt=""></button>
                             </div>
                         </div>
-                        <div class="insights__section">
-                            <div class="insights__section--carousel">
-                                <div class="insight">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img src="./app/img/Insight-1.jpg" alt=""></div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">Jak wygląda poprawnie zaprojektowany system
-                                                    filtrowania? - Kinderkraft e-commerce</div>
-                                                <div class="category">Ecommerce case study</div>
-                                            </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="insight">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img src="./app/img/Insight-2.jpg" alt=""></div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">Futrzasty brand hero inspirowany rzeczywistością
+                        <div class="">
+                            <div class="insights__section splide__track">
+                                <div class="insights__section--carousel splide__list">
+                                    <div class="insight splide__slide">
+                                        <div class="insight__box">
+                                            <div class="insight__box--img"><img src="./app/img/Insight-1.jpg" alt=""></div>
+                                            <div class="insight__box--title">
+                                                <div class="content">
+                                                    <div class="title">Jak wygląda poprawnie zaprojektowany system
+                                                        filtrowania? - Kinderkraft e-commerce</div>
+                                                    <div class="category">Ecommerce case study</div>
                                                 </div>
-                                                <div class="category">Ecommerce case study</div>
-                                            </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="insight">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img src="./app/img/Insight-3.jpg" alt=""></div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">ChatGPT ujawnia wszystko: Od umysłu AI do tajników
-                                                    cyfrowego świata! - wywiad z ChatGPT</div>
-                                                <div class="category">Ecommerce case study</div>
-                                            </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="insight">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img src="./app/img/Insight-1.jpg" alt=""></div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">Jak wygląda poprawnie zaprojektowany system
-                                                    filtrowania? - Kinderkraft e-commerce</div>
-                                                <div class="category">Ecommerce case study</div>
-                                            </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="insight">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img src="./app/img/Insight-2.jpg" alt=""></div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">Futrzasty brand hero inspirowany rzeczywistością
+                                                <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
                                                 </div>
-                                                <div class="category">Ecommerce case study</div>
+    
                                             </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
-                                            </div>
-
                                         </div>
                                     </div>
-                                </div>
-                                <div class="insight">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img src="./app/img/Insight-3.jpg" alt=""></div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">ChatGPT ujawnia wszystko: Od umysłu AI do tajników
-                                                    cyfrowego świata! - wywiad z ChatGPT</div>
-                                                <div class="category">Ecommerce case study</div>
-                                            </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="insight">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img src="./app/img/Insight-1.jpg" alt=""></div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">Jak wygląda poprawnie zaprojektowany system
-                                                    filtrowania? - Kinderkraft e-commerce</div>
-                                                <div class="category">Ecommerce case study</div>
-                                            </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="insight">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img src="./app/img/Insight-2.jpg" alt=""></div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">Futrzasty brand hero inspirowany rzeczywistością
+                                    <div class="insight splide__slide">
+                                        <div class="insight__box">
+                                            <div class="insight__box--img"><img src="./app/img/Insight-2.jpg" alt=""></div>
+                                            <div class="insight__box--title">
+                                                <div class="content">
+                                                    <div class="title">Futrzasty brand hero inspirowany rzeczywistością
+                                                    </div>
+                                                    <div class="category">Ecommerce case study</div>
                                                 </div>
-                                                <div class="category">Ecommerce case study</div>
+                                                <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                                </div>
+    
                                             </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
-                                            </div>
-
                                         </div>
                                     </div>
-                                </div>
-                                <div class="insight">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img src="./app/img/Insight-3.jpg" alt=""></div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">ChatGPT ujawnia wszystko: Od umysłu AI do tajników
-                                                    cyfrowego świata! - wywiad z ChatGPT</div>
-                                                <div class="category">Ecommerce case study</div>
+                                    <div class="insight splide__slide">
+                                        <div class="insight__box">
+                                            <div class="insight__box--img"><img src="./app/img/Insight-3.jpg" alt=""></div>
+                                            <div class="insight__box--title">
+                                                <div class="content">
+                                                    <div class="title">ChatGPT ujawnia wszystko: Od umysłu AI do tajników
+                                                        cyfrowego świata! - wywiad z ChatGPT</div>
+                                                    <div class="category">Ecommerce case study</div>
+                                                </div>
+                                                <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                                </div>
+    
                                             </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="insight splide__slide" style="background-color: red;">
+                                        <div class="insight__box">
+                                            <div class="insight__box--img"><img src="./app/img/Insight-1.jpg" alt=""></div>
+                                            <div class="insight__box--title">
+                                                <div class="content">
+                                                    <div class="title">Jak wygląda poprawnie zaprojektowany system
+                                                        filtrowania? - Kinderkraft e-commerce</div>
+                                                    <div class="category">Ecommerce case study</div>
+                                                </div>
+                                                <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                                </div>
+    
                                             </div>
-
+                                        </div>
+                                    </div>
+                                    <div class="insight splide__slide">
+                                        <div class="insight__box">
+                                            <div class="insight__box--img"><img src="./app/img/Insight-2.jpg" alt=""></div>
+                                            <div class="insight__box--title">
+                                                <div class="content">
+                                                    <div class="title">Futrzasty brand hero inspirowany rzeczywistością
+                                                    </div>
+                                                    <div class="category">Ecommerce case study</div>
+                                                </div>
+                                                <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insight splide__slide">
+                                        <div class="insight__box">
+                                            <div class="insight__box--img"><img src="./app/img/Insight-3.jpg" alt=""></div>
+                                            <div class="insight__box--title">
+                                                <div class="content">
+                                                    <div class="title">ChatGPT ujawnia wszystko: Od umysłu AI do tajników
+                                                        cyfrowego świata! - wywiad z ChatGPT</div>
+                                                    <div class="category">Ecommerce case study</div>
+                                                </div>
+                                                <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insight splide__slide" style="background-color: blue;">
+                                        <div class="insight__box">
+                                            <div class="insight__box--img"><img src="./app/img/Insight-1.jpg" alt=""></div>
+                                            <div class="insight__box--title">
+                                                <div class="content">
+                                                    <div class="title">Jak wygląda poprawnie zaprojektowany system
+                                                        filtrowania? - Kinderkraft e-commerce</div>
+                                                    <div class="category">Ecommerce case study</div>
+                                                </div>
+                                                <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insight splide__slide">
+                                        <div class="insight__box">
+                                            <div class="insight__box--img"><img src="./app/img/Insight-2.jpg" alt=""></div>
+                                            <div class="insight__box--title">
+                                                <div class="content">
+                                                    <div class="title">Futrzasty brand hero inspirowany rzeczywistością
+                                                    </div>
+                                                    <div class="category">Ecommerce case study</div>
+                                                </div>
+                                                <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="insight splide__slide">
+                                        <div class="insight__box">
+                                            <div class="insight__box--img"><img src="./app/img/Insight-3.jpg" alt=""></div>
+                                            <div class="insight__box--title">
+                                                <div class="content">
+                                                    <div class="title">ChatGPT ujawnia wszystko: Od umysłu AI do tajników
+                                                        cyfrowego świata! - wywiad z ChatGPT</div>
+                                                    <div class="category">Ecommerce case study</div>
+                                                </div>
+                                                <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
+                                                </div>
+    
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -480,10 +493,10 @@
 
                                         <div class="details__name--left">
 
-                                        <div class="name">Webmetric</div>
-                                        <div class="position">
-                                            <p>UX/UI Designer</p>
-                                        </div>
+                                            <div class="name">Webmetric</div>
+                                            <div class="position">
+                                                <p>UX/UI Designer</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -495,10 +508,10 @@
                                         <div class="date">2023&nbsp-&nbspCurrent</div>
                                         <div class="details__name--left">
 
-                                        <div class="name">Froggly</div>
-                                        <div class="position">
-                                            <p>UI Designer</p>
-                                        </div>
+                                            <div class="name">Froggly</div>
+                                            <div class="position">
+                                                <p>UI Designer</p>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -525,10 +538,10 @@
                                     <div class="details__name">
                                         <div class="date">2018</div>
                                         <div class="details__name--left">
-                                        <div class="name">Pitbull West Coast</div>
-                                        <div class="position">
-                                            <p>Sports Wear Designer</p>
-                                        </div>
+                                            <div class="name">Pitbull West Coast</div>
+                                            <div class="position">
+                                                <p>Sports Wear Designer</p>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -545,8 +558,8 @@
                             <h1><span class="empower">Let's talk</span> about your&nbspproject</h1>
                             <div class="header--actions">
                                 <button>Fill the form<img src="./app/img/send-plane.svg" alt="send"></button>
-                                <div class="mail">or copy an email: <div class="mail--action" onclick="copyContent()">Hello@melon.studio <img
-                                            src="./app/img/copy.svg" alt="copy"></div>
+                                <div class="mail">or copy an email: <div class="mail--action" onclick="copyContent()">
+                                        Hello@melon.studio <img src="./app/img/copy.svg" alt="copy"></div>
                                 </div>
                             </div>
                         </div>
@@ -620,7 +633,7 @@
                 let triggerElement = $(this);
                 let targetElement = $(".menu-logo");
 
-                
+
 
                 let tl = gsap.timeline({
                     scrollTrigger: {
@@ -633,16 +646,16 @@
                 });
                 mm.add("(min-width: 53rem)", () => {
 
-                tl.fromTo(targetElement, {
-                    y: "0%",
-                    width: "calc(100% - 3.5rem)",
-                    margin: "50px 0 0 0",
-                    duration: 1
-                },
-                    {
-                        width: "auto",
-                        margin: "0"
-                    });
+                    tl.fromTo(targetElement, {
+                        y: "0%",
+                        width: "calc(100% - 3rem)",
+                        margin: "50px 0 0 0",
+                        duration: 1
+                    },
+                        {
+                            width: "auto",
+                            margin: "0"
+                        });
                 });
 
 
@@ -692,19 +705,22 @@
     </script>
     <script>
         const lenis = new Lenis()
-
-        // lenis.on('scroll', (e) => {
-        //     console.log(e)
-        // })
-
         lenis.on('scroll', ScrollTrigger.update)
-
         gsap.ticker.add((time) => {
             lenis.raf(time * 1000)
         })
 
         gsap.ticker.lagSmoothing(0)
     </script>
+    <script>
+        var splide = new Splide('.splide', {
+            snap: true,
+            perPage: 3
+        });
+
+        splide.mount();
+    </script>
+
 </body>
 
 </html>

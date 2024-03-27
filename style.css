@@ -46,6 +46,10 @@ h4 {
   font-size: clamp(1.5rem, 1.3442rem + 0.6926vw, 2rem);
 }
 
+:root {
+  --img-gap: 2rem;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -786,7 +790,7 @@ body .wrapper .container main section.section .latest-project .row .project .hov
     display: none;
   }
 }
-body .wrapper .container main section.section .latest-project .row .project .hover-container-content button .learn-more img {
+body .wrapper .container main section.section .latest-project .row .project .hover-container-content button img {
   width: auto;
 }
 @media (max-width: 82.5rem) {
@@ -947,6 +951,26 @@ body .wrapper .container main section.section .insights .header .header-break {
 body .wrapper .container main section.section .insights .header sup {
   font-size: 1.5rem;
 }
+body .wrapper .container main section.section .insights .header .splide__arrow {
+  -ms-flex-align: stretch;
+  background: none;
+  border: none;
+  border-radius: 0;
+  display: block;
+  height: auto;
+  opacity: 1;
+  position: static;
+  top: 0;
+  transform: translate(0%);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body .wrapper .container main section.section .insights .header .splide__arrow:disabled {
+  opacity: 0.5;
+}
+body .wrapper .container main section.section .insights .header .splide__arrow--prev img {
+  rotate: 180deg;
+}
 body .wrapper .container main section.section .insights .header .navigation {
   display: flex;
   gap: 1rem;
@@ -957,23 +981,23 @@ body .wrapper .container main section.section .insights .header .navigation butt
   padding: 1rem;
   border-radius: 64px;
 }
-body .wrapper .container main section.section .insights .header .navigation button.navigation-disabled {
-  border: solid 1px var(--42);
-}
 body .wrapper .container main section.section .insights .header .navigation button.navigation-active {
   border: solid 1px var(--92);
 }
+body .wrapper .container main section.section .insights__section {
+  width: 100%;
+  margin: 0 auto;
+}
 body .wrapper .container main section.section .insights__section--carousel {
   display: flex;
-  gap: 2rem;
-  overflow: hidden;
+  gap: 24px;
 }
 body .wrapper .container main section.section .insights__section--carousel .insight {
   width: 100%;
   border-radius: 1.5rem;
   overflow: hidden;
   z-index: 1;
-  min-width: 31%;
+  will-change: scale;
 }
 @media (max-width: 45rem) {
   body .wrapper .container main section.section .insights__section--carousel .insight {

@@ -3,61 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Currently Playing Song</title>
+  <title>Document</title>
+  <style>
+    .carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  flex: 0 0 25%;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+  </style>
 </head>
 <body>
-  <h1>Currently Playing Song</h1>
-  <div id="songInfo"></div>
-
+  <div class="carousel">
+    <div class="carousel-container">
+      <div class="carousel-slide"><img src="https://placehold.co/600x400" alt=""></div>
+      <div class="carousel-slide"><img src="https://placehold.co/600x400" alt=""></div>
+      <div class="carousel-slide"><img src="https://placehold.co/600x400" alt=""></div>
+      <div class="carousel-slide"><img src="https://placehold.co/600x400" alt=""></div>
+      <div class="carousel-slide"><img src="https://placehold.co/600x400" alt=""></div>
+      <div class="carousel-slide"><img src="https://placehold.co/600x400" alt=""></div>
+      <div class="carousel-slide"><img src="https://placehold.co/600x400" alt=""></div>
+      <div class="carousel-slide"><img src="https://placehold.co/600x400" alt=""></div>
+      <div class="carousel-slide"><img src="https://placehold.co/600x400" alt=""></div>
+      <div class="carousel-slide"><img src="https://placehold.co/600x400" alt=""></div>
+      <div class="carousel-slide"><img src="https://placehold.co/600x400" alt=""></div>
+      <!-- Dodaj kolejne zdjęcia według potrzeb -->
+    </div>
+    <button class="prev" onclick="moveSlide(-3)">&#10094;</button>
+    <button class="next" onclick="moveSlide(3)">&#10095;</button>
+  </div>
   <script>
-    // Funkcja do pobierania danych o aktualnie odtwarzanej piosence z Spotify API
-    async function getCurrentSong() {
-      try {
-        // Pobranie dostępu do API Spotify
-        const response = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
-          headers: {
-            'Authorization': 'Bearer AQDmPafIqpRQmHwJDCw34LqDIAiw-vtd3Iucu5OGaqrz0_OvabpNjDgEo_VKjdrfml3b40HNOI7TQau2zGvBKqmvqjCn0O7ahe7KXAoEuOxld4P4SjFgvBoUO7mqI-bObDTvbVYFhRaSuTnYMdC-MRPxLJxo3Vx4dpdosWfiQyGcroxSe3QABECxJaarCQGUQvP66yUa'
-          }
-        });
+    let slideIndex = 0;
 
-        // Sprawdzenie, czy odpowiedź jest prawidłowa
-        if (!response.ok) {
-          throw new Error('Failed to fetch currently playing song');
-        }
+function moveSlide(n) {
+  const slides = document.getElementsByClassName("carousel-slide");
+  const totalSlides = slides.length;
 
-        // Pobranie danych o aktualnie odtwarzanej piosence
-        const data = await response.json();
+  slideIndex = (slideIndex + n + totalSlides) % totalSlides;
 
-        // Zwrócenie danych piosenki
-        return data;
-      } catch (error) {
-        console.error('Error fetching currently playing song:', error.message);
-        throw error;
-      }
-    }
+  const slideWidth = slides[0].offsetWidth;
+  const offset = -slideIndex * slideWidth;
 
-    // Funkcja do wyświetlania informacji o piosence na stronie
-    async function displayCurrentSong() {
-      try {
-        // Pobranie danych o aktualnie odtwarzanej piosence
-        const songData = await getCurrentSong();
-
-        // Sprawdzenie, czy jest aktualnie odtwarzana piosenka
-        if (!songData.is_playing) {
-          document.getElementById('songInfo').innerText = 'No song currently playing';
-          return;
-        }
-
-        // Wyświetlenie informacji o piosence
-        const songInfo = `Title: ${songData.item.name}<br>Artist: ${songData.item.artists.map(artist => artist.name).join(', ')}`;
-        document.getElementById('songInfo').innerHTML = songInfo;
-      } catch (error) {
-        console.error('Error displaying currently playing song:', error.message);
-      }
-    }
-
-    // Wywołanie funkcji po załadowaniu strony
-    window.onload = displayCurrentSong;
+  const container = document.querySelector(".carousel-container");
+  container.style.transform = `translateX(${offset}px)`;
+}
   </script>
 </body>
 </html>
