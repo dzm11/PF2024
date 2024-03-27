@@ -715,7 +715,18 @@
     <script>
         var splide = new Splide('.splide', {
             snap: true,
-            perPage: 3
+            perPage: 3,
+            pagination: false,
+            breakpoints: {
+		1300: {
+			perPage: 2,
+		},
+  },
+  breakpoints: {
+		848: {
+			perPage: 1,
+		},
+  }
         });
 
         splide.mount();
