@@ -710,45 +710,6 @@
                         });
                 });
 
-
-                mm.add("(max-width: 1560px)", () => {
-                    tl.fromTo(targetElement, {
-                        y: "15%",
-                        width: "calc(100% - 3.5rem)",
-                        margin: "0 auto",
-                        duration: 1
-                    },
-                        {
-                            width: "auto"
-                        });
-
-                });
-
-                mm.add("(max-width: 1000px)", () => {
-                    tl.fromTo(targetElement, {
-                        y: "30%",
-                        width: "calc(100% - 3.5rem)",
-                        margin: "0 auto",
-                        duration: 1
-                    },
-                        {
-                            width: "auto"
-                        });
-
-                });
-                mm.add("(max-width: 668px)", () => {
-                    tl.fromTo(targetElement, {
-                        y: "35%",
-                        width: "calc(100% - 3.5rem)",
-                        margin: "0 auto",
-                        duration: 1
-                    },
-                        {
-                            width: "auto"
-                        });
-
-                });
-
             });
         });
         ScrollTrigger.defaults({
