@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
-
+    <!-- <script src="https://unpkg.com/split-type"></script> -->
+    <!-- <script src="https://www.unpkg.com/js@1.1.0"></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
@@ -114,11 +115,82 @@
                         <div class="circle"></div>
                         Available for work
                     </div>
-                    <h1 class="hero__content--header"><span class="inside">I'm Piotr <img
-                                src="./app/img/hero-author.png" alt=""></span>— a <span class="empower">user experience
-                            & interface designer</span> from Poland, focusing on building
-                        functional websites that will <span class="empower">increase conversion</span> and help <span
-                            class="empower">reach customers.</span></h1>
+                    <h1 class="hero__content--header ">
+                        <span class="inside">
+                            <div class="word-container">
+                                <span class="word">I'm </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">Piotr </span>
+                            </div>
+                            <div class="word-container">
+                                <img src="./app/img/hero-author.png" alt="" class="word">
+                            </div>
+                        </span>
+                        <div class="word-container">
+                            <span class="word">— a </span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word empower">user </span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word empower">experience </span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word empower">&#38; </span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word empower">interface </span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word empower">designer</span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word"> from</span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word"> Poland,</span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word">focusing</span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word"> on</span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word"> building </span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word">functional</span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word"> websites</span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word">that</span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word">will </span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word empower">increase</span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word empower"> conversion</span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word"> and </span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word">help </span>
+                        </div>
+                        <div class="word-container">
+                            <span class="word empower">reach </span>
+                        </div>
+                            <div class="word-container">
+                                <span class="word empower">customers.</span>
+                            </div>
+                    </h1>
                 </div>
             </section>
             <main>
@@ -453,7 +525,8 @@
                                     <div class="splide__slide">
                                         <div class="insight">
                                             <div class="insight__box">
-                                                <div class="insight__box--img"><img src="./app/img/Insight-3.jpg" alt="">
+                                                <div class="insight__box--img"><img src="./app/img/Insight-3.jpg"
+                                                        alt="">
                                                 </div>
                                                 <div class="insight__box--title">
                                                     <div class="content">
@@ -465,7 +538,7 @@
                                                     <div class="insight__box--icon"><img src="./app/img/box-arrow.svg"
                                                             alt="">
                                                     </div>
-    
+
                                                 </div>
                                             </div>
                                         </div>
@@ -720,17 +793,37 @@
 
                 gsap.to(".bar", 2, {
                     height: 0,
-                    stagger:{
+                    stagger: {
                         amount: 0.5,
                     },
                     ease: "power4.inOut"
                 });
-                gsap.from("#M, #E, #L, #O, #N", 3, {
-                    y: 500,
-                    stagger:{
+                gsap.from("#M, #E, #L, #O, #N", 1.5, {
+                    delay: 1.5,
+                    y: 100,
+                    opacity: 0,
+                    stagger: {
                         amount: -.7,
                     },
-                    ease: "power4.inOut"
+                });
+                gsap.from(".word", 0.3, {
+                    delay: 3.5,
+                    rotateX: -90,
+                    opacity: 0,
+                    y: 50,
+                    stagger: .05,
+                });
+                gsap.from("body .wrapper .container .hero header nav ul li", 1, {
+                    delay: 4,
+
+                    opacity: 0,
+                    y: 20,
+                    stagger: .05
+                });
+                gsap.from("body .wrapper .container .hero__content .status", 1, {
+                    delay: 3.5,
+                    opacity: 0,
+                    y: 20,
                 });
 
             });
@@ -739,6 +832,7 @@
             markers: false
         });
     </script>
+
     <script>
         const lenis = new Lenis()
         lenis.on('scroll', ScrollTrigger.update)
@@ -748,6 +842,7 @@
 
         gsap.ticker.lagSmoothing(0)
     </script>
+
     <script>
         var splide = new Splide('.splide', {
             snap: true,

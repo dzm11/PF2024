@@ -19,7 +19,9 @@ html.lenis body {
     pointer-events: none;
 }
 
-
+.word-container{
+    overflow: hidden;
+}
 
 body {
     font-family: var(--ff-secondary);
@@ -311,9 +313,21 @@ body {
                         // position: relative;
                         max-width: 1540px;
                         color: var(--42);
+                        display: flex;
+                        flex-wrap: wrap;
+                        column-gap: 8px;
+                        row-gap: 2px;
+
+                        .word{
+                            display: inline-flex;
+                            overflow: hidden;
+                        }
 
                         span.inside {
                             display: inline-flex;
+                            .word:nth-child(1){
+                                margin-inline-end: 0.2em;
+                            }
 
                             img {
                                 margin-inline: 1rem;

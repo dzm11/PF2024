@@ -279,6 +279,10 @@ html.lenis body {
   pointer-events: none;
 }
 
+.word-container {
+  overflow: hidden;
+}
+
 body {
   font-family: var(--ff-secondary);
   color: var(--42);
@@ -522,9 +526,21 @@ body .wrapper .container .hero__content .status .circle:after {
 body .wrapper .container .hero__content--header {
   max-width: 1540px;
   color: var(--42);
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  row-gap: 2px;
+}
+body .wrapper .container .hero__content--header .word {
+  display: inline-flex;
+  overflow: hidden;
 }
 body .wrapper .container .hero__content--header span.inside {
   display: inline-flex;
+}
+body .wrapper .container .hero__content--header span.inside .word:nth-child(1) {
+  margin-inline-end: 0.2em;
 }
 body .wrapper .container .hero__content--header span.inside img {
   margin-inline: 1rem;
