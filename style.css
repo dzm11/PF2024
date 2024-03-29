@@ -46,6 +46,12 @@ h4 {
   font-size: clamp(1.5rem, 1.3442rem + 0.6926vw, 2rem);
 }
 
+h5 {
+  font-family: var(--ff-secondary);
+  font-size: clamp(1.25rem, 1.1959rem + 0.2703vw, 1.5rem);
+  font-weight: 400;
+}
+
 :root {
   --img-gap: 2rem;
 }
@@ -1559,4 +1565,208 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   body .wrapper .container footer .footer-bg .additional-information .footer__socials--link .links * {
     font-size: 14px;
   }
+}
+
+.wrapper.blog .container .hero {
+  height: -moz-min-content;
+  height: min-content;
+  min-height: auto;
+}
+.wrapper.blog .container .hero header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: static;
+  right: 0;
+}
+.wrapper.blog .container .hero header .menu-logo {
+  display: block;
+  position: static;
+  max-width: none;
+}
+@media (max-width: 45rem) {
+  .wrapper.blog .container .hero header .menu-logo {
+    /* 720px */
+  }
+  .wrapper.blog .container .hero header .menu-logo {
+    display: block;
+    height: auto;
+  }
+}
+.wrapper.blog .container main .hero__content {
+  gap: 1rem;
+  max-width: 920px;
+  margin-block: 64px;
+}
+.wrapper.blog .container main .project-archive {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.wrapper.blog .container main .project-archive .header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+.wrapper.blog .container main .project-archive .row {
+  display: flex;
+  gap: 1.5rem;
+}
+@media (max-width: 82.5rem) {
+  .wrapper.blog .container main .project-archive .row .project-1 img {
+    height: 100%;
+  }
+}
+@media (max-width: 53rem) {
+  .wrapper.blog .container main .project-archive .row {
+    flex-direction: column;
+  }
+}
+.wrapper.blog .container main .project-archive .row .project {
+  position: relative;
+  overflow: hidden;
+  will-change: scale;
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+}
+@media (max-width: 82.5rem) {
+  .wrapper.blog .container main .project-archive .row .project {
+    /* 720px */
+  }
+  .wrapper.blog .container main .project-archive .row .project {
+    height: auto !important;
+  }
+}
+.wrapper.blog .container main .project-archive .row .project::after {
+  background-color: var(--12);
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.2s ease-in-out;
+}
+.wrapper.blog .container main .project-archive .row .project:hover::after {
+  opacity: 0.1;
+}
+.wrapper.blog .container main .project-archive .row .project:hover .hover-container {
+  opacity: 1;
+}
+.wrapper.blog .container main .project-archive .row .project:hover img {
+  scale: 1.05;
+}
+.wrapper.blog .container main .project-archive .row .project .img-box {
+  overflow: hidden;
+  will-change: scale;
+  display: flex;
+  height: 100%;
+  border-radius: 3rem;
+}
+@media (max-width: 53rem) {
+  .wrapper.blog .container main .project-archive .row .project .img-box {
+    height: 400px;
+    border-radius: 2rem;
+  }
+}
+@media (max-width: 45rem) {
+  .wrapper.blog .container main .project-archive .row .project .img-box {
+    height: 260px;
+    border-radius: 1rem;
+  }
+}
+.wrapper.blog .container main .project-archive .row .project img {
+  transition: scale 0.5s ease;
+  opacity: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.wrapper.blog .container main .project-archive .row .project .hover-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  overflow: hidden;
+  z-index: 2;
+}
+@media (max-width: 53rem) {
+  .wrapper.blog .container main .project-archive .row .project .hover-container {
+    opacity: 1;
+    padding: 20px 8px;
+    overflow: visible;
+    transition: none;
+    position: static;
+  }
+}
+.wrapper.blog .container main .project-archive .row .project .hover-container-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border-radius: 76px;
+  background: radial-gradient(740.63% 225.28% at 7.95% 70.62%, rgba(28, 30, 32, 0.6) 0%, rgba(152, 158, 165, 0.6) 100%);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+@media (max-width: 53rem) {
+  .wrapper.blog .container main .project-archive .row .project .hover-container-content {
+    padding: 0;
+    background: none;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+  }
+}
+.wrapper.blog .container main .project-archive .row .project .hover-container-content .title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.wrapper.blog .container main .project-archive .row .project .hover-container-content .title-container .title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 100%;
+  color: var(--92);
+}
+.wrapper.blog .container main .project-archive .row .project .hover-container-content .title-container .title .star {
+  font-size: 12px;
+  color: var(--92);
+  font-weight: 400;
+}
+.wrapper.blog .container main .project-archive .row .project .hover-container-content .title-container .subtitle {
+  color: var(--82);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 100%;
+}
+.wrapper.blog .container main .project-archive .row .project .hover-container-content button {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  color: var(--92);
+  line-height: 100%;
+  padding: 1rem;
+  border: solid 1px var(--82);
+  border-radius: 40px;
+}
+.wrapper.blog .container main .project-archive .row .project .hover-container-content button .learn-more {
+  padding-inline-start: 0.5rem;
+}
+@media (max-width: 82.5rem) {
+  .wrapper.blog .container main .project-archive .row .project .hover-container-content button .learn-more {
+    display: none;
+  }
+}
+.wrapper.blog .container main .project-archive .row .project .hover-container-content button img {
+  width: auto;
 }/*# sourceMappingURL=style.css.map */

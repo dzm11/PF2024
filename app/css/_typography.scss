@@ -44,3 +44,9 @@ h3{
 
 h4{    font-family: var(--ff-primary);
     font-size: clamp(1.5rem, 1.3442rem + 0.6926vw, 2rem);}
+
+    h5{
+        font-family: var(--ff-secondary);
+        font-size: clamp(1.25rem, 1.1959rem + 0.2703vw, 1.5rem);
+        font-weight: 400;
+    }

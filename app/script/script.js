@@ -11,11 +11,9 @@ const html= document.querySelector("html");
 
 function setupTopNav(e){
   if (e.matches){
-    // console.log("mobile")
 topNavMenu.setAttribute("inert", "");
 topNavMenu.style.transition = "none";
 } else{
-  // console.log("dektop")
   topNavMenu.removeAttribute("inert");
   }
 }
@@ -90,3 +88,16 @@ async function copyContent() {
   media.addEventListener("change", function(e){
     setupTopNav(e);
   })
+
+
+///////////////
+//Smooth Scroll
+///////////////
+
+  const lenis = new Lenis()
+  lenis.on('scroll', ScrollTrigger.update)
+  gsap.ticker.add((time) => {
+      lenis.raf(time * 1000)
+  })
+
+  gsap.ticker.lagSmoothing(0)

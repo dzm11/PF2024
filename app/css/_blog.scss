@@ -1,0 +1,242 @@
+.wrapper.blog {
+    .container {
+        .hero {
+            height: min-content;
+            min-height: auto;
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: static;
+                right: 0;
+
+                .menu-logo {
+                    display: block;
+                    position: static;
+                    max-width: none;
+
+                    @media (max-width: 45rem) {
+
+                        /* 720px */
+                        & {
+                            display: block;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+        main{
+            .hero__content{
+                gap: 1rem;
+                max-width: 920px;
+                margin-block: 64px;
+            }
+            .project-archive{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                .header{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 0.5rem;
+                    align-items: center;
+                }
+                .row{
+                    display: flex;
+                    gap: 1.5rem;
+
+                    @media (max-width: 82.5rem) {
+                        & {
+                            .project-1 {
+                                img {
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                    @media (max-width: 53rem) {
+                        & {
+                            flex-direction: column;
+                        }
+                    }
+                    .project{
+                        position: relative;
+                        overflow: hidden;
+                        // border-radius: 3rem;
+                        will-change: scale;
+                        width: 100%;
+                        height: auto;
+                        max-height: 650px;
+                        @media (max-width: 82.5rem) {
+
+                            /* 720px */
+                            & {
+                                height: auto!important;
+                            }
+                        }
+                        &::after {
+                            background-color: var(--12);
+                            opacity: 0;
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            transition: all .2s ease-in-out;
+
+                        }
+
+                        &:hover::after {
+                            opacity: .1;
+                        }
+
+                        &:hover {
+                            .hover-container {
+                                opacity: 1;
+                            }
+
+                            img {
+                                // opacity: .6;
+                                scale: 1.05;
+                            }
+                        }
+
+                        .img-box {
+                            overflow: hidden;
+                            will-change: scale;
+                            display: flex;
+                            height: 100%;
+                            border-radius: 3rem;
+
+                            @media (max-width: 53rem) {
+                                & {
+                                    height: 400px;
+                                    border-radius: 2rem;
+                                }
+                            }
+
+                            @media (max-width: 45rem) {
+                                & {
+                                    height: 260px;
+                                    border-radius: 1rem;
+
+                                }
+                            }
+
+                        }
+
+                        img {
+                            transition: scale .5s ease;
+                            opacity: 1;
+                            object-fit: cover;
+                            width: 100%;
+
+                        }
+
+                        .hover-container {
+                            position: absolute;
+                            bottom: 0;
+                            width: 100%;
+                            padding: 20px;
+                            opacity: 0;
+                            transition: opacity .2s ease-in-out;
+                            overflow: hidden;
+                            z-index: 2;
+
+
+                            @media (max-width: 53rem) {
+                                & {
+                                    opacity: 1;
+                                    padding: 20px 8px;
+                                    overflow: visible;
+                                    transition: none;
+                                    position: static;
+                                }
+                            }
+
+
+
+                            &-content {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding: 1rem 1rem 1rem 2.5rem;
+                                border-radius: 76px;
+                                background: radial-gradient(740.63% 225.28% at 7.95% 70.62%, rgba(28, 30, 32, 0.60) 0%, rgba(152, 158, 165, 0.60) 100%);
+                                backdrop-filter: blur(20px);
+
+                                @media (max-width: 53rem) {
+                                    & {
+                                        padding: 0;
+                                        background: none;
+                                        backdrop-filter: none;
+                                    }
+                                }
+
+                                .title-container {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 6px;
+
+                                    .title {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 0.5rem;
+                                        font-size: 1.5rem;
+                                        font-weight: 500;
+                                        line-height: 100%;
+                                        color: var(--92);
+
+                                        .star {
+                                            font-size: 12px;
+                                            color: var(--92);
+                                            font-weight: 400;
+                                        }
+                                    }
+
+                                    .subtitle {
+                                        color: var(--82);
+                                        font-size: 1rem;
+                                        font-weight: 400;
+                                        line-height: 100%;
+                                    }
+                                }
+
+                                button {
+                                    background-color: transparent;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 0.5rem;
+                                    font-size: 1.125rem;
+                                    color: var(--92);
+                                    line-height: 100%;
+                                    padding: 1rem;
+                                    border: solid 1px var(--82);
+                                    border-radius: 40px;
+
+                                    .learn-more {
+                                        padding-inline-start: 0.5rem;
+
+                                        @media (max-width: 82.5rem) {
+                                            & {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                    img {
+                                        width: auto;
+
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
