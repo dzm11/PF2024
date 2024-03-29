@@ -757,6 +757,7 @@
     <script src="./app/script/script.js"></script>
     <script>
         let mm = gsap.matchMedia();
+        const overlay = document.querySelector(".overlay");
 
         mm.revert();
 
@@ -796,6 +797,7 @@
                     stagger: {
                         amount: 0.5,
                     },
+                    onComplete: () => overlay.remove(),
                     ease: "power4.inOut"
                 });
                 gsap.from("#M, #E, #L, #O, #N", 1.5, {
