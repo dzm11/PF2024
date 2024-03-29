@@ -806,25 +806,30 @@
                         amount: -.7,
                     },
                 });
-                gsap.from(".word", 0.3, {
+                gsap.from(".word", 1, {
                     delay: 3.5,
                     rotateX: -90,
+                    rotation: 5,
                     opacity: 0,
                     y: 50,
                     stagger: .05,
+                    ease: "power4.inOut",
+
                 });
                 gsap.from("body .wrapper .container .hero header nav ul li", 1, {
                     delay: 4,
-
-                    opacity: 0,
-                    y: 20,
-                    stagger: .05
+                    // opacity: 0,
+                    rotation: 5,
+                    y: 60,
+                    stagger: .12,
+                    ease: "power4.inOut"
                 });
                 gsap.from("body .wrapper .container .hero__content .status", 1, {
                     delay: 3.5,
                     opacity: 0,
                     y: 20,
                 });
+
 
             });
         });

@@ -255,7 +255,7 @@ span.empower {
 .bar {
   width: 12.5vw;
   height: 105vh;
-  background: var(--12);
+  background: white;
 }
 
 html.lenis,
@@ -416,6 +416,7 @@ body .wrapper .container .hero header nav ul {
   align-items: center;
   justify-content: flex-end;
   gap: 2rem;
+  overflow: hidden;
 }
 body .wrapper .container .hero header nav ul li {
   font-size: 1rem;
