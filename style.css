@@ -1598,6 +1598,17 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   max-width: 920px;
   margin-block: 64px;
 }
+.wrapper.blog .container main .hero__content h5 {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  row-gap: 2px;
+}
+.wrapper.blog .container main .hero__content h5 .word-container .word {
+  display: inline-flex;
+  overflow: hidden;
+}
 .wrapper.blog .container main .project-archive {
   display: flex;
   flex-direction: column;
@@ -1608,6 +1619,7 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   justify-content: space-between;
   margin-bottom: 0.5rem;
   align-items: center;
+  overflow: hidden;
 }
 .wrapper.blog .container main .project-archive .row {
   display: flex;

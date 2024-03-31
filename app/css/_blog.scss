@@ -27,23 +27,42 @@
                 }
             }
         }
-        main{
-            .hero__content{
+
+        main {
+            .hero__content {
                 gap: 1rem;
                 max-width: 920px;
                 margin-block: 64px;
+
+                h5 {
+                    display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 8px;
+                    row-gap: 2px;
+
+                    .word-container {
+                        .word {
+                            display: inline-flex;
+                            overflow: hidden;
+                        }
+                    }
+                }
             }
-            .project-archive{
+
+            .project-archive {
                 display: flex;
                 flex-direction: column;
                 gap: 2rem;
-                .header{
+
+                .header {
                     display: flex;
                     justify-content: space-between;
                     margin-bottom: 0.5rem;
                     align-items: center;
+                    overflow: hidden;
                 }
-                .row{
+
+                .row {
                     display: flex;
                     gap: 1.5rem;
 
@@ -56,12 +75,14 @@
                             }
                         }
                     }
+
                     @media (max-width: 53rem) {
                         & {
                             flex-direction: column;
                         }
                     }
-                    .project{
+
+                    .project {
                         position: relative;
                         overflow: hidden;
                         // border-radius: 3rem;
@@ -69,13 +90,15 @@
                         width: 100%;
                         height: auto;
                         max-height: 650px;
+
                         @media (max-width: 82.5rem) {
 
                             /* 720px */
                             & {
-                                height: auto!important;
+                                height: auto !important;
                             }
                         }
+
                         &::after {
                             background-color: var(--12);
                             opacity: 0;
@@ -226,6 +249,7 @@
                                             }
                                         }
                                     }
+
                                     img {
                                         width: auto;
 
