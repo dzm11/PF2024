@@ -1,0 +1,101 @@
+.wrapper.insights-page {
+    .container {
+        .hero {
+            height: min-content;
+            min-height: auto;
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: static;
+                right: 0;
+
+                .menu-logo {
+                    display: block;
+                    position: static;
+                    max-width: none;
+
+                    @media (max-width: 45rem) {
+
+                        /* 720px */
+                        & {
+                            display: block;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            .hero__content {
+                gap: 1rem;
+                max-width: 780px;
+                margin-block: 64px;
+
+                h5 {
+                    display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 6px;
+                    row-gap: 2px;
+
+                    .word-container {
+                        .word {
+                            display: inline-flex;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+
+            .insights__section {
+                gap: 32px;
+                display: flex;
+                flex-direction: column;
+
+                .header {
+                    overflow: hidden;
+                }
+
+                .insights__section--carousel {
+                    --grid-columns: 3;
+                    display: grid;
+                    gap: 32px;
+                    grid-template-columns:
+                        repeat(var(--grid-columns), 1fr);
+
+                    @media (max-width: 82.5rem) {
+                        & {
+                            --grid-columns: 2;
+                        }
+                    }
+                    @media (max-width: 53rem) {
+                        & {
+                            --grid-columns: 1;
+                        }
+                    }
+
+                    .insight {
+                        height: auto;
+                        @media (max-width: 82.5rem) {
+                            & {
+                                max-height: 480px;
+                            }
+                        }
+
+                        &__box {
+                            &--title {
+                                @media (max-width: 82.5rem) {
+                                    & {
+                                        padding-inline: 1.5rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

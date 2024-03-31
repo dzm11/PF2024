@@ -31,13 +31,13 @@
         main {
             .hero__content {
                 gap: 1rem;
-                max-width: 920px;
+                max-width: 970px;
                 margin-block: 64px;
 
                 h5 {
                     display: flex;
                     flex-wrap: wrap;
-                    column-gap: 8px;
+                    column-gap: 6px;
                     row-gap: 2px;
 
                     .word-container {
