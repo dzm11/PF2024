@@ -77,6 +77,7 @@
                     }
 
                     .insight {
+                        max-height: 520px;
                         height: auto;
                         @media (max-width: 82.5rem) {
                             & {
@@ -86,11 +87,7 @@
 
                         &__box {
                             &--title {
-                                @media (max-width: 82.5rem) {
-                                    & {
-                                        padding-inline: 1.5rem;
-                                    }
-                                }
+                                padding-inline: 1.5rem;
                             }
                         }
                     }

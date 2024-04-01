@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>My Insights</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -73,7 +73,7 @@
                                 </li>
                                 <li>
                                     <div class="list-container">
-                                        <a href="./blog.html">Work <sup>(5)</sup></a>
+                                        <a href="./my-projects.html">Work <sup>(5)</sup></a>
                                     </div>
                                 </li>
                                 <li>
@@ -445,9 +445,8 @@
                 });
                 gsap.from("body .wrapper .container .hero header nav ul li", 1, {
                     delay: 2,
-                    opacity: 0,
-                    rotation: 5,
-                    y: 60,
+                    rotation: 20,
+                    y: 80,
                     stagger: .12,
                     ease: "power4.inOut"
                 });
@@ -473,6 +472,8 @@
                     delay: 2.2,
                     clipPath: "inset(700px 0px 0px 0px)",
                     ease: "power4.inOut",
+                    stagger: .1,
+
                 });
                 gsap.from(".topnav__open", 1, {
                     delay: 2.5,

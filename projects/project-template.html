@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/rick-liruixin/body-scroll-lock-upgrade@v1.1.0/lib/index.umd.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="wrapper project-default">
+        <div class="container">
+            <section class="hero">
+                <header>
+                    <div class="menu-logo">
+                        <a href="./../index.html">
+                            <svg width="137" height="32" viewBox="0 0 137 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="M"
+                                    d="M117.914 30.9653H111.117V8.22651H117.415V15.2161H117.823C118.412 11.4036 121.131 7.77264 127.066 7.77264C133.273 7.77264 136.218 11.7667 136.218 16.8046V30.9653H129.422V19.074C129.422 15.443 127.927 13.8999 123.759 13.8999C119.454 13.8999 117.914 15.6246 117.914 19.4824V30.9653Z"
+                                    fill="#E9EBEC" />
+                                <path id="E"
+                                    d="M96.6953 31.4057C88.95 31.4057 83.7412 26.7789 83.7412 19.6118C83.7412 12.3541 88.95 7.77264 96.6953 7.77264C104.441 7.77264 109.649 12.3541 109.649 19.6118C109.649 26.7789 104.441 31.4057 96.6953 31.4057ZM96.6953 25.3727C101.27 25.3727 102.901 23.6036 102.901 19.6118C102.901 15.6201 101.27 13.7603 96.6953 13.7603C92.0753 13.7603 90.49 15.6201 90.49 19.6118C90.49 23.6036 92.0753 25.3727 96.6953 25.3727Z"
+                                    fill="#E9EBEC" />
+                                <path id="L"
+                                    d="M68.0489 30.9653L65.9797 26.6483C67.3454 26.0672 68.6283 25.3615 69.7871 24.4898C67.5937 21.252 66.3522 16.935 66.3522 12.0783C66.3522 4.68951 69.6629 0.580017 74.629 0.580017C79.3881 0.580017 82.4919 4.31592 82.4919 10.7085C82.4919 15.6897 80.6296 20.5878 77.4017 24.4068C78.726 25.2785 80.2158 25.7351 81.8712 25.7351H83.154V30.9653H81.5815C78.3949 30.9653 75.5808 29.9691 73.2633 28.2257C71.6907 29.3464 69.9526 30.3012 68.0489 30.9653ZM71.8976 11.7047C71.8976 14.984 72.6012 17.9727 73.8427 20.3388C75.8291 17.5161 76.9465 14.1953 76.9465 10.7085C76.9465 7.51219 76.036 5.81028 74.5462 5.81028C72.9322 5.81028 71.8976 7.67823 71.8976 11.7047Z"
+                                    fill="#E9EBEC" />
+                                <path id="O"
+                                    d="M52.7977 31.4057C45.2345 31.4057 40.0715 27.6861 40.0715 19.6118C40.0715 12.3541 45.1892 7.77264 52.6618 7.77264C60.0892 7.77264 65.0257 11.6737 65.0257 18.7953C65.0257 19.6118 64.9351 20.2015 64.8445 20.9727H46.3667C46.5478 24.4655 48.1782 25.9624 52.5712 25.9624C56.6019 25.9624 58.0059 24.9191 58.0059 22.9685V22.5149H64.7992V23.0139C64.7992 27.9582 59.9986 31.4057 52.7977 31.4057ZM52.526 13.0799C48.4952 13.0799 46.7743 14.4407 46.4573 17.3892H58.5041C58.3229 14.3953 56.5114 13.0799 52.526 13.0799Z"
+                                    fill="#E9EBEC" />
+                                <path id="N"
+                                    d="M6.80253 30.9653H-0.00219727V0.580017H9.20687L16.3292 15.5459L19.1871 22.6661H19.6862L22.4534 15.5459L29.3489 0.580017H38.6033V30.9653H31.7986V15.5459L32.0254 10.784H31.5264L29.7572 15.5459L23.4061 29.1513H15.1497L8.79859 15.5459L7.02936 10.784H6.53035L6.80253 15.5459V30.9653Z"
+                                    fill="#E9EBEC" />
+                            </svg>
+
+                        </a>
+
+                    </div>
+
+                    <nav>
+                        <span id="nav-label" hidden>Navigation</span>
+                        <button class="topnav__open" aria-expanded="false" aria-labelledby="nav-label" id="btnOpen">
+                            <img src="./../app/img/menu.svg" alt="" width="24px" height="24px">
+                            <p>Menu</p>
+                        </button>
+                        <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
+                            <button class="topnav__close">
+                                <img src="./../app/img/Close.svg" alt="" width="32px" height="32px" id="btnClose"
+                                    aria-label="Close">
+                            </button>
+                            <ul>
+                                <li>
+                                    <div class="list-container">
+                                        <a href="#">About me</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-container">
+                                        <a href="./../my-projects.html">Work <sup>(5)</sup></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-container">
+                                        <a href="./../insight.html">Insight <sup>(10)</sup></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-container">
+                                        <a href="#">Contact</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon" id="myText" onclick="copyContent()">
+                                        <img src="./../app/img/copy.svg" alt="">
+                                        Hello@melon.studio
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                    </nav>
+
+                </header>
+            </section>
+            <main>
+                <section class="hero__content">
+                    <div class="project-title">
+                        <h1 class="hero__content--title">
+                            <div class="word-container">
+                                <span class="word empower">BKT </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">Elektrinik</span>
+                            </div>
+                        </h1>
+                        <h1 class="hero__content--date">
+                            <div class="word-container">
+                                <span class="word empower">
+                                    2024
+                                </span>
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="project-category">
+                        <div class="project-category__category">
+                            Redesign of technology ecommerce homepage company
+                        </div>
+                        <div class="project-category__icon">
+                            Discover <img src="./../app/img/arrow-corner-right-down.svg" alt="">
+                        </div>
+                    </div>
+                </section>
+                <section class="section project-hero-image">
+                    <img src="./../app/img/projects/project-hero-image.jpg" alt="">
+                </section>
+                <section class="section project-details">
+                    <div class="project-details">
+                        <div class="header">
+                            <h2>Project <span class="empower">Details</span></h2>
+                            <p class="big-paragraph">BKT Elektronik is a manufacturer and supplier of comprehensive solutions for the ICT industry.</p>
+                            <p>
+                                We offer cabling systems intended for the construction of telecommunications infrastructure and solutions used in the implementation of Data Center projects.</p>
+                            </p>
+                        </div>
+                        <div class="details">
+                            <div class="details__element">
+                                <div class="details__element--category">Client</div>
+                                <div class="details__element--text">BKT Elektronik</div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="details__element">
+                                <div class="details__element--category">Services</div>
+                                <div class="details__element--text">Homepage redesign</div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="details__element">
+                                <div class="details__element--category">Year</div>
+                                <div class="details__element--text">2023</div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="details__element">
+                                <div class="details__element--category">Site</div>
+                                <div class="details__element--text underline"><a href="#">Visit website <img src="./../app/img/box-arrow.svg" alt=""></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section project-gallery">
+                    <img src="./../app/img/projects/project-hero-image.jpg" alt="">
+                    <div class="project-gallery__row">
+                        <div class="col">
+
+                            <img src="./../app/img/projects/project-hero-image.jpg" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="./../app/img/projects/project-hero-image.jpg" alt="">
+
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="section">
+                <div class="footer-bg">
+                    <div class="footer__content">
+                        <div class="header">
+                            <h1><span class="empower">Let's talk</span> about your&nbspproject</h1>
+                            <div class="header--actions">
+                                <button>Fill the form<img src="./../app/img/send-plane.svg" alt="send"></button>
+                                <div class="mail">or copy an email: <div class="mail--action" onclick="copyContent()">
+                                        Hello@melon.studio <img src="./../app/img/copy.svg" alt="copy"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widgets">
+                            <div class="widgets__spotify">
+                                <div class="widgets__spotify--header">
+                                    <div class="header">Listening</div>
+                                    <div class="time">2 hours ago</div>
+                                </div>
+                                <div class="widgets__spotify--content">
+                                    <img src="./../app/img/Listening-image.jpg" alt="">
+                                    <div class="song">
+                                        <div class="song__title">Syn Okiennika</div>
+                                        <div class="song__author">Kacperczyk, Artur Rojek</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widgets__reading">
+                                <div class="widgets__reading--header">
+                                    <div class="header">Reading</div>
+                                </div>
+                                <div class="widgets__reading--content">
+                                    <img src="./../app/img/Reading-image.jpg" alt="">
+                                    <div class="book">
+                                        <div class="book__title">The Umami Strategy</div>
+                                        <div class="book__author">Aga Szóstek</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="additional-information">
+                        <div class="footer__info">
+                            <div class="footer__info--version">
+                                <div class="header">Version</div>
+                                <p>2023 © melon.studio</p>
+                            </div>
+                            <div class="footer__info--timezone">
+                                <div class="header">Local time</div>
+                                <p>00:20 UTC+1 Poznań, Poland</p>
+                            </div>
+                        </div>
+                        <div class="footer__socials">
+                            <div class="footer__socials--link">
+                                <div class="header">Socials</div>
+                                <div class="links">
+                                    <div class="behance"><img src="./../app/img/Behance.svg" alt="">Behance</div>
+                                    <div class="Dribbble"><img src="./../app/img/Dribbble.svg" alt="">Dribbble</div>
+                                    <div class="Linkedin"><img src="./../app/img/LinkedIn.svg" alt="">Linkedin</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="./../app/script/script.js"></script>
+    <script>
+        let mm = gsap.matchMedia();
+        const overlay = document.querySelector(".overlay");
+
+        mm.revert();
+
+        // use a script tag or an external JS file
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger)
+            // Animate From
+            $("header").each(function (index) {
+
+                gsap.from("h1 .word", 1, {
+                    delay: 0.5,
+                    rotation: 5,
+                    opacity: 0,
+                    y: 50,
+                    stagger: .05,
+                    ease: "power4.inOut",
+
+                });
+
+                gsap.from("body .wrapper .container .hero header nav ul li", 1, {
+                    delay: 2,
+                    rotation: 20,
+                    y: 80,
+                    stagger: .12,
+                    ease: "power4.inOut"
+                });
+                gsap.from("#M, #E, #L, #O, #N", 1, {
+                    delay: 2,
+                    y: 60,
+                    opacity: 0,
+                    stagger: {
+                        amount: -.2,
+                    },
+                    ease: "power4.inOut"
+                });
+
+                gsap.from(".project", 1.5, {
+                    delay: 2.2,
+                    clipPath: "inset(700px 0px 0px 0px)",
+                    ease: "power4.inOut",
+                });
+                gsap.from(".topnav__open", 1, {
+                    delay: 2.5,
+                    y: 10,
+                    opacity: 0,
+                    ease: "power4.out",
+                });
+
+            });
+        });
+        ScrollTrigger.defaults({
+            markers: false
+        });
+    </script>
+</body>
+
+</html>

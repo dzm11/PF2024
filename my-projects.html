@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>My Projects</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -73,7 +73,7 @@
                                 </li>
                                 <li>
                                     <div class="list-container">
-                                        <a href="./blog.html">Work <sup>(5)</sup></a>
+                                        <a href="./my-projects.html">Work <sup>(5)</sup></a>
                                     </div>
                                 </li>
                                 <li>
@@ -182,29 +182,34 @@
                             <h2>Project <span class="empower">Archive</span></h2>
                         </div>
                         <div class="row">
-                            <div class="project">
-                                <div class="img-box">
-                                    <img src="./app/img/Project-1.jpg" alt="">
-                                </div>
-                                <div class="hover-container">
-                                    <div class="hover-container-content">
+                                <div class="project">
+                                    <a href="./projects/project-template.html">
 
-                                        <div class="title-container">
-                                            <div class="title"><span class="star">✦</span>
-                                                <h5>BKT Elektronik</h5>
-                                            </div>
-                                            <div class="subtitle">
-                                                <p>Homepage redesign — 2023</p>
-                                            </div>
-                                        </div>
-                                        <button>
-                                            <p class="learn-more">Learn more</p><img src="./app/img/box-arrow.svg"
-                                                alt="">
-                                        </button>
+                                    <div class="img-box">
+                                        <img src="./app/img/Project-1.jpg" alt="">
                                     </div>
+                                    <div class="hover-container">
+                                        <div class="hover-container-content">
+    
+                                            <div class="title-container">
+                                                <div class="title"><span class="star">✦</span>
+                                                    <h5>BKT Elektronik</h5>
+                                                </div>
+                                                <div class="subtitle">
+                                                    <p>Homepage redesign — 2023</p>
+                                                </div>
+                                            </div>
+                                            <button>
+                                                <p class="learn-more">Learn more</p><img src="./app/img/box-arrow.svg"
+                                                    alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="project">
+                                
+                                <div class="project">
+                                <a href="./projects/project-template.html">
                                 <div class="img-box">
                                     <img src="./app/img/Project-2.jpg" alt="">
                                 </div>
@@ -223,9 +228,12 @@
                                     </div>
 
                                 </div>
+                            </a>
                             </div>
+
                         </div>
                         <div class="row">
+                            <a href="./projects/project-template.html">
                             <div class="project">
                                 <div class="img-box">
                                     <img src="./app/img/Project-1.jpg" alt="">
@@ -248,6 +256,10 @@
                                     </div>
                                 </div>
                             </div>
+                        </a>
+
+                            <a href="./projects/project-template.html">
+
                             <div class="project">
                                 <div class="img-box">
                                     <img src="./app/img/Project-2.jpg" alt="">
@@ -268,8 +280,12 @@
 
                                 </div>
                             </div>
+                        </a>
+
                         </div>
                         <div class="row">
+                            <a href="./projects/project-template.html">
+
                             <div class="project">
                                 <div class="img-box">
                                     <img src="./app/img/Project-1.jpg" alt="">
@@ -292,6 +308,9 @@
                                     </div>
                                 </div>
                             </div>
+                        </a>
+
+                            <a href="./projects/project-template.html">
                             <div class="project">
                                 <div class="img-box">
                                     <img src="./app/img/Project-2.jpg" alt="">
@@ -312,6 +331,7 @@
 
                                 </div>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -399,7 +419,6 @@
 
                 gsap.from("h1 .word", 1, {
                     delay: 0.5,
-                    rotateX: -90,
                     rotation: 5,
                     opacity: 0,
                     y: 50,
@@ -419,9 +438,8 @@
                 });
                 gsap.from("body .wrapper .container .hero header nav ul li", 1, {
                     delay: 2,
-                    opacity: 0,
-                    rotation: 5,
-                    y: 60,
+                    rotation: 20,
+                    y: 80,
                     stagger: .12,
                     ease: "power4.inOut"
                 });
