@@ -1,0 +1,133 @@
+.wrapper.insight-default {
+    .word-container {
+        .word {
+            display: inline-flex;
+            overflow: hidden;
+        }
+    }
+
+    .container {
+        .hero {
+            height: min-content;
+            min-height: auto;
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: static;
+                right: 0;
+
+                .menu-logo {
+                    display: block;
+                    position: static;
+                    max-width: none;
+
+                    @media (max-width: 45rem) {
+
+                        /* 720px */
+                        & {
+                            display: block;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            gap: 0;
+
+            .hero__content {
+                display: flex;
+                flex-direction: column;
+                gap: 240px;
+                padding-block-end: 8px;
+
+                @media (max-width: 45rem) {
+                    & {
+                        gap: 120px;
+                    }
+                }
+
+                .project-title {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: row;
+
+                    h1 {
+                        display: flex;
+                        flex-wrap: wrap;
+                        column-gap: 6px;
+                        row-gap: 2px;
+                        max-width: 850px;
+                    }
+                }
+
+                .project-category {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    gap: 32px;
+
+                    &__category {
+                        font-family: "Bricolage Grotesque";
+                        font-size: 40px;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: 120%;
+                        /* 48px */
+                        letter-spacing: 0.4px;
+                        max-width: 700px;
+                        color: var(--62);
+                        display: flex;
+                        flex-wrap: wrap;
+                        column-gap: 6px;
+                        row-gap: 2px;
+
+                        @media (max-width: 69rem) {
+                            & {
+                                font-size: clamp(1.25rem, -0.0368rem + 3.6765vw, 2.5rem);
+                            }
+                        }
+
+                    }
+
+                    &__icon {
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 120%;
+                        letter-spacing: 0.24px;
+                        color: var(--82);
+
+                        @media (max-width: 45rem) {
+                            & {
+                                display: none;
+                            }
+                        }
+
+                        img {
+                            max-inline-size: none;
+                        }
+                    }
+                }
+            }
+
+            .project-hero-image {
+                img {
+                    width: 100%;
+                    border-radius: 32px;
+
+                    @media (max-width: 53rem) {
+                        & {
+                            height: 450px;
+                            object-fit: cover;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
