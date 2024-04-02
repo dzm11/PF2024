@@ -121,12 +121,113 @@
 
                     @media (max-width: 53rem) {
                         & {
-                            height: 450px;
+                            height: 320px;
                             object-fit: cover;
                         }
                     }
 
                 }
+            }
+
+            section.insight-content {
+                padding: 0;
+
+                @media (max-width: 69rem) {
+                    & {
+                        padding-inline: 1.75rem;
+
+                    }
+                }
+
+                @media (max-width: 45rem) {
+                    & {
+                        padding-inline: 1rem;
+
+                    }
+                }
+            }
+
+            .insight-content {
+                max-width: 856px;
+                margin: 80px auto;
+                padding-block: 80px;
+                display: flex;
+                flex-direction: column;
+                gap: 64px;
+
+                p.paragraph-light {
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 170%;
+                    color: var(--62);
+
+                    @media (max-width: 69rem) {
+                        & {
+                            font-size: clamp(0.875rem, 0.4890rem + 1.1029vw, 1.25rem);
+                        }
+                    }
+                }
+
+                ol {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                &__lead {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    h2 {
+                        font-size: 48px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 120%;
+                        color: var(--82);
+
+                        @media (max-width: 69rem) {
+                            & {
+                                font-size: clamp(2rem, 1.6883rem + 1.3853vw, 3rem);
+                            }
+                        }
+                    }
+
+                    ol {
+                        li {
+                            margin-inline-start: 16px;
+                        }
+                    }
+                }
+
+                &__paragraph {
+                    h4 {
+                        color: var(--82);
+                        margin-bottom: 12px;
+                    }
+
+                    ol {
+                        li {
+                            margin-inline-start: 16px;
+                        }
+                    }
+
+                    .insight-content__image {
+                    margin-top: 20px;
+                        img {
+                            border-radius: 32px;
+
+                            @media (max-width: 45rem) {
+                                & {
+                                    border-radius: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+
             }
         }
     }

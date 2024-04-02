@@ -106,7 +106,10 @@ gsap.ticker.lagSmoothing(0)
 ///////////////
 //Fetching Song
 ///////////////
-fetch('http://localhost:3001/current-song')
+const jsonUrl = 'http://localhost:3001/current-song';
+
+
+fetch(jsonUrl)
   .then(response => response.json()) // Assuming the server response is JSON
   .then(data => {
     // console.log(data);
@@ -124,9 +127,7 @@ fetch('http://localhost:3001/current-song')
 fetchDataAndUpdate()
 // Funkcja do pobierania i aktualizowania danych
 function fetchDataAndUpdate() {
-  // Adres URL do pliku JSON na twoim serwerze
-  const jsonUrl = 'http://localhost:3001/current-song';
-
+  
   // Pobierz dane z pliku JSON za pomocą metody fetch()
   fetch(jsonUrl)
     .then(response => {
@@ -196,3 +197,19 @@ function fetchDataAndUpdate() {
 
 // Wywołaj funkcję fetchDataAndUpdate() co 10 sekund (10000 ms)
 // setInterval(fetchDataAndUpdate, 1000);
+
+var now = new Date();
+
+// Utwórz obiekt formatowania daty/czasu z opcją timeZone
+var formatter = new Intl.DateTimeFormat('pl-PL', {
+    timeZone: 'Europe/Warsaw',
+    timeStyle: 'short', // lub 'short', 'long' itp., w zależności od preferencji
+    hour12: false // aby użyć zapisu 24-godzinnego
+});
+
+// Sformatuj aktualny czas dla Poznania
+var formattedTime = formatter.format(now);
+const currentDate = document.getElementById('currentDate');
+currentDate.innerHTML = formattedTime;
+
+
