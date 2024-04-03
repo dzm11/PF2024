@@ -1807,6 +1807,353 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   width: auto;
 }
 
+.wrapper.about-me .container .hero {
+  height: -moz-min-content;
+  height: min-content;
+  min-height: auto;
+}
+.wrapper.about-me .container .hero header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: static;
+  right: 0;
+}
+.wrapper.about-me .container .hero header .menu-logo {
+  display: block;
+  position: static;
+  max-width: none;
+}
+@media (max-width: 45rem) {
+  .wrapper.about-me .container .hero header .menu-logo {
+    /* 720px */
+  }
+  .wrapper.about-me .container .hero header .menu-logo {
+    display: block;
+    height: auto;
+  }
+}
+.wrapper.about-me .container main .hero__content {
+  gap: 1rem;
+  flex-direction: row;
+}
+@media (max-width: 69rem) {
+  .wrapper.about-me .container main .hero__content {
+    flex-direction: column;
+  }
+}
+.wrapper.about-me .container main .hero__content .h1-container {
+  width: 100%;
+}
+.wrapper.about-me .container main .hero__content--header {
+  width: 100%;
+}
+.wrapper.about-me .container main .hero__content--header img {
+  height: 1em;
+}
+@media (max-width: 53rem) {
+  .wrapper.about-me .container main .hero__content--header img {
+    height: 1.25em;
+  }
+}
+.wrapper.about-me .container main .hero__content h5 {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 6px;
+       column-gap: 6px;
+  row-gap: 2px;
+  color: var(--82);
+}
+@media (max-width: 45rem) {
+  .wrapper.about-me .container main .hero__content h5 {
+    font-size: 18px;
+  }
+}
+.wrapper.about-me .container main .hero__content h5 .word-container .word {
+  display: inline-flex;
+  overflow: hidden;
+}
+.wrapper.about-me .container main .hero__content--text {
+  width: 100%;
+  padding-inline-end: 200px;
+}
+@media (max-width: 96rem) {
+  .wrapper.about-me .container main .hero__content--text {
+    padding-inline-end: 0;
+  }
+}
+.wrapper.about-me .container main .hero__content--text p.paragraph-big {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 27px */
+  letter-spacing: 0.18px;
+  color: var(--62);
+  margin-block: 16px 24px;
+}
+.wrapper.about-me .container main .hero__content--text .contact-socials {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+@media (max-width: 82.5rem) {
+  .wrapper.about-me .container main .hero__content--text .contact-socials {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 69rem) {
+  .wrapper.about-me .container main .hero__content--text .contact-socials {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media (max-width: 45rem) {
+  .wrapper.about-me .container main .hero__content--text .contact-socials {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}
+.wrapper.about-me .container main .hero__content--text .contact-socials button {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 64px;
+  color: var(--15);
+  background-color: var(--82);
+  align-items: center;
+}
+.wrapper.about-me .container main .hero__content--text .contact-socials .socials .links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+@media (max-width: 45rem) {
+  .wrapper.about-me .container main .hero__content--text .contact-socials .socials .links {
+    flex-wrap: wrap;
+  }
+}
+.wrapper.about-me .container main .hero__content--text .contact-socials .socials .links img {
+  width: 18px;
+  height: 18px;
+}
+.wrapper.about-me .container main .hero__content--text .contact-socials .socials .links > * {
+  display: flex;
+  gap: 8px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--92);
+}
+.wrapper.about-me .container main .services {
+  flex-direction: column;
+}
+@media (max-width: 64rem) {
+  .wrapper.about-me .container main .services__section {
+    /* 720px */
+  }
+  .wrapper.about-me .container main .services__section {
+    flex-direction: column;
+  }
+}
+.wrapper.about-me .container main section.faq {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  width: 100%;
+}
+@media (max-width: 64rem) {
+  .wrapper.about-me .container main section.faq {
+    /* 1024px */
+  }
+  .wrapper.about-me .container main section.faq {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+.wrapper.about-me .container main section.faq .faq__header {
+  width: 32%;
+}
+@media (max-width: 64rem) {
+  .wrapper.about-me .container main section.faq .faq__header {
+    /* 1024px */
+  }
+  .wrapper.about-me .container main section.faq .faq__header {
+    width: 100%;
+  }
+}
+.wrapper.about-me .container main section.faq .faq__header h2 {
+  color: var(--82);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  /* 57.6px */
+  margin-bottom: 8px;
+}
+.wrapper.about-me .container main section.faq .faq__header p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 24px */
+  color: var(--52);
+  max-width: 500px;
+}
+.wrapper.about-me .container main section.faq .faq__header--more {
+  margin-block-start: 24px;
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 24px;
+  background-color: var(--15);
+}
+.wrapper.about-me .container main section.faq .faq__header--more .light-p {
+  color: var(--82);
+}
+.wrapper.about-me .container main section.faq .faq__header--more p {
+  color: var(--52);
+}
+.wrapper.about-me .container main section.faq .faq__header--more button {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 64px;
+  color: var(--15);
+  background-color: var(--82);
+  align-items: center;
+  margin-block-start: 16px;
+}
+.wrapper.about-me .container main section.faq .accordion {
+  width: 67%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+@media (max-width: 64rem) {
+  .wrapper.about-me .container main section.faq .accordion {
+    /* 1024px */
+  }
+  .wrapper.about-me .container main section.faq .accordion {
+    width: 100%;
+  }
+}
+.wrapper.about-me .container main section.faq .accordion-item {
+  padding-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  align-items: flex-start;
+  align-self: stretch;
+  width: 100%;
+  background-color: var(--15);
+  border-radius: 24px;
+}
+@media (max-width: 64rem) {
+  .wrapper.about-me .container main section.faq .accordion-item {
+    /* 1024px */
+  }
+  .wrapper.about-me .container main section.faq .accordion-item {
+    padding: 24px;
+  }
+}
+.wrapper.about-me .container main section.faq .accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  min-width: 100%;
+  color: var(--82);
+  padding-inline-end: 2.5rem;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  /* 36px */
+  border: none;
+  background: none;
+  outline: none;
+}
+@media (max-width: 64rem) {
+  .wrapper.about-me .container main section.faq .accordion button {
+    /* 1024px */
+  }
+  .wrapper.about-me .container main section.faq .accordion button {
+    font-size: 18px;
+    line-height: 140%;
+  }
+}
+.wrapper.about-me .container main section.faq .accordion button:hover, .wrapper.about-me .container main section.faq .accordion button:focus {
+  cursor: pointer;
+  color: var(--92);
+}
+.wrapper.about-me .container main section.faq .accordion button:hover::after, .wrapper.about-me .container main section.faq .accordion button:focus::after {
+  cursor: pointer;
+  color: var(--92);
+  border: 1px solid var(--92);
+}
+.wrapper.about-me .container main section.faq .accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 24px;
+  height: 24px;
+}
+.wrapper.about-me .container main section.faq .accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 11px;
+  left: 3px;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+}
+.wrapper.about-me .container main section.faq .accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 3px;
+  left: 11px;
+  width: 2px;
+  height: 18px;
+  background: currentColor;
+}
+.wrapper.about-me .container main section.faq .accordion button[aria-expanded=true] {
+  color: var(--92);
+}
+.wrapper.about-me .container main section.faq .accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.wrapper.about-me .container main section.faq .accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.wrapper.about-me .container main section.faq .accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.wrapper.about-me .container main section.faq .accordion .accordion-content p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 24px */
+  color: var(--52);
+  margin-block-start: 16px;
+}
+
 .wrapper.insights-page .container .hero {
   height: -moz-min-content;
   height: min-content;

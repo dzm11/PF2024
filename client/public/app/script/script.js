@@ -127,7 +127,7 @@ fetch(jsonUrl)
 fetchDataAndUpdate()
 // Funkcja do pobierania i aktualizowania danych
 function fetchDataAndUpdate() {
-  
+
   // Pobierz dane z pliku JSON za pomocą metody fetch()
   fetch(jsonUrl)
     .then(response => {
@@ -160,13 +160,13 @@ function fetchDataAndUpdate() {
         if (timeDifference < hour) {
           const minutesAgo = Math.floor(timeDifference / minute);
           statusContainer.innerHTML = `${minutesAgo} minutes ago`;
-      } else if (timeDifference < day) {
+        } else if (timeDifference < day) {
           const hoursAgo = Math.floor(timeDifference / hour);
           statusContainer.innerHTML = `${hoursAgo} hours ago`;
-      } else {
+        } else {
           const daysAgo = Math.floor(timeDifference / day);
           statusContainer.innerHTML = `${daysAgo} days ago`;
-      }
+        }
 
       }
 
@@ -194,17 +194,20 @@ function fetchDataAndUpdate() {
       console.error('There has been a problem with your fetch operation:', error);
     });
 }
-
 // Wywołaj funkcję fetchDataAndUpdate() co 10 sekund (10000 ms)
 // setInterval(fetchDataAndUpdate, 1000);
+
+//////////////////
+/// Podawanie daty
+//////////////////
 
 var now = new Date();
 
 // Utwórz obiekt formatowania daty/czasu z opcją timeZone
 var formatter = new Intl.DateTimeFormat('pl-PL', {
-    timeZone: 'Europe/Warsaw',
-    timeStyle: 'short', // lub 'short', 'long' itp., w zależności od preferencji
-    hour12: false // aby użyć zapisu 24-godzinnego
+  timeZone: 'Europe/Warsaw',
+  timeStyle: 'short', // lub 'short', 'long' itp., w zależności od preferencji
+  hour12: false // aby użyć zapisu 24-godzinnego
 });
 
 // Sformatuj aktualny czas dla Poznania
@@ -213,3 +216,21 @@ const currentDate = document.getElementById('currentDate');
 currentDate.innerHTML = formattedTime;
 
 
+//////////////
+/// Akordeony
+//////////////
+const items = document.querySelectorAll(".accordion button");
+
+function toggleAccordion() {
+  const itemToggle = this.getAttribute('aria-expanded');
+
+  for (i = 0; i < items.length; i++) {
+    items[i].setAttribute('aria-expanded', 'false');
+  }
+
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+  }
+}
+
+items.forEach(item => item.addEventListener('click', toggleAccordion));
