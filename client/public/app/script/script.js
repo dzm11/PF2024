@@ -106,7 +106,7 @@ gsap.ticker.lagSmoothing(0)
 ///////////////
 //Fetching Song
 ///////////////
-const jsonUrl = 'http://localhost:3001/current-song';
+const jsonUrl = 'https://pf-2024-ivory.vercel.app/current-song';
 
 
 fetch(jsonUrl)
