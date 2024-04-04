@@ -16,7 +16,7 @@ const spotifyApi = new SpotifyWebApi({
   clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
   redirectUri: process.env.REDIRECT_URI
 });
-
+console.log("działam");
 // Set the refresh token on your Spotify API instance
 spotifyApi.setRefreshToken(process.env.SPOTIFY_REFRESH_TOKEN);
 
