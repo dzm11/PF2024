@@ -30,8 +30,10 @@
 
         main {
             .hero__content {
+                padding-block: 128px;
                 @media (max-width: 69rem) {
                     & {
+                        padding-block: 88px;
                         flex-direction: column;
                     }
                 }
@@ -63,6 +65,7 @@
                     column-gap: 6px;
                     row-gap: 2px;
                     color: var(--82);
+                    line-height: 120%;
                     @media (max-width: 45rem) {
                         & {
                             font-size: 18px;
@@ -79,7 +82,7 @@
 
                 &--text {
                     width: 100%;
-                    padding-inline-end: 200px;
+                    padding-inline-end: 272px;
 
                     @media (max-width: 96rem) {
                         & {
@@ -131,6 +134,9 @@
                             color: var(--15);
                             background-color: var(--82);
                             align-items: center;
+                            &:hover{
+                                background-color: var(--92);
+                            }
                         }
 
                         .socials {
@@ -253,6 +259,9 @@
                             background-color: var(--82);
                             align-items: center;
                             margin-block-start: 16px;
+                            &:hover{
+                                background-color: var(--92);
+                            }
                         }
 
                     }
@@ -281,6 +290,11 @@
                         width: 100%;
                         background-color: var(--15);
                         border-radius: 24px;
+                        &:hover{
+                            background-color: #292B2E;
+
+                        }
+
                         @media (max-width: 64rem) {
 
                             /* 1024px */
@@ -374,7 +388,6 @@
                             max-height: 9em;
                             transition: all 200ms linear;
                             will-change: opacity, max-height;
-
                         }
                     }
 

@@ -19,7 +19,7 @@ html.lenis body {
     pointer-events: none;
 }
 
-.word-container{
+.word-container {
     overflow: hidden;
 }
 
@@ -28,6 +28,8 @@ body {
     color: var(--42);
     background-color: var(--12);
     background-image: url(./app/img/Noise.png);
+
+   
 
     section {
         padding: 2rem 1.75rem;
@@ -144,6 +146,7 @@ body {
                                         flex-direction: column;
                                         align-items: flex-start;
                                         gap: 0;
+
                                         @media (max-width: 27.5rem) {
                                             & {
                                                 gap: 1rem;
@@ -319,14 +322,15 @@ body {
                         column-gap: 8px;
                         row-gap: 2px;
 
-                        .word{
+                        .word {
                             display: inline-flex;
                             overflow: hidden;
                         }
 
                         span.inside {
                             display: inline-flex;
-                            .word:nth-child(1){
+
+                            .word:nth-child(1) {
                                 margin-inline-end: 0.2em;
                             }
 
@@ -555,11 +559,11 @@ body {
                                     height: 100%;
                                     border-radius: 3rem;
 
-                                @media (max-width: 82.5rem) {
-                                    & {
-                                        height: auto;
+                                    @media (max-width: 82.5rem) {
+                                        & {
+                                            height: auto;
+                                        }
                                     }
-                                }
 
                                     @media (max-width: 53rem) {
                                         & {
@@ -676,6 +680,7 @@ body {
                                                     }
                                                 }
                                             }
+
                                             img {
                                                 width: auto;
 
@@ -897,30 +902,35 @@ body {
                             sup {
                                 font-size: 1.5rem;
                             }
-                            .splide__arrow{
+
+                            .splide__arrow {
                                 -ms-flex-align: stretch;
-                              background: none;
-                              border: none;
-                              border-radius: 0;
-                              display: block;
-                              height: auto;
-                              opacity: 1;
-                              position: static;
-                              top: 0;
-                              transform: translate(0%);
-                              width: fit-content;
-                              }
-                              .splide__arrow:disabled{
+                                background: none;
+                                border: none;
+                                border-radius: 0;
+                                display: block;
+                                height: auto;
+                                opacity: 1;
+                                position: static;
+                                top: 0;
+                                transform: translate(0%);
+                                width: fit-content;
+                            }
+
+                            .splide__arrow:disabled {
                                 opacity: .5;
-                              }
-                              .splide__arrow:hover:not(:disabled){
+                            }
+
+                            .splide__arrow:hover:not(:disabled) {
                                 background-color: var(--15);
-                              }
-                              .splide__arrow--prev{
-                                img{
+                            }
+
+                            .splide__arrow--prev {
+                                img {
                                     rotate: (180deg);
                                 }
-                              }
+                            }
+
                             .navigation {
                                 display: flex;
                                 gap: 1rem;
@@ -947,18 +957,22 @@ body {
                             &--carousel {
                                 display: flex;
 
-                                .splide__slide{
+                                .splide__slide {
+
                                     // padding: 1rem;
-                                    &:nth-child(3n){
+                                    &:nth-child(3n) {
                                         padding-inline-start: 1rem;
                                     }
-                                    &:nth-child(3n + 2){
+
+                                    &:nth-child(3n + 2) {
                                         padding-inline: 1rem;
                                     }
-                                    &:nth-child(3n + 1){
+
+                                    &:nth-child(3n + 1) {
                                         padding-inline-end: 1rem;
                                     }
                                 }
+
                                 .insight {
                                     width: 100%;
                                     border-radius: 1.5rem;
@@ -1003,6 +1017,7 @@ body {
                                             height: 110px;
                                             width: 100%;
                                             border-radius: 0 0 1.5rem 1.5rem;
+
                                             @media (max-width: 35rem) {
                                                 & {
                                                     height: auto;
@@ -1025,6 +1040,7 @@ body {
                                                     line-height: 100%;
                                                     font-size: 1rem;
                                                     color: var(--62);
+
                                                     @media (max-width: 35rem) {
                                                         & {
                                                             display: none;
@@ -1224,9 +1240,10 @@ body {
 
                                 .date {
                                     color: var(--62);
+
                                     @media (max-width: 45rem) {
                                         & {
-font-size: 14px;
+                                            font-size: 14px;
                                         }
                                     }
                                 }
@@ -1316,6 +1333,10 @@ font-size: 14px;
                                     color: var(--15);
                                     background-color: var(--82);
                                     align-items: center;
+
+                                    &:hover {
+                                        background-color: var(--92);
+                                    }
                                 }
 
                                 .mail {
@@ -1393,14 +1414,15 @@ font-size: 14px;
                                     color: var(--62);
                                     background-color: var(--32);
                                 }
-                                .live{
+
+                                .live {
                                     color: var(--92);
                                     background-color: #3F6336;
                                     display: flex;
                                     align-items: center;
                                     gap: 4px;
-                                    
-                                    &::before{
+
+                                    &::before {
                                         content: '';
                                         display: block;
                                         height: 10px;

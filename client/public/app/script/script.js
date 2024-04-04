@@ -200,20 +200,25 @@ function fetchDataAndUpdate() {
 //////////////////
 /// Podawanie daty
 //////////////////
+updateDate();
+function updateDate(){
+  var now = new Date();
+  
+  // Utwórz obiekt formatowania daty/czasu z opcją timeZone
+  var formatter = new Intl.DateTimeFormat('pl-PL', {
+    timeZone: 'Europe/Warsaw',
+    timeStyle: 'short', // lub 'short', 'long' itp., w zależności od preferencji
+    hour12: false // aby użyć zapisu 24-godzinnego
+  });
 
-var now = new Date();
+  // Sformatuj aktualny czas dla Poznania
+  var formattedTime = formatter.format(now);
+  const currentDateContact = document.getElementById('currentDateContact');
+  const currentDate = document.getElementById('currentDate');
+  currentDate.innerHTML = formattedTime;
+  currentDateContact.innerHTML = formattedTime;
+} setInterval(updateDate, 60000);
 
-// Utwórz obiekt formatowania daty/czasu z opcją timeZone
-var formatter = new Intl.DateTimeFormat('pl-PL', {
-  timeZone: 'Europe/Warsaw',
-  timeStyle: 'short', // lub 'short', 'long' itp., w zależności od preferencji
-  hour12: false // aby użyć zapisu 24-godzinnego
-});
-
-// Sformatuj aktualny czas dla Poznania
-var formattedTime = formatter.format(now);
-const currentDate = document.getElementById('currentDate');
-currentDate.innerHTML = formattedTime;
 
 
 //////////////
@@ -234,3 +239,47 @@ function toggleAccordion() {
 }
 
 items.forEach(item => item.addEventListener('click', toggleAccordion));
+
+
+
+//////////////
+/// Formularz
+//////////////
+const form = document.getElementById('form');
+const result = document.getElementById('result');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
+  result.innerHTML = "Please wait..."
+
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                result.innerHTML = "Form submitted successfully";
+            } else {
+                console.log(response);
+                result.innerHTML = json.message;
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            result.innerHTML = "Something went wrong!";
+        })
+        .then(function() {
+            form.reset();
+            setTimeout(() => {
+                result.style.display = "none";
+            }, 3000);
+        });
+});

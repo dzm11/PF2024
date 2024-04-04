@@ -1,0 +1,349 @@
+.wrapper.contact {
+    .container {
+        .hero {
+            height: min-content;
+            min-height: auto;
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: static;
+                right: 0;
+
+                .menu-logo {
+                    display: block;
+                    position: static;
+                    max-width: none;
+
+                    @media (max-width: 45rem) {
+
+                        /* 720px */
+                        & {
+                            display: block;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            .header-h1, .description {
+                .word-container {
+                    .word {
+                        display: inline-flex;
+                        overflow: hidden;
+                    }
+                }
+            }
+
+            .contact-overlay {
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-block: 128px;
+                overflow: auto;
+
+                @media (max-width: 75rem) {
+                    & {
+                        justify-content: flex-start;
+                    }
+                }
+
+                @media (max-width: 45rem) {
+
+                    /* 720px */
+                    & {
+                        padding: 2rem 1rem;
+                    }
+                }
+
+                .contact-overlay-content {
+                    max-width: 1448px;
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 88px;
+
+                    @media (max-width: 75rem) {
+                        & {
+                            margin: 0;
+                            width: 100%;
+                        }
+                    }
+
+                    .contact__header {
+                        display: flex;
+                        align-items: flex-end;
+
+                        @media (max-width: 75rem) {
+                            & {
+                                flex-direction: column;
+                                align-items: flex-start;
+                                gap: 16px;
+
+                            }
+                        }
+
+                        .header-h1 {
+                            // width: 100%;
+                            font-family: var(--ff-primary);
+                            font-size: clamp(2.2rem, 1.4831rem + 3.1861vw, 3.5rem);
+                            line-height: 100%;
+                            letter-spacing: 1px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            column-gap: 6px;
+                            row-gap: 2px;
+                            width: 100%;
+
+                            @media (max-width: 96rem) {
+                                & {
+                                    width: 60%;
+                                }
+                            }
+
+                            @media (max-width: 75rem) {
+                                & {
+                                    max-width: 800px;
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .description {
+                            width: 100%;
+                            padding-left: 148px;
+                            font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 27px */
+letter-spacing: 0.18px;
+color: var(--62);
+display: flex;
+flex-wrap: wrap;
+column-gap: 6px;
+row-gap: 2px;
+
+                            @media (max-width: 96rem) {
+                                & {
+                                    width: 40%;
+                                    padding-left: 48px;
+                                }
+                            }
+
+                            @media (max-width: 75rem) {
+                                & {
+                                    padding-left: 0px;
+                                    width: 100%;
+                                    max-width: 800px;
+
+                                }
+                            }
+                        }
+                    }
+
+                    .contact__row {
+                        display: flex;
+
+                        @media (max-width: 45rem) {
+                            & {
+                                flex-direction: column;
+                                gap: 60px;
+                            }
+                        }
+
+                        .contact__form {
+                            width: 100%;
+
+                            @media (max-width: 96rem) {
+                                & {
+                                    width: 60%;
+                                }
+                            }
+
+                            @media (max-width: 45rem) {
+                                & {
+                                    width: 100%;
+                                }
+                            }
+
+                            form {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 48px;
+
+                                .input-container {
+                                    display: flex;
+                                    flex-direction: column-reverse;
+                                    overflow: hidden;
+
+                                    input:focus+label,
+                                    textarea:focus+label {
+                                        color: var(--92);
+                                    }
+                                }
+
+                                label {
+                                    font-size: 16px;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    line-height: 100%;
+                                    color: var(--82);
+                                    /* 16px */
+                                }
+
+                                input,
+                                textarea {
+                                    background-color: transparent !important;
+                                    border-bottom: 1px solid var(--52);
+                                    color: var(--52);
+
+                                    &::placeholder {
+                                        color: var(--52);
+                                    }
+                                }
+
+                                input {
+                                    height: 60px;
+                                }
+
+                                input:not(input:-webkit-autofill)::-webkit-contacts-auto-fill-button {
+                                    background-color: var(--82);
+                                }
+
+                                textarea {
+                                    height: 220px;
+                                    padding-top: 15px;
+                                    resize: none;
+
+                                }
+
+                                textarea::-webkit-scrollbar {
+                                    width: 8px;
+                                }
+
+                                textarea::-webkit-scrollbar-track {
+                                    -webkit-box-shadow: inset 0 0 2px var(--12);
+                                }
+
+                                textarea::-webkit-scrollbar-thumb {
+                                    background-color: var(--22);
+                                    border-radius: 20px;
+                                }
+
+                                input:focus,
+                                textarea:focus {
+                                    color: var(--92);
+                                    outline: none;
+                                    border-bottom: 1px solid var(--92) !important;
+                                }
+
+                                button {
+                                    display: flex;
+                                    gap: 0.5rem;
+                                    padding: 0.75rem 1.5rem;
+                                    border-radius: 64px;
+                                    color: var(--15);
+                                    background-color: var(--82);
+                                    align-items: center;
+                                    width: fit-content;
+
+                                    &:hover {
+                                        background-color: var(--92);
+                                    }
+                                }
+                            }
+
+                        }
+
+                        .contact__info {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 58px;
+                            width: 100%;
+                            padding-left: 148px;
+
+                            @media (max-width: 96rem) {
+                                & {
+                                    width: 40%;
+                                    padding-left: 48px;
+                                }
+                            }
+
+                            @media (max-width: 45rem) {
+                                & {
+                                    flex-direction: row;
+                                    flex-wrap: wrap;
+                                    width: 100%;
+                                    padding: 0;
+                                    column-gap: 3rem;
+                                    row-gap: 2rem;
+                                }
+                            }
+
+
+
+                            &--mail,
+                            &--time,
+                            &--socials {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1rem;
+
+                                .label {
+                                    color: var(--62);
+                                    font-size: 1rem;
+                                }
+                            }
+
+                            &--mail {
+                                color: var(--82);
+                                font-size: 18px;
+                            }
+
+                            &--time {
+                                color: var(--82);
+                                font-size: 18px;
+
+                            }
+
+                            &--socials {
+                                .links {
+                                    display: flex;
+                                    flex-direction: column;
+                                    column-gap: 2rem;
+                                    row-gap: 1.25rem;
+                                    padding-left: 2px;
+
+                                    @media (max-width: 45rem) {
+                                        & {
+                                            flex-direction: row;
+
+                                        }
+                                    }
+
+                                    * {
+                                        display: flex;
+                                        gap: 0.625rem;
+                                        color: var(--82);
+                                        font-size: 18px;
+
+                                        @media (max-width: 27.5rem) {
+                                            & {
+                                                font-size: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
