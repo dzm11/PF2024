@@ -9,7 +9,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.SPOTIFY_CLIENT_ID,
