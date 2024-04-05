@@ -1721,11 +1721,10 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
 }
 .wrapper.blog .container main .project-archive .row .project {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  height: auto;
   will-change: scale;
   width: 100%;
-  height: auto;
-  max-height: 650px;
 }
 @media (max-width: 82.5rem) {
   .wrapper.blog .container main .project-archive .row .project {
@@ -1762,6 +1761,7 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   display: flex;
   height: 100%;
   border-radius: 3rem;
+  max-height: 500px;
 }
 @media (max-width: 53rem) {
   .wrapper.blog .container main .project-archive .row .project .img-box {
@@ -1771,7 +1771,6 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
 }
 @media (max-width: 45rem) {
   .wrapper.blog .container main .project-archive .row .project .img-box {
-    height: 260px;
     border-radius: 1rem;
   }
 }
@@ -1783,41 +1782,20 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   width: 100%;
 }
 .wrapper.blog .container main .project-archive .row .project .hover-container {
-  position: absolute;
+  position: static;
   bottom: 0;
   width: 100%;
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-  overflow: hidden;
+  opacity: 1;
+  padding: 20px 8px;
+  transition: none;
+  overflow: visible;
   z-index: 2;
-}
-@media (max-width: 53rem) {
-  .wrapper.blog .container main .project-archive .row .project .hover-container {
-    opacity: 1;
-    padding: 20px 8px;
-    overflow: visible;
-    transition: none;
-    position: static;
-  }
 }
 .wrapper.blog .container main .project-archive .row .project .hover-container-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1rem 1rem 2.5rem;
   border-radius: 76px;
-  background: radial-gradient(740.63% 225.28% at 7.95% 70.62%, rgba(28, 30, 32, 0.6) 0%, rgba(152, 158, 165, 0.6) 100%);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
-}
-@media (max-width: 53rem) {
-  .wrapper.blog .container main .project-archive .row .project .hover-container-content {
-    padding: 0;
-    background: none;
-    -webkit-backdrop-filter: none;
-            backdrop-filter: none;
-  }
 }
 .wrapper.blog .container main .project-archive .row .project .hover-container-content .title-container {
   display: flex;
