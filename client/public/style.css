@@ -631,6 +631,11 @@ body .wrapper .container main section.section .latest-project .backdrop-shadow {
   position: relative;
   will-change: filter;
 }
+@media (max-width: 64rem) {
+  body .wrapper .container main section.section .latest-project .backdrop-shadow {
+    width: 100%;
+  }
+}
 body .wrapper .container main section.section .latest-project .backdrop-shadow:hover:before {
   content: "";
   position: absolute;
@@ -774,13 +779,13 @@ body .wrapper .container main section.section .latest-project .row .project .img
 }
 @media (max-width: 53rem) {
   body .wrapper .container main section.section .latest-project .row .project .img-box {
-    height: 400px;
+    height: 500px;
     border-radius: 2rem;
   }
 }
 @media (max-width: 45rem) {
   body .wrapper .container main section.section .latest-project .row .project .img-box {
-    height: 260px;
+    height: 400px;
     border-radius: 1rem;
   }
 }
@@ -890,6 +895,22 @@ body .wrapper .container main section.section .latest-project .row .project .hov
 body .wrapper .container main section.section .latest-project .row-1 .project-1 {
   display: flex;
   flex-grow: 2;
+}
+@media (max-width: 64rem) {
+  body .wrapper .container main section.section .latest-project .row-1 .project-1 {
+    height: 100%;
+  }
+  body .wrapper .container main section.section .latest-project .row-1 .project-1 .img-box {
+    height: 100%;
+  }
+}
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .latest-project .row-1 .project-1 {
+    height: 100%;
+  }
+  body .wrapper .container main section.section .latest-project .row-1 .project-1 .img-box {
+    height: 400px;
+  }
 }
 body .wrapper .container main section.section .latest-project .row-1 .project-2 {
   display: flex;
