@@ -29,7 +29,7 @@ body {
     background-color: var(--12);
     background-image: url(./app/img/Noise.png);
 
-   
+
 
     section {
         padding: 2rem 1.75rem;
@@ -426,6 +426,52 @@ body {
                         flex-direction: column;
                         gap: 2rem;
 
+                        .backdrop-shadow {
+                            transition: all .5s ease-in;
+                            position: relative;
+                            will-change: filter;
+
+                        }
+
+                        .backdrop-shadow:hover:before {
+                            content: "";
+                            position: absolute;
+                            display: block;
+                            z-index: -10;
+                            width: 90%;
+                            height: 90%;
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            transform: translate(-50%, -50%);
+                            left: 50%;
+                            top: 50%;
+                            filter: blur(50px);
+                        }
+
+                        .blured-1:hover:before {
+                            background-image: url(./../../app/img/Project-1blured.jpg);
+                        }
+
+                        .blured-2:hover:before{
+                            background-image: url(./../../app/img/Project-2blured.jpg);
+                        }
+
+                        .blured-3:hover:before{
+                            background-image: url(./../../app/img/Project-3blured.jpg);
+                        }
+
+                        .blured-4:hover:before{
+                            background-image: url(./../../app/img/Project-4blured.jpg);
+                        }
+
+                        .blured-5:hover:before{
+                            background-image: url(./../../app/img/Project-5blured.jpg);
+                        }
+
+                        .blured-6:hover:before{
+                            background-image: url(./../../app/img/Project-6blured.jpg);
+                        }
+
                         .header {
                             display: flex;
                             justify-content: space-between;
@@ -502,6 +548,8 @@ body {
                                     }
                                 }
                             }
+
+
 
                             .project {
                                 position: relative;

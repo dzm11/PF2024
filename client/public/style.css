@@ -626,6 +626,43 @@ body .wrapper .container main section.section .latest-project {
   flex-direction: column;
   gap: 2rem;
 }
+body .wrapper .container main section.section .latest-project .backdrop-shadow {
+  transition: all 0.5s ease-in;
+  position: relative;
+  will-change: filter;
+}
+body .wrapper .container main section.section .latest-project .backdrop-shadow:hover:before {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: -10;
+  width: 90%;
+  height: 90%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  filter: blur(50px);
+}
+body .wrapper .container main section.section .latest-project .blured-1:hover:before {
+  background-image: url(./../../app/img/Project-1blured.jpg);
+}
+body .wrapper .container main section.section .latest-project .blured-2:hover:before {
+  background-image: url(./../../app/img/Project-2blured.jpg);
+}
+body .wrapper .container main section.section .latest-project .blured-3:hover:before {
+  background-image: url(./../../app/img/Project-3blured.jpg);
+}
+body .wrapper .container main section.section .latest-project .blured-4:hover:before {
+  background-image: url(./../../app/img/Project-4blured.jpg);
+}
+body .wrapper .container main section.section .latest-project .blured-5:hover:before {
+  background-image: url(./../../app/img/Project-5blured.jpg);
+}
+body .wrapper .container main section.section .latest-project .blured-6:hover:before {
+  background-image: url(./../../app/img/Project-6blured.jpg);
+}
 body .wrapper .container main section.section .latest-project .header {
   display: flex;
   justify-content: space-between;
