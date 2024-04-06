@@ -237,6 +237,7 @@ body {
                                     gap: 0.75rem;
                                     text-decoration: underline;
                                     transition: all .1s ease-in;
+                                    position: relative;
 
                                     &:hover {
                                         background-color: var(--32) !important;

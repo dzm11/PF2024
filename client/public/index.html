@@ -39,7 +39,7 @@
     <div class="wrapper">
         <div class="container">
             <section class="hero">
-                <div class="menu-logo">
+                <div class="menu-logo hp-logo">
                     <svg width="137" height="32" viewBox="0 0 137 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path id="M"
                             d="M117.914 30.9653H111.117V8.22651H117.415V15.2161H117.823C118.412 11.4036 121.131 7.77264 127.066 7.77264C133.273 7.77264 136.218 11.7667 136.218 16.8046V30.9653H129.422V19.074C129.422 15.443 127.927 13.8999 123.759 13.8999C119.454 13.8999 117.914 15.6246 117.914 19.4824V30.9653Z"
@@ -93,7 +93,8 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="icon" id="myText" onclick="copyContent()">
+                                    <div class="icon" id="myText" onclick="copyContent(document.getElementById('tooltip-menu'))">
+                                        <span id="tooltip-menu" style="display: none;" onclick="copyContent(this)">Mail has been copied</span>                                        
                                         <img src="./app/img/copy.svg" alt="">
                                         Hello@melon.studio
                                     </div>
@@ -221,7 +222,8 @@
                             </a>
                         </div>
                         <div class="row row-1">
-                            <a href="./projects/Ai-Puzzle-E-commerce-powered-by-AI-jigsaw-puzzle.html" class="backdrop-shadow blured-1">
+                            <a href="./projects/Ai-Puzzle-E-commerce-powered-by-AI-jigsaw-puzzle.html"
+                                class="backdrop-shadow blured-1">
 
                                 <div class="project project-1">
                                     <div class="img-box">
@@ -247,7 +249,8 @@
                                 </div>
 
                             </a>
-                            <a href="./projects/Velare-configurator-for-prestigious-luxury-car.html" class="backdrop-shadow blured-2">
+                            <a href="./projects/Velare-configurator-for-prestigious-luxury-car.html"
+                                class="backdrop-shadow blured-2">
 
                                 <div class="project project-2">
                                     <div class="img-box">
@@ -299,7 +302,8 @@
                                     </a>
                                 </div>
                                 <div class="inner-row">
-                                    <a href="./projects/Kinderkraft-high-quality-children-articles.html" class="backdrop-shadow blured-4">
+                                    <a href="./projects/Kinderkraft-high-quality-children-articles.html"
+                                        class="backdrop-shadow blured-4">
 
                                         <div class="project project-4">
                                             <div class="img-box">
@@ -320,7 +324,8 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <a href="./projects/BarterSA-energy-sector-company.html" class="backdrop-shadow blured-5">
+                                    <a href="./projects/BarterSA-energy-sector-company.html"
+                                        class="backdrop-shadow blured-5">
 
                                         <div class="project project-5">
                                             <div class="img-box">
@@ -614,9 +619,14 @@
                         <div class="header">
                             <h1><span class="empower">Let's talk</span> about your&nbspproject</h1>
                             <div class="header--actions">
-                                <button>Fill the form<img src="./app/img/send-plane.svg" alt="send"></button>
-                                <div class="mail">or copy an email: <div class="mail--action" onclick="copyContent()">
-                                        Hello@melon.studio <img src="./app/img/copy.svg" alt="copy"></div>
+                                <a href="./contact.html">
+                                    <button>Fill the form<img src="./app/img/send-plane.svg" alt="send"></button>
+                                </a>                                <div class="mail">or copy an email: 
+                                    <div class="mail--action" style="position: relative;" onclick="copyContent(document.getElementById('tooltip'))">
+                                        Hello@melon.studio 
+                                        <img src="./app/img/copy.svg" alt="copy">
+                                        <div id="tooltip" style="display: none;" onclick="copyContent(this)">Mail has been copied</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -692,9 +702,9 @@
     <script src="./app/script/script.js"></script>
     <script>
         let mm = gsap.matchMedia();
-        const overlay = document.querySelector(".overlay");
+        // const overlay = document.querySelector(".overlay");
 
-        mm.revert();
+        // mm.revert();
 
         // use a script tag or an external JS file
         document.addEventListener("DOMContentLoaded", (event) => {
@@ -738,7 +748,7 @@
                 //     ease: "power4.inOut"
                 // });
                 gsap.from("#M, #E, #L, #O, #N", 2, {
-                    delay: 1.5,
+                    delay: .7,
                     y: 100,
                     opacity: 0,
                     stagger: {
@@ -747,7 +757,7 @@
                     ease: "expo.out"
                 });
                 gsap.from(".word", 1, {
-                    delay: 3.5,
+                    delay: 2.5,
                     rotateX: -90,
                     rotation: 5,
                     opacity: 0,
@@ -772,7 +782,7 @@
                 mm.add("(min-width: 721px)", () => {
 
                     gsap.from("body .wrapper .container .hero header nav ul li", 1, {
-                        delay: 4,
+                        delay: 2.2,
                         rotation: 20,
                         opacity: 0,
                         y: 80,
@@ -784,15 +794,19 @@
                 });
 
                 gsap.from("body .wrapper .container .hero__content .status", 1, {
-                    delay: 3.5,
+                    delay: 2.5,
                     opacity: 0,
                     y: 20,
                 });
                 gsap.from(".topnav__open", 1, {
-                    delay: 2.5,
+                    delay: 1.5,
                     y: 10,
                     opacity: 0,
                     ease: "power4.out",
+                });
+                gsap.to("body .wrapper .container .hero header nav ul", {
+                    delay: 4,
+                    overflow: "visible",
                 });
 
 

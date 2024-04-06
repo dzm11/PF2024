@@ -86,7 +86,10 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="icon" id="myText" onclick="copyContent()">
+                                    <div class="icon" id="myText"
+                                        onclick="copyContent(document.getElementById('tooltip-menu'))">
+                                        <span id="tooltip-menu" style="display: none;" onclick="copyContent(this)">Mail
+                                            has been copied</span>
                                         <img src="./../app/img/copy.svg" alt="">
                                         Hello@melon.studio
                                     </div>
@@ -135,7 +138,7 @@
                             <div class="word-container">
                                 <span class="word empower">company.</span>
                             </div>
-                                 
+
                         </div>
                         <div class="project-category__icon">
                             <div class="word-container">
@@ -152,9 +155,11 @@
                     <div class="project-details">
                         <div class="header">
                             <h2>Project <span class="empower">Details</span></h2>
-                            <p class="big-paragraph">A team of SEO and Content Marketing specialists for whom effective promotion on the Internet is their daily bread.</p>
+                            <p class="big-paragraph">A team of SEO and Content Marketing specialists for whom effective
+                                promotion on the Internet is their daily bread.</p>
                             <p>
-                                Thanks to their SXO service, websites become easier to find in the Google search engine, and customers are eager to purchase new products and services.
+                                Thanks to their SXO service, websites become easier to find in the Google search engine,
+                                and customers are eager to purchase new products and services.
                             </p>
                         </div>
                         <div class="details">
@@ -175,7 +180,8 @@
                             <div class="divider"></div>
                             <div class="details__element">
                                 <div class="details__element--category">Site</div>
-                                <div class="details__element--text underline disabled-site-link"><a href="#">No website yet</a></div>
+                                <div class="details__element--text underline disabled-site-link"><a href="#">No website
+                                        yet</a></div>
                             </div>
                         </div>
                     </div>
@@ -201,9 +207,17 @@
                         <div class="header">
                             <h1><span class="empower">Let's talk</span> about your&nbspproject</h1>
                             <div class="header--actions">
-                                <button>Fill the form<img src="./../app/img/send-plane.svg" alt="send"></button>
-                                <div class="mail">or copy an email: <div class="mail--action" onclick="copyContent()">
-                                        Hello@melon.studio <img src="./../app/img/copy.svg" alt="copy"></div>
+                                <a href="./../contact.html">
+                                    <button>Fill the form<img src="./../app/img/send-plane.svg" alt="send"></button>
+                                </a>
+                                <div class="mail">or copy an email:
+                                    <div class="mail--action" style="position: relative;"
+                                        onclick="copyContent(document.getElementById('tooltip'))">
+                                        Hello@melon.studio
+                                        <img src="./../app/img/copy.svg" alt="copy">
+                                        <div id="tooltip" style="display: none;" onclick="copyContent(this)">Mail has
+                                            been copied</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -215,8 +229,7 @@
                                 </div>
                                 <a href="" target="_blank" id="spotifyLink">
                                     <div class="widgets__spotify--content">
-                                        <img src="" id="imgContainer" alt="" height="60px"
-                                        width="60px">
+                                        <img src="" id="imgContainer" alt="" height="60px" width="60px">
                                         <div class="song">
                                             <div class="song__title" id="titleContainer"></div>
                                             <div class="song__author" id="authorContainer"></div>
@@ -255,16 +268,16 @@
                                 <div class="header">Socials</div>
                                 <div class="links">
                                     <a href="https://www.behance.net/MelonToPies" class="links" target="_blank">
-                                        <div class="behance"><img src="./app/img/Behance.svg" alt="">Behance</div>
+                                        <div class="behance"><img src="./../app/img/Behance.svg" alt="">Behance</div>
 
                                     </a>
                                     <a href=" " class="links" target="_blank">
-                                        <div class="Dribbble"><img src="./app/img/Dribbble.svg" alt="">Dribbble</div>
+                                        <div class="Dribbble"><img src="./../app/img/Dribbble.svg" alt="">Dribbble</div>
 
                                     </a>
                                     <a href="https://www.linkedin.com/in/piotr-brzeziński-69a51115a/" class="links"
                                         target="_blank">
-                                        <div class="Linkedin"><img src="./app/img/LinkedIn.svg" alt="">Linkedin</div>
+                                        <div class="Linkedin"><img src="./../app/img/LinkedIn.svg" alt="">Linkedin</div>
 
                                     </a>
                                 </div>
@@ -289,7 +302,7 @@
             gsap.registerPlugin(ScrollTrigger)
             // Animate From
             $("header").each(function (index) {
-                
+
                 gsap.from("h1 .word", 2.5, {
                     delay: 0.5,
                     rotation: 2,
@@ -308,7 +321,7 @@
                     ease: "expo.out",
 
                 });
-                
+
                 gsap.from("body .wrapper .container .hero header nav ul li", 1, {
                     delay: 1,
                     rotation: 20,
@@ -337,7 +350,10 @@
                     opacity: 0,
                     ease: "power4.out",
                 });
-
+                gsap.to("body .wrapper .container .hero header nav ul", {
+                    delay: 4,
+                    overflow: "visible",
+                });
             });
         });
         ScrollTrigger.defaults({

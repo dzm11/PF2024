@@ -90,7 +90,10 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="icon" id="myText" onclick="copyContent()">
+                                    <div class="icon" id="myText"
+                                        onclick="copyContent(document.getElementById('tooltip-menu'))">
+                                        <span id="tooltip-menu" style="display: none;" onclick="copyContent(this)">Mail
+                                            has been copied</span>
                                         <img src="./app/img/copy.svg" alt="">
                                         Hello@melon.studio
                                     </div>
@@ -226,7 +229,9 @@
                             government projects.
                         </p>
                         <div class="contact-socials">
-                            <button>Write a message <img src="./app/img/send-plane.svg" alt=""></button>
+                            <a href="./contact.html">
+                                <button>Write a message <img src="./app/img/send-plane.svg" alt=""></button>
+                            </a>
                             <div class="socials">
                                 <div class="links">
                                     <a href="https://www.behance.net/MelonToPies" class="links" target="_blank">
@@ -378,7 +383,9 @@
                         <div class="faq__header--more">
                             <p class="light-p">Do you still have any questions?</p>
                             <p>Contact me and I'll get back to you as soon as it's possible.</p>
+                            <a href="./contact.html">
                             <button>Write a message <img src="./app/img/send-plane.svg" alt=""></button>
+                            </a>
                         </div>
 
                     </div>
@@ -390,9 +397,8 @@
                                 </span><span class="icon" aria-hidden="true"></span></button>
                             <div class="accordion-content">
                                 <p>
-                                    Once you've uploaded your image and finalized your puzzle specifications, our AI
-                                    system gets to work creating your puzzle layout. Typically, you can expect to
-                                    receive your puzzle within [insert timeframe here] days.
+                                    The cost of designing a website's UI & UX, along with development, can vary significantly depending on several factors, such as the complexity of the project, the scope of the project, the experience of the agency or designer, location, and additional services.<br><br>
+                                    Generally speaking, the cost can range from several thousand to tens of thousands of dollars.
                                 </p>
                             </div>
                         </div>
@@ -416,9 +422,7 @@
                                 </span><span class="icon" aria-hidden="true"></span></button>
                             <div class="accordion-content">
                                 <p>
-                                    Once you've uploaded your image and finalized your puzzle specifications, our AI
-                                    system gets to work creating your puzzle layout. Typically, you can expect to
-                                    receive your puzzle within [insert timeframe here] days.
+                                    Yes, I design e-commerce website and I also take care of their features. There are many different tools that you canuse within e-commerce website design, depending on your needs and brand specifications.
                                 </p>
                             </div>
                         </div>
@@ -429,9 +433,7 @@
                                 </span><span class="icon" aria-hidden="true"></span></button>
                             <div class="accordion-content">
                                 <p>
-                                    Once you've uploaded your image and finalized your puzzle specifications, our AI
-                                    system gets to work creating your puzzle layout. Typically, you can expect to
-                                    receive your puzzle within [insert timeframe here] days.
+                                    The time needed for design and developing, e.g. an e-commerce website, may take from 2 to 4 weeks and approximately the same amount of time for development. It is also worth taking into account additional time for tests, corrections and final adaptation of the project to the client's needs.
                                 </p>
                             </div>
                         </div>
@@ -442,9 +444,7 @@
                                 </span><span class="icon" aria-hidden="true"></span></button>
                             <div class="accordion-content">
                                 <p>
-                                    Once you've uploaded your image and finalized your puzzle specifications, our AI
-                                    system gets to work creating your puzzle layout. Typically, you can expect to
-                                    receive your puzzle within [insert timeframe here] days.
+                                    The UI/UX design revised and feedback reporting process includes client input, concept and mockup creation, client feedback collection, iterative on client feedback, significant control testing, and final client acceptance of the design.   
                                 </p>
                             </div>
                         </div>
@@ -455,9 +455,7 @@
                                 </span><span class="icon" aria-hidden="true"></span></button>
                             <div class="accordion-content">
                                 <p>
-                                    Once you've uploaded your image and finalized your puzzle specifications, our AI
-                                    system gets to work creating your puzzle layout. Typically, you can expect to
-                                    receive your puzzle within [insert timeframe here] days.
+                                    I usually start the process with low-fidelity mockups to gain as much information as possible in the shortest possible time. Then I prepare a mockup of the Homepage, and finally I create the rest of the subpages. At each of these stages, client gets involved and accepts the work and functionalities that I done previously.
                                 </p>
 
                             </div>
@@ -472,9 +470,16 @@
                         <div class="header">
                             <h1><span class="empower">Let's talk</span> about your&nbspproject</h1>
                             <div class="header--actions">
-                                <button>Fill the form<img src="./app/img/send-plane.svg" alt="send"></button>
-                                <div class="mail">or copy an email: <div class="mail--action" onclick="copyContent()">
-                                        Hello@melon.studio <img src="./app/img/copy.svg" alt="copy"></div>
+                                <a href="./contact.html">
+                                    <button>Fill the form<img src="./app/img/send-plane.svg" alt="send"></button>
+                                </a>                                <div class="mail">or copy an email: <div class="mail--action"
+                                        style="position: relative;"
+                                        onclick="copyContent(document.getElementById('tooltip'))">
+                                        Hello@melon.studio
+                                        <img src="./app/img/copy.svg" alt="copy">
+                                        <div id="tooltip" style="display: none;" onclick="copyContent(this)">Mail has
+                                            been copied</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -611,55 +616,17 @@
                     opacity: 0,
                     ease: "power4.out",
                 });
+                gsap.to("body .wrapper .container .hero header nav ul", {
+                    delay: 4,
+                    overflow: "visible",
+                });
 
             });
         });
         ScrollTrigger.defaults({
             markers: false
         });
-    </script>
-    <script src="https://web3forms.com/client/script.js" async defer></script>
-
-    <script>
-        const form = document.getElementById('form');
-        const result = document.getElementById('result');
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-            result.innerHTML = "Please wait..."
-
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            })
-                .then(async (response) => {
-                    let json = await response.json();
-                    if (response.status == 200) {
-                        result.innerHTML = "Form submitted successfully";
-                    } else {
-                        console.log(response);
-                        result.innerHTML = json.message;
-                    }
-                })
-                .catch(error => {
-                    console.log(error);
-                    result.innerHTML = "Something went wrong!";
-                })
-                .then(function () {
-                    form.reset();
-                    setTimeout(() => {
-                        result.style.display = "none";
-                    }, 3000);
-                });
-        });
-    </script>
+    </script>    
 </body>
 
 </html>

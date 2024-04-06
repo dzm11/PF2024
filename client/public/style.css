@@ -228,6 +228,22 @@ span.empower {
   color: var(--82);
 }
 
+.hp-logo {
+  margin-top: 12px;
+}
+
+#tooltip, #tooltip-menu {
+  background-color: var(--82);
+  color: var(--12);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  position: absolute;
+  bottom: -40px;
+  left: -6px;
+  text-decoration: none;
+}
+
 @keyframes pulse-ring {
   0% {
     transform: scale(0.33);
@@ -468,6 +484,7 @@ body .wrapper .container .hero header nav ul li .icon {
   gap: 0.75rem;
   text-decoration: underline;
   transition: all 0.1s ease-in;
+  position: relative;
 }
 body .wrapper .container .hero header nav ul li .icon:hover {
   background-color: var(--32) !important;
@@ -1890,6 +1907,7 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
 }
 .wrapper.about-me .container main .hero__content .h1-container {
   width: 100%;
+  max-width: 700px;
 }
 .wrapper.about-me .container main .hero__content--header {
   width: 100%;
@@ -2189,7 +2207,7 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
 }
 .wrapper.about-me .container main section.faq .accordion button[aria-expanded=true] + .accordion-content {
   opacity: 1;
-  max-height: 9em;
+  max-height: 30em;
   transition: all 200ms linear;
   will-change: opacity, max-height;
 }
@@ -2453,6 +2471,14 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
 }
 .wrapper.project-default .container main .project-details .details__element .underline {
   text-decoration: underline;
+}
+.wrapper.project-default .container main .project-details .details__element .disabled-site-link {
+  text-decoration: none;
+  cursor: not-allowed;
+}
+.wrapper.project-default .container main .project-details .details__element .disabled-site-link a {
+  color: var(--32);
+  pointer-events: none;
 }
 .wrapper.project-default .container main .project-details .details__element--category {
   color: var(--62);

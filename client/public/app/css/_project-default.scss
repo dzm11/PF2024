@@ -190,6 +190,16 @@
                         .underline {
                             text-decoration: underline;
                         }
+                        .disabled-site-link{
+                            text-decoration: none;
+                            cursor: not-allowed;
+
+                            a{
+                                color: var(--32);
+                                pointer-events: none;
+
+                            }
+                        }
 
                         &--category {
                             color: var(--62);

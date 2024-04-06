@@ -70,28 +70,43 @@ function addAnimation() {
   });
 }
 
-
-///////////////
-//Copy Content
-///////////////
-
-async function copyContent() {
-  try {
-    await navigator.clipboard.writeText("Hello@melon.studio");
-    console.log("Content copied to clipboard");
-    /* Resolved - text copied to clipboard successfully */
-  } catch (err) {
-    console.error("Failed to copy: ", err);
-    /* Rejected - text failed to copy to the clipboard */
-  }
-}
-
 setupTopNav(media);
 
 media.addEventListener("change", function (e) {
   setupTopNav(e);
 })
 
+///////////////
+//Copy Content
+///////////////
+
+function copyContent(clickedTooltip) {
+  // Kopiowanie zawartości do schowka
+  navigator.clipboard.writeText("Hello@melon.studio")
+      .then(function () {
+          // Wyświetlanie tooltipa
+          let tooltip = document.getElementById("tooltip");
+          let tooltip_menu = document.getElementById("tooltip-menu");
+
+          // Sprawdzenie, który tooltip został kliknięty
+          if (clickedTooltip === tooltip) {
+              tooltip.style.display = "block";
+              tooltip_menu.style.display = "none";
+          } else if (clickedTooltip === tooltip_menu) {
+              tooltip.style.display = "none";
+              tooltip_menu.style.display = "block";
+          }
+
+          // Ukrywanie tooltipów po 3 sekundach
+          setTimeout(function () {
+              tooltip.style.display = "none";
+              tooltip_menu.style.display = "none";
+          }, 2000);
+      })
+      .catch(function (error) {
+          console.error('Copy failed: ', error);
+      });
+}
 
 ///////////////
 //Smooth Scroll
@@ -200,44 +215,63 @@ function fetchDataAndUpdate() {
 // Wywołaj funkcję fetchDataAndUpdate() co 10 sekund (10000 ms)
 // setInterval(fetchDataAndUpdate, 1000);
 
+
 //////////////////
 /// Podawanie daty
 //////////////////
-updateDate();
-function updateDate(){
-  var now = new Date();
-  
-  // Utwórz obiekt formatowania daty/czasu z opcją timeZone
-  var formatter = new Intl.DateTimeFormat('pl-PL', {
-    timeZone: 'Europe/Warsaw',
-    timeStyle: 'short', // lub 'short', 'long' itp., w zależności od preferencji
-    hour12: false // aby użyć zapisu 24-godzinnego
-  });
+// Utwórz funkcję, która aktualizuje datę
+function updateDate() {
+  try {
+      var now = new Date();
 
-  // Sformatuj aktualny czas dla Poznania
-  var formattedTime = formatter.format(now);
-  const currentDateContact = document.getElementById('currentDateContact');
-  const currentDate = document.getElementById('currentDate');
-  currentDate.innerHTML = formattedTime;
-  currentDateContact.innerHTML = formattedTime;
-} setInterval(updateDate, 60000);
+      // Utwórz obiekt formatowania daty/czasu z opcją timeZone
+      var formatter = new Intl.DateTimeFormat('pl-PL', {
+          timeZone: 'Europe/Warsaw',
+          timeStyle: 'short', // lub 'short', 'long' itp., w zależności od preferencji
+          hour12: false // aby użyć zapisu 24-godzinnego
+      });
+
+      // Sformatuj aktualny czas dla Poznania
+      var formattedTime = formatter.format(now);
+      
+      // Znajdź elementy HTML
+      const currentDateContact = document.getElementById('currentDateContact');
+      const currentDate = document.getElementById('currentDate');
+
+      // Aktualizuj tekst w elementach HTML
+      if (currentDate && currentDateContact) {
+          currentDate.innerHTML = formattedTime;
+          currentDateContact.innerHTML = formattedTime;
+      } else {
+          throw new Error('Nie można znaleźć elementu HTML.');
+      }
+  } catch (error) {
+      console.error('Wystąpił błąd podczas aktualizowania daty:', error.message);
+  }
+}
+
+// Wywołaj funkcję aktualizacji daty
+updateDate();
+
+// Ustaw interwał do automatycznego aktualizowania daty co minutę
+setInterval(updateDate, 60000);
 
 
 
 //////////////
 /// Akordeony
 //////////////
-const items = document.querySelectorAll(".accordion button");
+const items = document.querySelectorAll('.accordion-item');
 
 function toggleAccordion() {
-  const itemToggle = this.getAttribute('aria-expanded');
+  const itemToggle = this.querySelector('button').getAttribute('aria-expanded');
 
   for (i = 0; i < items.length; i++) {
-    items[i].setAttribute('aria-expanded', 'false');
+    items[i].querySelector('button').setAttribute('aria-expanded', 'false');
   }
 
   if (itemToggle == 'false') {
-    this.setAttribute('aria-expanded', 'true');
+    this.querySelector('button').setAttribute('aria-expanded', 'true');
   }
 }
 
@@ -291,6 +325,6 @@ form.addEventListener('submit', function(e) {
 /////////////////////
 ///Move top on scroll
 /////////////////////
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-}
+// document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+// document.body.scrollTop = 0; // For Safari

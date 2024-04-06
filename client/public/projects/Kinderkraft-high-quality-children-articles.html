@@ -86,7 +86,8 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="icon" id="myText" onclick="copyContent()">
+                                    <div class="icon" id="myText" onclick="copyContent(document.getElementById('tooltip-menu'))">
+                                        <span id="tooltip-menu" style="display: none;" onclick="copyContent(this)">Mail has been copied</span>                                        
                                         <img src="./../app/img/copy.svg" alt="">
                                         Hello@melon.studio
                                     </div>
@@ -213,9 +214,16 @@
                         <div class="header">
                             <h1><span class="empower">Let's talk</span> about your&nbspproject</h1>
                             <div class="header--actions">
-                                <button>Fill the form<img src="./../app/img/send-plane.svg" alt="send"></button>
-                                <div class="mail">or copy an email: <div class="mail--action" onclick="copyContent()">
-                                        Hello@melon.studio <img src="./../app/img/copy.svg" alt="copy"></div>
+                                <a href="./../contact.html">
+                                    <button>Fill the form<img src="./../app/img/send-plane.svg" alt="send"></button>
+                                </a>                                <div class="mail">or copy an email:
+                                    <div class="mail--action" style="position: relative;"
+                                        onclick="copyContent(document.getElementById('tooltip'))">
+                                        Hello@melon.studio
+                                        <img src="./../app/img/copy.svg" alt="copy">
+                                        <div id="tooltip" style="display: none;" onclick="copyContent(this)">Mail has
+                                            been copied</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -267,16 +275,16 @@
                                 <div class="header">Socials</div>
                                 <div class="links">
                                     <a href="https://www.behance.net/MelonToPies" class="links" target="_blank">
-                                        <div class="behance"><img src="./app/img/Behance.svg" alt="">Behance</div>
+                                        <div class="behance"><img src="./../app/img/Behance.svg" alt="">Behance</div>
 
                                     </a>
                                     <a href=" " class="links" target="_blank">
-                                        <div class="Dribbble"><img src="./app/img/Dribbble.svg" alt="">Dribbble</div>
+                                        <div class="Dribbble"><img src="./../app/img/Dribbble.svg" alt="">Dribbble</div>
 
                                     </a>
                                     <a href="https://www.linkedin.com/in/piotr-brzeziński-69a51115a/" class="links"
                                         target="_blank">
-                                        <div class="Linkedin"><img src="./app/img/LinkedIn.svg" alt="">Linkedin</div>
+                                        <div class="Linkedin"><img src="./../app/img/LinkedIn.svg" alt="">Linkedin</div>
 
                                     </a>
                                 </div>
@@ -349,7 +357,10 @@
                     opacity: 0,
                     ease: "power4.out",
                 });
-
+                gsap.to("body .wrapper .container .hero header nav ul", {
+                    delay: 4,
+                    overflow: "visible",
+                });
             });
         });
         ScrollTrigger.defaults({
