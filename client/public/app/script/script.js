@@ -286,3 +286,11 @@ form.addEventListener('submit', function(e) {
             }, 3000);
         });
 });
+
+
+/////////////////////
+///Move top on scroll
+/////////////////////
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
