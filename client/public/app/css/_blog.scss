@@ -117,6 +117,12 @@
                         &:hover {
                             .hover-container {
                                 opacity: 1;
+                                .hover-container-content{
+                                    button{
+                                        border: solid 1px var(--22);
+                                        background-color: var(--22);
+                                    }
+                                }
                             }
 
                             img {
@@ -213,6 +219,8 @@
                                     padding: 1rem;
                                     border: solid 1px var(--82);
                                     border-radius: 40px;
+                                    transition: all .1s ease-out;
+
 
                                     .learn-more {
                                         padding-inline-start: 0.5rem;

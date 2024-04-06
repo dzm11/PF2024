@@ -8,6 +8,7 @@ const media = window.matchMedia("(max-width: 53rem)")
 const topNavMenu = document.querySelector(".topnav__menu");
 const main = document.querySelector('main');
 const html = document.querySelector("html");
+const body = document.querySelector("body");
 
 function setupTopNav(e) {
   if (e.matches) {
@@ -20,10 +21,12 @@ function setupTopNav(e) {
 
 function openMobileMenu() {
   btnOpen.setAttribute("aria-expanded", "true");
+  body.style.overflow = "hidden";
+  topNavMenu.setAttribute("data-lenis-prevent", "");
   topNavMenu.removeAttribute("inert");
   topNavMenu.removeAttribute("style");
   main.setAttribute('inert', '');
-  bodyScrollLockUpgrade.disableBodyScroll(body);
+  // bodyScrollLockUpgrade.disableBodyScroll(body);
 
 }
 
@@ -31,7 +34,7 @@ function closeMobileMenu() {
   btnOpen.setAttribute("aria-expanded", "false");
   topNavMenu.setAttribute("inert", "");
   main.removeAttribute('inert');
-  bodyScrollLockUpgrade.enableBodyScroll(body);
+  // bodyScrollLockUpgrade.enableBodyScroll(body);
 
   setTimeout(() => {
     topNavMenu.style.transition = "none"
