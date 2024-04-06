@@ -1938,6 +1938,19 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   display: inline-flex;
   overflow: hidden;
 }
+.wrapper.about-me .container main .hero__content .paragraph-big {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 6px;
+       column-gap: 6px;
+  row-gap: 2px;
+  color: var(--82);
+  line-height: 120%;
+}
+.wrapper.about-me .container main .hero__content .paragraph-big .word-container .word {
+  display: inline-flex;
+  overflow: hidden;
+}
 .wrapper.about-me .container main .hero__content--text {
   width: 100%;
   padding-inline-end: 272px;
@@ -1947,7 +1960,7 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
     padding-inline-end: 0;
   }
 }
-.wrapper.about-me .container main .hero__content--text p.paragraph-big {
+.wrapper.about-me .container main .hero__content--text .paragraph-big {
   font-size: 18px;
   font-style: normal;
   font-weight: 400;

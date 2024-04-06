@@ -80,6 +80,20 @@
                         }
                     }
                 }
+                .paragraph-big{
+                    display: flex;
+                    flex-wrap: wrap;
+                    column-gap: 6px;
+                    row-gap: 2px;
+                    color: var(--82);
+                    line-height: 120%;
+                    .word-container {
+                        .word {
+                            display: inline-flex;
+                            overflow: hidden;
+                        }
+                    }
+                }
 
                 &--text {
                     width: 100%;
@@ -91,7 +105,7 @@
                         }
                     }
 
-                    p.paragraph-big {
+                    .paragraph-big {
                         font-size: 18px;
                         font-style: normal;
                         font-weight: 400;
