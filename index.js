@@ -36,12 +36,12 @@ async function refreshTokens() {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/authorize', (req, res) => {
+app.get('/api/authorize', (req, res) => {
   const authorizeURL = spotifyApi.createAuthorizeURL(['user-read-currently-playing'], 'some-state');
   res.redirect(authorizeURL);
 });
 
-app.get('/callback', async (req, res) => {
+app.get('/api/callback', async (req, res) => {
   const { code } = req.query;
   try {
     const data = await spotifyApi.authorizationCodeGrant(code);
@@ -55,7 +55,7 @@ app.get('/callback', async (req, res) => {
   }
 });
 
-app.get('/current-track', async (req, res) => {
+app.get('/api/current-track', async (req, res) => {
   try {
     await refreshTokens();
     const data = await spotifyApi.getMyCurrentPlayingTrack();
