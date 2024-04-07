@@ -290,10 +290,11 @@ function updateDate() {
       const currentDate = document.getElementById('currentDate');
 
       // Aktualizuj tekst w elementach HTML
-      if (currentDate && currentDateContact) {
+      if (currentDate) {
           currentDate.innerHTML = formattedTime;
-          currentDateContact.innerHTML = formattedTime;
-      } else {
+      }else if(currentDateContact) {
+        currentDateContact.innerHTML = formattedTime;
+      }else {
           throw new Error('Nie można znaleźć elementu HTML.');
       }
   } catch (error) {
