@@ -7,7 +7,7 @@ const axios = require('axios');
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.CLIENT_ID,
@@ -26,7 +26,6 @@ async function refreshTokens() {
         client_id: process.env.CLIENT_ID,
         client_secret: process.env.CLIENT_SECRET,
       }
-      
     });
 
     spotifyApi.setAccessToken(data.access_token);
