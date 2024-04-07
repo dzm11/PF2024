@@ -1,4 +1,4 @@
-// const express = require('express');
+const express = require('express');
 const path = require('path');
 const SpotifyWebApi = require('spotify-web-api-node');
 const dotenv = require('dotenv');
@@ -6,8 +6,8 @@ const axios = require('axios');
 
 dotenv.config();
 
-// const app = express();
-// const port = process.env.PORT || 3000;
+const app = express();
+const port = process.env.PORT || 3000;
 
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.CLIENT_ID,
@@ -75,6 +75,6 @@ app.get('/current-track', async (req, res) => {
   }
 });
 
-// app.listen(port, () => {
-//   console.log(`Serwer uruchomiony na http://localhost:${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Serwer uruchomiony na http://localhost:${port}`);
+});
