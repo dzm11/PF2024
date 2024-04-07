@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/rick-liruixin/body-scroll-lock-upgrade@v1.1.0/lib/index.umd.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+
+
+    <div class="wrapper about-me">
+        <div class="container">
+            <section class="hero">
+
+                <header>
+                    <div class="menu-logo">
+                        <a href="./index.html">
+                            <svg width="137" height="32" viewBox="0 0 137 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="M"
+                                    d="M117.914 30.9653H111.117V8.22651H117.415V15.2161H117.823C118.412 11.4036 121.131 7.77264 127.066 7.77264C133.273 7.77264 136.218 11.7667 136.218 16.8046V30.9653H129.422V19.074C129.422 15.443 127.927 13.8999 123.759 13.8999C119.454 13.8999 117.914 15.6246 117.914 19.4824V30.9653Z"
+                                    fill="#E9EBEC" />
+                                <path id="E"
+                                    d="M96.6953 31.4057C88.95 31.4057 83.7412 26.7789 83.7412 19.6118C83.7412 12.3541 88.95 7.77264 96.6953 7.77264C104.441 7.77264 109.649 12.3541 109.649 19.6118C109.649 26.7789 104.441 31.4057 96.6953 31.4057ZM96.6953 25.3727C101.27 25.3727 102.901 23.6036 102.901 19.6118C102.901 15.6201 101.27 13.7603 96.6953 13.7603C92.0753 13.7603 90.49 15.6201 90.49 19.6118C90.49 23.6036 92.0753 25.3727 96.6953 25.3727Z"
+                                    fill="#E9EBEC" />
+                                <path id="L"
+                                    d="M68.0489 30.9653L65.9797 26.6483C67.3454 26.0672 68.6283 25.3615 69.7871 24.4898C67.5937 21.252 66.3522 16.935 66.3522 12.0783C66.3522 4.68951 69.6629 0.580017 74.629 0.580017C79.3881 0.580017 82.4919 4.31592 82.4919 10.7085C82.4919 15.6897 80.6296 20.5878 77.4017 24.4068C78.726 25.2785 80.2158 25.7351 81.8712 25.7351H83.154V30.9653H81.5815C78.3949 30.9653 75.5808 29.9691 73.2633 28.2257C71.6907 29.3464 69.9526 30.3012 68.0489 30.9653ZM71.8976 11.7047C71.8976 14.984 72.6012 17.9727 73.8427 20.3388C75.8291 17.5161 76.9465 14.1953 76.9465 10.7085C76.9465 7.51219 76.036 5.81028 74.5462 5.81028C72.9322 5.81028 71.8976 7.67823 71.8976 11.7047Z"
+                                    fill="#E9EBEC" />
+                                <path id="O"
+                                    d="M52.7977 31.4057C45.2345 31.4057 40.0715 27.6861 40.0715 19.6118C40.0715 12.3541 45.1892 7.77264 52.6618 7.77264C60.0892 7.77264 65.0257 11.6737 65.0257 18.7953C65.0257 19.6118 64.9351 20.2015 64.8445 20.9727H46.3667C46.5478 24.4655 48.1782 25.9624 52.5712 25.9624C56.6019 25.9624 58.0059 24.9191 58.0059 22.9685V22.5149H64.7992V23.0139C64.7992 27.9582 59.9986 31.4057 52.7977 31.4057ZM52.526 13.0799C48.4952 13.0799 46.7743 14.4407 46.4573 17.3892H58.5041C58.3229 14.3953 56.5114 13.0799 52.526 13.0799Z"
+                                    fill="#E9EBEC" />
+                                <path id="N"
+                                    d="M6.80253 30.9653H-0.00219727V0.580017H9.20687L16.3292 15.5459L19.1871 22.6661H19.6862L22.4534 15.5459L29.3489 0.580017H38.6033V30.9653H31.7986V15.5459L32.0254 10.784H31.5264L29.7572 15.5459L23.4061 29.1513H15.1497L8.79859 15.5459L7.02936 10.784H6.53035L6.80253 15.5459V30.9653Z"
+                                    fill="#E9EBEC" />
+                            </svg>
+
+                        </a>
+
+                    </div>
+
+                    <nav>
+                        <span id="nav-label" hidden>Navigation</span>
+                        <button class="topnav__open" aria-expanded="false" aria-labelledby="nav-label" id="btnOpen">
+                            <img src="./app/img/menu.svg" alt="" width="24px" height="24px">
+                            <p>Menu</p>
+                        </button>
+                        <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
+                            <button class="topnav__close">
+                                <img src="./app/img/Close.svg" alt="" width="32px" height="32px" id="btnClose"
+                                    aria-label="Close">
+                            </button>
+                            <ul>
+                                <li>
+                                    <div class="list-container">
+                                        <a href="./about-me.html">About me</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-container">
+                                        <a href="./my-projects.html">Work <sup>(6)</sup></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-container">
+                                        <a href="./insight.html">Insight <sup>(1)</sup></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-container">
+                                        <a href="./contact.html">Contact</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon" id="myText"
+                                        onclick="copyContent(document.getElementById('tooltip-menu'))">
+                                        <span id="tooltip-menu" style="display: none;" onclick="copyContent(this)">Mail
+                                            has been copied</span>
+                                        <img src="./app/img/copy.svg" alt="">
+                                        Hello@melon.studio
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                    </nav>
+
+                </header>
+            </section>
+            <main>
+                <section class="hero__content">
+                    <div class="h1-container">
+
+                        <h1 class="hero__content--header">
+                            <div class="word-container" style="margin-block-start: -8px;">
+                                <img src="./app/img/about-me-image.png" alt="" class="word">
+                            </div>
+                            <div class="word-container">
+                                <span class="word">Hello, </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">I'm </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">Piotr </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">UX & UI </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">Designer.</span>
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="hero__content--text">
+                        <h5>
+                            <div class="word-container">
+                                <span class="word">With </span>
+
+                            </div>
+                            <div class="word-container">
+                                <span class="word">experience </span>
+
+                            </div>
+                            <div class="word-container">
+                                <span class="word">in </span>
+
+                            </div>
+                            <div class="word-container">
+                                <span class="word">a </span>
+
+                            </div>
+                            <div class="word-container">
+                                <span class="word">Creative </span>
+
+                            </div>
+                            <div class="word-container">
+                                <span class="word">Agency </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">as a </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">Graphic </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">Designer </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">and </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">as a </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">UX/UI </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">designer, </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">I combine </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">both </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">fields </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">to </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">understand </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">the </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">needs </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">of brands </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">and </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">create </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">experiences </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">that </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">bring </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">them </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">profit. </span>
+                            </div>
+                        </h5>
+                        <div class="paragraph-big">
+                            <div class="word-container">
+                                <span class="word">I </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">have </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">been </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">designing </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">and </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">developing </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">digital </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">products </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">for </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">over </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">5 years, </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">both </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">as a </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">full-time </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">employee </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">and </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">as a </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">freelancer </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">working </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">in the </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">gaming </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">industry, </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">through </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">the </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">legal </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">industry, </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">to </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">goverment </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word">projects.</span>
+                            </div>
+                        </div>
+                        <div class="contact-socials">
+                            <a href="./contact.html">
+                                <button>Write a message <img src="./app/img/send-plane.svg" alt=""></button>
+                            </a>
+                            <div class="socials">
+                                <div class="links">
+                                    <a href="https://www.behance.net/MelonToPies" class="links" target="_blank">
+                                        <div class="behance"><img src="./app/img/Behance.svg" alt="">Behance</div>
+
+                                    </a>
+                                    <a href=" " class="links" target="_blank">
+                                        <div class="Dribbble"><img src="./app/img/Dribbble.svg" alt="">Dribbble</div>
+
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/piotr-brzeziński-69a51115a/" class="links"
+                                        target="_blank">
+                                        <div class="Linkedin"><img src="./app/img/LinkedIn.svg" alt="">Linkedin</div>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="experience">
+                        <div class="header">
+                            <h2>Experience</h2>
+                            <p>As a freelancer I worked on the UX / UI of websites from the cryptocurrency, e-commerce,
+                                CSR, RCP industries. I am also constantly expanding my knowledge in the front-end area
+                                and coding simple websites.</p>
+                        </div>
+                        <div class="companies">
+                            <div class="companies__element">
+                                <div class="details">
+                                    <img class="webmetric" src="./app/img/Webmetric.svg" alt="">
+                                    <div class="details__name">
+                                        <div class="date">2023&nbsp-&nbspCurrent</div>
+
+                                        <div class="details__name--left">
+
+                                            <div class="name">Webmetric</div>
+                                            <div class="position">
+                                                <p>UX/UI Designer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="companies__element">
+                                <div class="details">
+                                    <img class="froggly" src="./app/img/Froggly.svg" alt="">
+                                    <div class="details__name">
+                                        <div class="date">2023&nbsp-&nbspCurrent</div>
+                                        <div class="details__name--left">
+
+                                            <div class="name">Froggly</div>
+                                            <div class="position">
+                                                <p>UI Designer</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="companies__element">
+                                <div class="details">
+                                    <img class="GPD" src="./app/img/GPD.svg" alt="">
+                                    <div class="details__name">
+                                        <div class="date">2018&nbsp-&nbsp2023</div>
+                                        <div class="details__name--left">
+                                            <div class="name">GPD Agency & Film Studio</div>
+                                            <div class="position">
+                                                <p>Senior Graphic Designer & UX/UI&nbspDesigner</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="date">2018&nbsp-&nbsp2023</div> -->
+                            </div>
+                            <div class="companies__element">
+                                <div class="details">
+                                    <img class="pitbull" src="./app/img/Pitbull-west-coast-brand-logo.svg" alt="">
+                                    <div class="details__name">
+                                        <div class="date">2018</div>
+                                        <div class="details__name--left">
+                                            <div class="name">Pitbull West Coast</div>
+                                            <div class="position">
+                                                <p>Sports Wear Designer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="services">
+                        <div class="services__heading">
+                            <h3>How my <span class="empower">service process </span>looks like</h3>
+                        </div>
+                        <div class="services__section">
+                            <div class="col">
+                                <div class="services-element">
+                                    <div class="icon"><img src="./app/img/Consulting.svg" alt=""></div>
+                                    <div class="services-content">
+                                        <div class="title">Consulting</div>
+                                        <div class="definition">The first stage is a conversation with the client, in
+                                            which he gets to know his needs, goals and vision. During this phase,
+                                            together we analyze the characteristics of the brand, its target group,
+                                            competition, values and the purpose of the project.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="services-element">
+                                    <div class="icon"><img src="./app/img/Designing.svg" alt=""></div>
+                                    <div class="services-content">
+                                        <div class="title">Designing</div>
+                                        <div class="definition">At the implementation stage, I move on to planning and
+                                            design. I create concepts and graphic solutions that meet the client's
+                                            conceptions and needs, while ensuring visual consistency with the brand.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="services-element">
+                                    <div class="icon"><img src="./app/img/Developing.svg" alt=""></div>
+                                    <div class="services-content">
+                                        <div class="title">Developing</div>
+                                        <div class="definition">The final phase is the implementation of the website.
+                                            This requires supervision and experience, which is why I support the client
+                                            throughout the entire process from start to finish.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+                </section>
+                <section class="faq" id="FAQ">
+                    <div class="faq__header">
+                        <h2>F.A.Q.</h2>
+                        <p>The first stage is a conversation with the client, in which he gets to know his needs, goals
+                            and vision. During this phase, together we analyze the characteristics of the brand, its
+                            target group, competition, values and the purpose of the project.</p>
+                        <div class="faq__header--more">
+                            <p class="light-p">Do you still have any questions?</p>
+                            <p>Contact me and I'll get back to you as soon as it's possible.</p>
+                            <a href="./contact.html">
+                                <button>Write a message <img src="./app/img/send-plane.svg" alt=""></button>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="accordion">
+
+                        <div class="accordion-item">
+                            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">
+                                    How much does a website design project typically cost?
+                                </span><span class="icon" aria-hidden="true"></span></button>
+                            <div class="accordion-content">
+                                <p>
+                                    The cost of designing a website's UI & UX, along with development, can vary
+                                    significantly depending on several factors, such as the complexity of the project,
+                                    the scope of the project, the experience of the agency or designer, location, and
+                                    additional services.<br><br>
+                                    Generally speaking, the cost can range from several thousand to tens of thousands of
+                                    dollars.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">
+                                    Will the website be fully developed and ready for launch upon completion?
+                                </span><span class="icon" aria-hidden="true"></span></button>
+                            <div class="accordion-content">
+                                <p>
+                                    Yes, I offer complete website solutions. This includes both design and development,
+                                    ensuring that your website is not only visually appealing but also fully functional
+                                    and ready for launch.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">
+                                    Do you design e-commerce websites, and what features can be included?
+                                </span><span class="icon" aria-hidden="true"></span></button>
+                            <div class="accordion-content">
+                                <p>
+                                    Yes, I design e-commerce website and I also take care of their features. There are
+                                    many different tools that you canuse within e-commerce website design, depending on
+                                    your needs and brand specifications.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">
+                                    How long does it typically take to complete a website design project?
+                                </span><span class="icon" aria-hidden="true"></span></button>
+                            <div class="accordion-content">
+                                <p>
+                                    The time needed for design and developing, e.g. an e-commerce website, may take from
+                                    2 to 4 weeks and approximately the same amount of time for development. It is also
+                                    worth taking into account additional time for tests, corrections and final
+                                    adaptation of the project to the client's needs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">
+                                    What is the process for revisions and feedback during the design phase?
+                                </span><span class="icon" aria-hidden="true"></span></button>
+                            <div class="accordion-content">
+                                <p>
+                                    The UI/UX design revised and feedback reporting process includes client input,
+                                    concept and mockup creation, client feedback collection, iterative on client
+                                    feedback, significant control testing, and final client acceptance of the design.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">
+                                    Are the websites you design mobile-responsive?
+                                </span><span class="icon" aria-hidden="true"></span></button>
+                            <div class="accordion-content">
+                                <p>
+                                    I usually start the process with low-fidelity mockups to gain as much information as
+                                    possible in the shortest possible time. Then I prepare a mockup of the Homepage, and
+                                    finally I create the rest of the subpages. At each of these stages, client gets
+                                    involved and accepts the work and functionalities that I done previously.
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </main>
+            <footer class="section">
+                <div class="footer-bg">
+                    <div class="footer__content">
+                        <div class="header">
+                            <h1><span class="empower">Let's talk</span> about your&nbspproject</h1>
+                            <div class="header--actions">
+                                <a href="./contact.html">
+                                    <button>Fill the form<img src="./app/img/send-plane.svg" alt="send"></button>
+                                </a>
+                                <div class="mail">or copy an email: <div class="mail--action"
+                                        style="position: relative;"
+                                        onclick="copyContent(document.getElementById('tooltip'))">
+                                        Hello@melon.studio
+                                        <img src="./app/img/copy.svg" alt="copy">
+                                        <div id="tooltip" style="display: none;" onclick="copyContent(this)">Mail has
+                                            been copied</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widgets">
+                            <div class="widgets__spotify">
+                                <div class="widgets__spotify--header">
+                                    <div class="header">Listening</div>
+                                    <div class="time" id="isLiveContainer">2 hours ago</div>
+                                </div>
+                                <a href="" target="_blank" id="spotifyLink">
+                                    <div class="widgets__spotify--content">
+                                        <img src="" id="imgContainer" alt="" height="60px" width="60px">
+                                        <div class="song">
+                                            <div class="song__title" id="titleContainer"></div>
+                                            <div class="song__author" id="authorContainer"></div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="widgets__reading">
+                                <div class="widgets__reading--header">
+                                    <div class="header">Reading</div>
+                                </div>
+                                <div class="widgets__reading--content">
+                                    <img src="./app/img/Reading-image.jpg" alt="">
+                                    <div class="book">
+                                        <div class="book__title">The Umami Strategy</div>
+                                        <div class="book__author">Aga Szóstek</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="additional-information">
+                        <div class="footer__info">
+                            <div class="footer__info--version">
+                                <div class="header">Version</div>
+                                <p>2023 © melon.studio</p>
+                            </div>
+                            <div class="footer__info--timezone">
+                                <div class="header">Local time</div>
+                                <p><span id="currentDate"></span> UTC+1 Poznań, Poland</p>
+                            </div>
+                        </div>
+                        <div class="footer__socials">
+                            <div class="footer__socials--link">
+                                <div class="header">Socials</div>
+                                <div class="links">
+                                    <a href="https://www.behance.net/MelonToPies" class="links" target="_blank">
+                                        <div class="behance"><img src="./app/img/Behance.svg" alt="">Behance</div>
+
+                                    </a>
+                                    <a href=" " class="links" target="_blank">
+                                        <div class="Dribbble"><img src="./app/img/Dribbble.svg" alt="">Dribbble</div>
+
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/piotr-brzeziński-69a51115a/" class="links"
+                                        target="_blank">
+                                        <div class="Linkedin"><img src="./app/img/LinkedIn.svg" alt="">Linkedin</div>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="./app/script/script.js"></script>
+    <script>
+
+        // use a script tag or an external JS file
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger)
+            // Animate From
+            $("header").each(function (index) {
+
+                gsap.from("h1 .word", 1, {
+                    delay: 0.5,
+                    rotation: 5,
+                    opacity: 0,
+                    y: 50,
+                    stagger: .05,
+                    ease: "power4.inOut",
+
+                });
+                gsap.from(".hero__content h5 .word", 1, {
+                    delay: 1,
+                    rotateX: -40,
+                    rotation: 5,
+                    opacity: 0,
+                    y: 50,
+                    stagger: .05,
+                    ease: "power4.inOut",
+
+                });
+                gsap.from(".paragraph-big .word", 1, {
+                    delay: 1,
+                    rotateX: -40,
+                    rotation: 5,
+                    opacity: 0,
+                    y: 50,
+                    stagger: .05,
+                    ease: "power4.inOut",
+
+                });
+                gsap.from(".contact-socials a", 1, {
+                    delay: 2,
+                    rotateX: -40,
+                    rotation: 5,
+                    opacity: 0,
+                    y: 50,
+                    stagger: .05,
+                    ease: "expo.out",
+
+                });
+                gsap.from("body .wrapper .container .hero header nav ul li", 1, {
+                    delay: 2,
+                    rotation: 20,
+                    y: 80,
+                    stagger: .12,
+                    ease: "power4.inOut"
+                });
+                gsap.from("#M, #E, #L, #O, #N", 1, {
+                    delay: 2,
+                    y: 60,
+                    opacity: 0,
+                    stagger: {
+                        amount: -.2,
+                    },
+                    ease: "power4.inOut"
+                });
+                gsap.from(".wrapper.about-me .container main .project-archive .header h2", 1, {
+                    delay: 2,
+                    y: 60,
+                    opacity: 0,
+                    stagger: {
+                        amount: -.2,
+                    },
+                    ease: "power4.inOut"
+                });
+                gsap.from(".project", 1.5, {
+                    delay: 2.2,
+                    clipPath: "inset(700px 0px 0px 0px)",
+                    ease: "power4.inOut",
+                });
+                gsap.from(".topnav__open", 1, {
+                    delay: 2.5,
+                    y: 10,
+                    opacity: 0,
+                    ease: "power4.out",
+                });
+                gsap.to("body .wrapper .container .hero header nav ul", {
+                    delay: 4,
+                    overflow: "visible",
+                });
+
+            });
+        });
+        ScrollTrigger.defaults({
+            markers: false
+        });
+    </script>
+</body>
+
+</html>

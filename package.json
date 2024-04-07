@@ -1,20 +1,17 @@
 {
-  "name": "spotify-player",
+  "name": "nazwa-projektu",
   "version": "1.0.0",
-  "description": "",
+  "description": "Opis projektu",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd client && npm start\" \"cd server && npm start\"",
-    "install": "cd client && npm install && cd ../server && npm install"
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^8.2.2"
-  },
+  "author": "Dzm11",
+  "license": "Licencja",
   "dependencies": {
-    "live-server": "^1.2.2",
-    "postcss-import": "^16.0.0"
+    "axios": "^0.24.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "spotify-web-api-node": "^5.0.0"
   }
 }
