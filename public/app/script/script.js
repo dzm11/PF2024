@@ -219,6 +219,12 @@ gsap.ticker.lagSmoothing(0)
 async function getCurrentTrack() {
   try {
     const response = await fetch('/current-track');
+
+    // Sprawdzenie, czy odpowiedź jest poprawna (status 200)
+    if (!response.ok) {
+      throw new Error('Nie można pobrać danych');
+    }
+
     const data = await response.json();
     const currentTrackElement = document.getElementById('spotifyContainer');
     const isLiveContainer = document.getElementById('isLiveContainer');
@@ -257,10 +263,16 @@ async function getCurrentTrack() {
     `;
   } catch (error) {
     console.error('Błąd pobierania aktualnej piosenki:', error);
+
+    // Obsługa błędów dla użytkownika (może być wyświetlony jakiś komunikat)
+    const errorMessage = document.createElement('div');
+    errorMessage.textContent = 'Wystąpił błąd podczas pobierania danych.';
+    document.body.appendChild(errorMessage);
   }
 }
 
 getCurrentTrack();
+
 
 
 
@@ -328,10 +340,6 @@ function toggleAccordion() {
 }
 
 items.forEach(item => item.addEventListener('click', toggleAccordion));
-
-
-
-
 
 
 /////////////////////
