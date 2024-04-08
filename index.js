@@ -7,7 +7,7 @@ const axios = require('axios');
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.CLIENT_ID,
@@ -60,6 +60,7 @@ app.get('/current-track', async (req, res) => {
     await refreshTokens();
     const data = await spotifyApi.getMyCurrentPlayingTrack();
     const track = data.body;
+    console.log("udalo sie wejsc w try")
 
     // Jeśli obiekt item jest pusty, pobierz informacje o ostatnio odtwarzanej piosence
     if (!track) {
