@@ -43,11 +43,22 @@ async function refreshTokens() {
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-//redirect url
+// Middleware to handle redirection
 app.use((req, res, next) => {
+  // Check if request hostname is not 'melon.studio'
   if (req.hostname !== 'melon.studio') {
-    return res.redirect(301, 'https://melon.studio' + req.originalUrl);
+    // Redirect to 'https://melon.studio'
+    return res.redirect(301, 'https://melon.studio');
   }
+
+  // Check if request URL ends with '.html'
+  if (req.url.endsWith('.html')) {
+    // If it does, remove '.html' from the URL and redirect
+    const newUrl = req.url.slice(0, -5); // Remove last 5 characters ('.html')
+    return res.redirect(301, `https://melon.studio${newUrl}`);
+  }
+
+  // If none of the above conditions are met, proceed to next middleware
   next();
 });
 
