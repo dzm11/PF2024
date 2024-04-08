@@ -43,6 +43,14 @@ async function refreshTokens() {
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
 
+//redirect url
+app.use((req, res, next) => {
+  if (req.hostname !== 'melon.studio') {
+    return res.redirect(301, 'https://melon.studio' + req.originalUrl);
+  }
+  next();
+});
+
 // Routes
 app.get('/api/authorize', (req, res) => {
   const authorizeURL = spotifyApi.createAuthorizeURL(['user-read-currently-playing'], 'some-state');
@@ -87,5 +95,7 @@ app.get('/api/current-track', async (req, res) => {
 app.listen(port, () => {
   console.log(`Serwer uruchomiony na porcie 10000`);
 });
+
+
 
 
