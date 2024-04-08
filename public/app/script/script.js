@@ -218,7 +218,7 @@ gsap.ticker.lagSmoothing(0)
 
 async function getCurrentTrack() {
   try {
-    const response = await fetch('/current-track');
+    const response = await fetch('/api/current-track'); // Zmiana adresu zapytania
 
     // Sprawdzenie, czy odpowiedź jest poprawna (status 200)
     if (!response.ok) {
@@ -272,6 +272,7 @@ async function getCurrentTrack() {
 }
 
 getCurrentTrack();
+
 
 
 
