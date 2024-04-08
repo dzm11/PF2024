@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const SpotifyWebApi = require('spotify-web-api-node');
 const dotenv = require('dotenv');
@@ -7,7 +8,12 @@ const axios = require('axios');
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 10000;
+
+// Dodaj middleware cors
+app.use(cors());
+
+// Twoje pozostałe konfiguracje i trasy...
 
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.CLIENT_ID,
@@ -38,12 +44,12 @@ async function refreshTokens() {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-app.get('/authorize', (req, res) => {
+app.get('/api/authorize', (req, res) => {
   const authorizeURL = spotifyApi.createAuthorizeURL(['user-read-currently-playing'], 'some-state');
   res.redirect(authorizeURL);
 });
 
-app.get('/callback', async (req, res) => {
+app.get('/api/callback', async (req, res) => {
   const { code } = req.query;
   try {
     const data = await spotifyApi.authorizationCodeGrant(code);
@@ -57,7 +63,7 @@ app.get('/callback', async (req, res) => {
   }
 });
 
-app.get('api/current-track', async (req, res) => {
+app.get('/api/current-track', async (req, res) => {
   try {
     await refreshTokens();
     const data = await spotifyApi.getMyCurrentPlayingTrack();
@@ -79,7 +85,7 @@ app.get('api/current-track', async (req, res) => {
 
 // Start server
 app.listen(port, () => {
-  console.log(`Serwer uruchomiony na porcie 3000`);
+  console.log(`Serwer uruchomiony na porcie 10000`);
 });
 
 
