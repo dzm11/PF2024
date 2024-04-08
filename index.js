@@ -81,3 +81,5 @@ app.get('/current-track', async (req, res) => {
 app.listen(port, () => {
   console.log(`Serwer uruchomiony na http://localhost:${port}`);
 });
+
+
