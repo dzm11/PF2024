@@ -10,15 +10,5 @@
     "spotify-web-api-node": "^5.1.1",
     "dotenv": "^10.0.0",
     "axios": "^0.24.0"
-  },
-  "vercel": {
-    "routes": {
-      "/api/(.*)": {
-        "source": "/index.js"
-      },
-      "/(.*)": {
-        "source": "/public/$1"
-      }
-    }
   }
 }
