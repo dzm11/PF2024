@@ -228,7 +228,7 @@ span.empower {
   color: var(--82);
 }
 
-#tooltip, #tooltip-menu {
+#tooltip-menu {
   background-color: var(--82);
   color: var(--12);
   padding: 8px 12px;
@@ -237,6 +237,18 @@ span.empower {
   position: absolute;
   bottom: -32px;
   left: 28px;
+  text-decoration: none;
+}
+
+#tooltip {
+  background-color: var(--82);
+  color: var(--12);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  position: absolute;
+  bottom: -36px;
+  left: -7px;
   text-decoration: none;
 }
 
