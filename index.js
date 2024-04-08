@@ -34,8 +34,10 @@ async function refreshTokens() {
   }
 }
 
+// Static files
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Routes
 app.get('/authorize', (req, res) => {
   const authorizeURL = spotifyApi.createAuthorizeURL(['user-read-currently-playing'], 'some-state');
   res.redirect(authorizeURL);
@@ -60,7 +62,6 @@ app.get('/current-track', async (req, res) => {
     await refreshTokens();
     const data = await spotifyApi.getMyCurrentPlayingTrack();
     const track = data.body;
-    console.log("udalo sie wejsc w try")
 
     // Jeśli obiekt item jest pusty, pobierz informacje o ostatnio odtwarzanej piosence
     if (!track) {
@@ -76,6 +77,7 @@ app.get('/current-track', async (req, res) => {
   }
 });
 
+// Start server
 app.listen(port, () => {
   console.log(`Serwer uruchomiony na http://localhost:${port}`);
 });
