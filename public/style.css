@@ -228,10 +228,6 @@ span.empower {
   color: var(--82);
 }
 
-.hp-logo {
-  margin-top: 12px;
-}
-
 #tooltip, #tooltip-menu {
   background-color: var(--82);
   color: var(--12);
@@ -239,8 +235,8 @@ span.empower {
   border-radius: 8px;
   font-size: 14px;
   position: absolute;
-  bottom: -40px;
-  left: -6px;
+  bottom: -32px;
+  left: 28px;
   text-decoration: none;
 }
 
