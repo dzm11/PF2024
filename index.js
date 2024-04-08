@@ -57,7 +57,7 @@ app.get('/callback', async (req, res) => {
   }
 });
 
-app.get('/current-track', async (req, res) => {
+app.get('api/current-track', async (req, res) => {
   try {
     await refreshTokens();
     const data = await spotifyApi.getMyCurrentPlayingTrack();
@@ -79,7 +79,7 @@ app.get('/current-track', async (req, res) => {
 
 // Start server
 app.listen(port, () => {
-  console.log(`Serwer uruchomiony na http://localhost:${port}`);
+  console.log(`Serwer uruchomiony na porcie 3000`);
 });
 
 
