@@ -1,108 +1,81 @@
 const express = require('express');
-const cors = require('cors');
-const path = require('path');
-const SpotifyWebApi = require('spotify-web-api-node');
-const dotenv = require('dotenv');
 const axios = require('axios');
-
-dotenv.config();
+require('dotenv').config();
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 10000;
 
-// Dodaj middleware cors
-app.use(cors());
+const spotifyAPIBaseUri = 'https://api.spotify.com';
+const spotifyAccountsBaseUri = 'https://accounts.spotify.com';
 
-// Twoje pozostałe konfiguracje i trasy...
+const clientId = process.env.CLIENT_ID;
+const clientSecret = process.env.CLIENT_SECRET;
+const refreshToken = process.env.SPOTIFY_REFRESH_TOKEN;
+let accessToken = '';
 
-const spotifyApi = new SpotifyWebApi({
-  clientId: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-  redirectUri: process.env.REDIRECT_URI,
-  refreshToken: process.env.SPOTIFY_REFRESH_TOKEN
-});
-
-// Funkcja do odświeżania tokenów Spotify
-async function refreshTokens() {
+const refreshAccessToken = async () => {
   try {
-    const { data } = await axios.post('https://accounts.spotify.com/api/token', null, {
-      params: {
-        grant_type: 'refresh_token',
-        refresh_token: process.env.SPOTIFY_REFRESH_TOKEN,
-        client_id: process.env.CLIENT_ID,
-        client_secret: process.env.CLIENT_SECRET,
+    const response = await axios.post(
+      `${spotifyAccountsBaseUri}/api/token`,
+      `grant_type=refresh_token&refresh_token=${refreshToken}`,
+      {
+        headers: {
+          Authorization: `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`,
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
       }
-    });
-
-    spotifyApi.setAccessToken(data.access_token);
+    );
+    accessToken = response.data.access_token;
+    console.log('Access token refreshed:', accessToken);
   } catch (error) {
-    console.error('Błąd odświeżania tokenów Spotify:', error.response ? error.response.data : error.message);
+    console.error('Failed to refresh Spotify token:', error.message);
   }
-}
+};
 
-// Static files
+const getCurrentPlayingTrack = async () => {
+  try {
+    const response = await axios.get(`${spotifyAPIBaseUri}/v1/me/player/currently-playing`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch currently playing track:', error.message);
+    throw error;
+  }
+};
+
+const getRecentlyPlayedTracks = async () => {
+  try {
+    const response = await axios.get(`${spotifyAPIBaseUri}/v1/me/player/recently-played`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Failed to fetch recently played tracks:', error.message);
+    throw error;
+  }
+};
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-// // Middleware to handle redirection
-// app.use((req, res, next) => {
-//   // Check if request hostname is not 'melon.studio'
-//   if (req.hostname !== 'melon.studio') {
-//     // Redirect to 'https://melon.studio'
-//     return res.redirect(301, 'https://melon.studio');
-//   }
-
-//   // Check if request URL ends with '.html'
-//   if (req.url.endsWith('.html')) {
-//     // If it does, remove '.html' from the URL and redirect
-//     const newUrl = req.url.slice(0, -5); // Remove last 5 characters ('.html')
-//     return res.redirect(301, `https://melon.studio${newUrl}`);
-//   }
-
-//   // If none of the above conditions are met, proceed to next middleware
-//   next();
-// });
-
-// Routes
-app.get('/api/authorize', (req, res) => {
-  const authorizeURL = spotifyApi.createAuthorizeURL(['user-read-currently-playing'], 'some-state');
-  res.redirect(authorizeURL);
-});
-
-app.get('/api/callback', async (req, res) => {
-  const { code } = req.query;
+app.get('/player-info', async (req, res) => {
   try {
-    const data = await spotifyApi.authorizationCodeGrant(code);
-    const { access_token, refresh_token } = data.body;
-    spotifyApi.setAccessToken(access_token);
-    spotifyApi.setRefreshToken(refresh_token);
-    res.send('Autoryzacja zakończona pomyślnie. Możesz teraz zamknąć to okno.');
+    const currentTrack = await getCurrentPlayingTrack();
+    const recentTracks = await getRecentlyPlayedTracks();
+    res.json({ currentTrack, recentTracks });
   } catch (error) {
-    console.error('Błąd autoryzacji:', error);
-    res.status(500).send('Wystąpił błąd podczas autoryzacji.');
+    res.status(500).send('Error fetching player info');
   }
 });
 
-app.get('/api/current-track', async (req, res) => {
-  try {
-    await refreshTokens();
-    const data = await spotifyApi.getMyCurrentPlayingTrack();
-    const track = data.body;
-
-    // Jeśli obiekt item jest pusty, pobierz informacje o ostatnio odtwarzanej piosence
-    if (!track) {
-      const lastTrackData = await spotifyApi.getMyRecentlyPlayedTracks({ limit: 1 });
-      const lastTrack = lastTrackData.body.items[0];
-      res.json(lastTrack.track);
-    } else {
-      res.json(track);
-    }
-  } catch (error) {
-    console.error('Błąd pobierania aktualnej piosenki:', error);
-    res.status(error.statusCode || 500).send(error.message || 'Wystąpił błąd podczas pobierania aktualnie odtwarzanej piosenki.');
-  }
-});
-
-// Start server
-app.listen(port, () => {
-  console.log(`Serwer uruchomiony na porcie 10000`);
+app.listen(port, async () => {
+  console.log(`Server is running on port ${port}`);
+  await refreshAccessToken();
+  // Refresh access token every hour
+  setInterval(refreshAccessToken, 3600000);
 });

@@ -125,68 +125,199 @@ gsap.ticker.lagSmoothing(0)
 // //Fetching Song
 // ///////////////
 
-async function getCurrentTrack() {
+async function fetchPlayerInfo() {
   try {
-    const response = await fetch('/api/current-track');
-
-    // Sprawdzenie, czy odpowiedź jest poprawna (status 200)
+    const response = await fetch('/player-info');
     if (!response.ok) {
-      throw new Error('Nie można pobrać danych');
+      throw new Error('Error fetching player info');
     }
-
     const data = await response.json();
-    const currentTrackElement = document.getElementById('spotifyContainer');
-    const isLiveContainer = document.getElementById('isLiveContainer');
-    const spotifyLink = document.getElementById('spotifyLink');
-
-    const songLink = data.item.external_urls.spotify;
-
-
-    spotifyLink.href = songLink;
-
-    if (data.is_playing) {
-      // Jeśli odtwarzana jest piosenka
-      isLiveContainer.innerHTML = 'LIVE';
-      isLiveContainer.classList.add('live');
-    } else {
-      const lastPlayedTimestamp = new Date(data.timestamp).getTime();
-      const currentTime = new Date().getTime();
-      const timeDifference = currentTime - lastPlayedTimestamp;
-
-      const minute = 60 * 1000;
-      const hour = 60 * minute;
-      const day = 24 * hour;
-
-      if (timeDifference < hour) {
-        const minutesAgo = Math.floor(timeDifference / minute);
-        isLiveContainer.innerHTML = `${minutesAgo} minutes ago`;
-      } else if (timeDifference < day) {
-        const hoursAgo = Math.floor(timeDifference / hour);
-        isLiveContainer.innerHTML = `${hoursAgo} hours ago`;
-      } else {
-        const daysAgo = Math.floor(timeDifference / day);
-        isLiveContainer.innerHTML = `${daysAgo} days ago`;
-      }
-    }
-
-    currentTrackElement.innerHTML = `
-      <img src="${data.item.album.images[0].url}" id="imgContainer" alt="" height="60px" width="60px">
-      <div class="song">
-          <div class="song__title" id="titleContainer">${data.item.name}</div>
-          <div class="song__author" id="authorContainer">${data.item.artists[0].name}</div>
-      </div>
-    `;
+    return data;
   } catch (error) {
-    console.error('Błąd pobierania aktualnej piosenki:', error);
-
-    // Obsługa błędów dla użytkownika (może być wyświetlony jakiś komunikat)
-    const errorMessage = document.createElement('div');
-    errorMessage.textContent = 'Wystąpił błąd podczas pobierania danych.';
-    document.body.appendChild(errorMessage);
+    console.error('Error fetching player info:', error.message);
+    throw error;
   }
 }
 
-getCurrentTrack();
+function formatTimeAgo(timeElapsed) {
+  const minutesAgo = Math.floor(timeElapsed / (1000 * 60));
+  if (minutesAgo < 60) {
+    return `${minutesAgo} minutes ago`;
+  } else if (minutesAgo < 1440) {
+    const hoursAgo = Math.floor(minutesAgo / 60);
+    return `${hoursAgo} hours ago`;
+  } else {
+    const daysAgo = Math.floor(minutesAgo / 1440);
+    return `${daysAgo} days ago`;
+  }
+}
+
+async function displayTrackInfo() {
+  try {
+    const { currentTrack, recentTracks } = await fetchPlayerInfo();
+    const trackInfo = document.getElementById('widgets__spotify');
+
+    if (currentTrack && currentTrack.is_playing) {
+      // Display currently playing track
+      const trackName = currentTrack.item.name;
+      const artistName = currentTrack.item.artists.map(artist => artist.name).join(', ');
+      const trackUrl = currentTrack.item.external_urls.spotify;
+      const imageUrl = currentTrack.item.album.images[0].url;
+
+      // Tworzymy zawartość widgetu Spotify
+      trackInfo.innerHTML = `
+        <div class="widgets__spotify--header">
+            <div class="header">Listening</div>
+            <div class="time" id="isLiveContainer"></div>
+        </div>
+        <a href="${trackUrl}" target="_blank" id="spotifyLink">
+            <div id="spotifyContainer" class="widgets__spotify--content">
+                <img src="${imageUrl}" id="imgContainer" alt="" height="60px" width="60px">
+                <div class="song">
+                    <div class="song__title" id="titleContainer">${trackName}</div>
+                    <div class="song__author" id="authorContainer">${artistName}</div>
+                </div>
+            </div>
+        </a>
+    `;
+
+    const isLiveContainer = trackInfo.querySelector('#isLiveContainer');
+    isLiveContainer.innerHTML = 'LIVE';
+    isLiveContainer.classList.add('live');
+      
+      // trackInfo.innerHTML = `
+      //   <div>
+      //     <img src="${imageUrl}" alt="${trackName} Cover" style="max-width: 200px;">
+      //     <p>
+      //       <strong>${trackName}</strong> - ${artistName} (Played ${timeElapsedString})
+      //       <br>
+      //       <a href="${trackUrl}" target="_blank">Listen on Spotify</a>
+      //     </p>
+      //   </div>
+      // `;
+    } else if (recentTracks && recentTracks.items.length > 0) {
+      // Display latest recently played track
+      const latestTrack = recentTracks.items[0].track;
+      const trackName = latestTrack.name;
+      const artistName = latestTrack.artists.map(artist => artist.name).join(', ');
+      const playedAt = new Date(recentTracks.items[0].played_at);
+      const timeElapsed = Date.now() - playedAt.getTime();
+      const timeElapsedString = formatTimeAgo(timeElapsed);
+      const trackUrl = latestTrack.external_urls.spotify;
+      const imageUrl = latestTrack.album.images[0].url;
+
+      
+
+      trackInfo.innerHTML = `
+        <div class="widgets__spotify--header">
+            <div class="header">Listening</div>
+            <div class="time" id="isLiveContainer">${timeElapsedString}</div>
+        </div>
+        <a href="${trackUrl}" target="_blank" id="spotifyLink">
+            <div id="spotifyContainer" class="widgets__spotify--content">
+                <img src="${imageUrl}" id="imgContainer" alt="" height="60px" width="60px">
+                <div class="song">
+                    <div class="song__title" id="titleContainer">${trackName}</div>
+                    <div class="song__author" id="authorContainer">${artistName}</div>
+                </div>
+            </div>
+        </a>
+    `;
+    } else {
+      trackInfo.textContent = 'No track data available';
+    }
+  } catch (error) {
+    console.error('Error displaying track info:', error.message);
+  }
+}
+
+// Call the function to initially display track info
+displayTrackInfo();
+
+
+// async function getCurrentTrack() {
+//   try {
+//     const response = await fetch('/api/current-track');
+
+//     // Sprawdzenie, czy odpowiedź jest poprawna (status 200)
+//     if (!response.ok) {
+//       throw new Error('Nie można pobrać danych');
+//     }
+
+//     const data = await response.json();
+//     const currentTrackElement = document.getElementById('spotifyContainer');
+//     const isLiveContainer = document.getElementById('isLiveContainer');
+//     const spotifyLink = document.getElementById('spotifyLink');
+//     const widgets = document.getElementById('widgets');
+
+//     const songLink = data.item.external_urls.spotify;
+
+
+//     // spotifyLink.href = songLink;
+
+//     if (data.is_playing) {
+//       // Jeśli odtwarzana jest piosenka
+
+
+//     // Tworzymy nowy element div dla widgetu Spotify
+//     let widgets__spotify = document.createElement('div');
+//     widgets__spotify.classList.add('widgets__spotify');
+
+//     // Tworzymy zawartość widgetu Spotify
+//     widgets__spotify.innerHTML = `
+//         <div class="widgets__spotify--header">
+//             <div class="header">Listening</div>
+//             <div class="time" id="isLiveContainer"></div>
+//         </div>
+//         <a href="${data.item.external_urls.spotify}" target="_blank" id="spotifyLink">
+//             <div id="spotifyContainer" class="widgets__spotify--content">
+//                 <img src="${data.item.album.images[0].url}" id="imgContainer" alt="" height="60px" width="60px">
+//                 <div class="song">
+//                     <div class="song__title" id="titleContainer">${data.item.name}</div>
+//                     <div class="song__author" id="authorContainer">${data.item.artists[0].name}</div>
+//                 </div>
+//             </div>
+//         </a>
+//     `;
+
+//     // Dodajemy nowo utworzony element do kontenera o klasie "widgets"
+//     const widgetsContainer = document.querySelector('.widgets');
+//     widgetsContainer.appendChild(widgets__spotify);
+    
+//     const isLiveContainer = widgets__spotify.querySelector('#isLiveContainer');
+//     isLiveContainer.innerHTML = 'LIVE';
+//     isLiveContainer.classList.add('live');
+//     } else {
+//       const lastPlayedTimestamp = new Date(data.timestamp).getTime();
+//       const currentTime = new Date().getTime();
+//       const timeDifference = currentTime - lastPlayedTimestamp;
+
+//       const minute = 60 * 1000;
+//       const hour = 60 * minute;
+//       const day = 24 * hour;
+
+//       if (timeDifference < hour) {
+//         const minutesAgo = Math.floor(timeDifference / minute);
+//         isLiveContainer.innerHTML = `${minutesAgo} minutes ago`;
+//       } else if (timeDifference < day) {
+//         const hoursAgo = Math.floor(timeDifference / hour);
+//         isLiveContainer.innerHTML = `${hoursAgo} hours ago`;
+//       } else {
+//         const daysAgo = Math.floor(timeDifference / day);
+//         isLiveContainer.innerHTML = `${daysAgo} days ago`;
+//       }
+//     }
+//   } catch (error) {
+//     console.error('Błąd pobierania aktualnej piosenki:', error);
+
+//     // Obsługa błędów dla użytkownika (może być wyświetlony jakiś komunikat)
+//     // const errorMessage = document.createElement('div');
+//     // errorMessage.textContent = 'Wystąpił błąd podczas pobierania danych.';
+//     // document.body.appendChild(errorMessage);
+//   }
+// }
+
+// getCurrentTrack();
 
 
 
