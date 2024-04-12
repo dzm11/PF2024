@@ -252,6 +252,23 @@ span.empower {
   text-decoration: none;
 }
 
+.h1 {
+  font-family: var(--ff-primary);
+  color: var(--42);
+  font-size: clamp(2.2rem, 1.4831rem + 3.1861vw, 4rem);
+  line-height: 100%;
+  letter-spacing: 1px;
+}
+@media (max-width: 45rem) {
+  .h1 {
+    /* 720px */
+  }
+  .h1 {
+    line-height: 110%;
+    font-size: 32px;
+  }
+}
+
 @keyframes pulse-ring {
   0% {
     transform: scale(0.33);

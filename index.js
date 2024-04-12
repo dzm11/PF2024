@@ -2,6 +2,7 @@ const express = require('express');
 const axios = require('axios');
 require('dotenv').config();
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const port = process.env.PORT || 10000;
@@ -60,6 +61,17 @@ const getRecentlyPlayedTracks = async () => {
     throw error;
   }
 };
+
+app.use((req, res, next) => {
+  const { pathname } = new URL(req.url, `http://${req.headers.host}`);
+  if (pathname.endsWith('.html') && fs.existsSync(path.join(__dirname, 'public', pathname))) {
+    res.sendFile(path.join(__dirname, 'public', pathname));
+  } else if (fs.existsSync(path.join(__dirname, 'public', `${pathname}.html`))) {
+    res.sendFile(path.join(__dirname, 'public', `${pathname}.html`));
+  } else {
+    next();
+  }
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 
