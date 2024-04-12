@@ -4,7 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Melon Studio by Piotr Brzezinski</title>
+
+    <!-- Meta Tags dla SEO -->
+    <meta name="description"
+        content="Hello, I'm UX/UI Designer. You can find here my latest projects of web apps, web designs as well as my thoughts and inisght from web overall.">
+    <meta name="keywords"
+        content="UX Design, UI Design, WWW projektant, Brandinig, Graphic Designer, Projektowanie stron internetowych, projektowanie stron WWW, Usability">
+    <meta name="author" content="Melon Studio by Piotr Brzezinski">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags (dla udostępniania na platformach społecznościowych) -->
+    <meta property="og:title" content="Freelancer UX/UI Design - Melon Studio">
+    <meta property="og:description"
+        content="Hello, I'm UX/UI Designer. You can find here my latest projects of web apps, web designs as well as my thoughts and inisght from web overall.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://melon.studio">
+    <meta property="og:image" content="https://melon.studio/app/img/OG-img.png">
+    <meta property=" og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Melon Studio - Web Design">
+
+    <!-- Twitter Meta Tags (dla udostępniania na Twitterze) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Freelancer UX/UI Design - Melon Studio">
+    <meta name="twitter:description"
+        content="Hello, I'm UX/UI Designer. You can find here my latest projects of web apps, web designs as well as my thoughts and inisght from web overall.">
+    <meta name="twitter:image" content="https://melon.studio/app/img/Twitter-X-Card.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -86,8 +112,10 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="icon" id="myText" onclick="copyContent(document.getElementById('tooltip-menu'))">
-                                        <span id="tooltip-menu" style="display: none;" onclick="copyContent(this)">Mail has been copied</span>                                        
+                                    <div class="icon" id="myText"
+                                        onclick="copyContent(document.getElementById('tooltip-menu'))">
+                                        <span id="tooltip-menu" style="display: none;" onclick="copyContent(this)">Mail
+                                            has been copied</span>
                                         <img src="./../app/img/copy.svg" alt="">
                                         Hello@melon.studio
                                     </div>
@@ -108,7 +136,7 @@
                                 <span class="word empower">AI </span>
                             </div>
                             <div class="word-container">
-                                <span class="word empower">—  </span>
+                                <span class="word empower">— </span>
                             </div>
                             <div class="word-container">
                                 <span class="word empower">Puzzle</span>
@@ -151,7 +179,7 @@
                             <div class="word-container">
                                 <span class="word empower">puzzle.</span>
                             </div>
-                                 
+
                         </div>
                         <div class="project-category__icon">
                             <div class="word-container">
@@ -168,9 +196,12 @@
                     <div class="project-details">
                         <div class="header">
                             <h2>Project <span class="empower">Details</span></h2>
-                            <p class="big-paragraph">AI-Puzzle is an e-commerce platform selling user self-generated puzzles in AI. This unique approach allows users to create custom puzzles tailored to their preferences in Stable Diffusion.</p>
+                            <p class="big-paragraph">AI-Puzzle is an e-commerce platform selling user self-generated
+                                puzzles in AI. This unique approach allows users to create custom puzzles tailored to
+                                their preferences in Stable Diffusion.</p>
                             <p>
-                                Its stand out by innovative approach in AI technology, enabling creation of personalized puzzles. This platform offers a unique and innovative approach of future e-commerce.
+                                Its stand out by innovative approach in AI technology, enabling creation of personalized
+                                puzzles. This platform offers a unique and innovative approach of future e-commerce.
                             </p>
                         </div>
                         <div class="details">
@@ -191,7 +222,8 @@
                             <div class="divider"></div>
                             <div class="details__element">
                                 <div class="details__element--category">Site</div>
-                                <div class="details__element--text underline disabled-site-link"><a href="#">No website yet</a></div>
+                                <div class="details__element--text underline disabled-site-link"><a href="#">No website
+                                        yet</a></div>
                             </div>
                         </div>
                     </div>
@@ -268,7 +300,7 @@
                                         <div class="behance"><img src="./../app/img/Behance.svg" alt="">Behance</div>
 
                                     </a>
-                                    <a href=" " class="links" target="_blank">
+                                    <a href="https://dribbble.com/MelonToPies" class="links" target="_blank">
                                         <div class="Dribbble"><img src="./../app/img/Dribbble.svg" alt="">Dribbble</div>
 
                                     </a>
@@ -299,7 +331,7 @@
             gsap.registerPlugin(ScrollTrigger)
             // Animate From
             $("header").each(function (index) {
-                
+
                 gsap.from("h1 .word", 2.5, {
                     delay: 0.5,
                     rotation: 2,
@@ -318,7 +350,7 @@
                     ease: "expo.out",
 
                 });
-                
+
                 gsap.from("body .wrapper .container .hero header nav ul li", 1, {
                     delay: 1,
                     rotation: 20,

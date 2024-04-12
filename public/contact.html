@@ -4,7 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
+    <title>Melon Studio by Piotr Brzezinski</title>
+
+    <!-- Meta Tags dla SEO -->
+    <meta name="description"
+        content="Hello, I'm UX/UI Designer. You can find here my latest projects of web apps, web designs as well as my thoughts and inisght from web overall.">
+    <meta name="keywords"
+        content="UX Design, UI Design, WWW projektant, Brandinig, Graphic Designer, Projektowanie stron internetowych, projektowanie stron WWW, Usability">
+    <meta name="author" content="Melon Studio by Piotr Brzezinski">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags (dla udostępniania na platformach społecznościowych) -->
+    <meta property="og:title" content="Freelancer UX/UI Design - Melon Studio">
+    <meta property="og:description"
+        content="Hello, I'm UX/UI Designer. You can find here my latest projects of web apps, web designs as well as my thoughts and inisght from web overall.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://melon.studio">
+    <meta property="og:image" content="https://melon.studio/app/img/OG-img.png">
+    <meta property=" og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Melon Studio - Web Design">
+
+    <!-- Twitter Meta Tags (dla udostępniania na Twitterze) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Freelancer UX/UI Design - Melon Studio">
+    <meta name="twitter:description"
+        content="Hello, I'm UX/UI Designer. You can find here my latest projects of web apps, web designs as well as my thoughts and inisght from web overall.">
+    <meta name="twitter:image" content="https://melon.studio/app/img/Twitter-X-Card.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -21,7 +47,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 
 </head>
 
@@ -88,8 +114,10 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="icon" id="myText" onclick="copyContent(document.getElementById('tooltip-menu'))">
-                                        <span id="tooltip-menu" style="display: none;" onclick="copyContent(this)">Mail has been copied</span>                                        
+                                    <div class="icon" id="myText"
+                                        onclick="copyContent(document.getElementById('tooltip-menu'))">
+                                        <span id="tooltip-menu" style="display: none;" onclick="copyContent(this)">Mail
+                                            has been copied</span>
                                         <img src="./app/img/copy.svg" alt="">
                                         Hello@melon.studio
                                     </div>
@@ -265,7 +293,7 @@
                                                 </div>
 
                                             </a>
-                                            <a href=" " class="links" target="_blank">
+                                            <a href="https://dribbble.com/MelonToPies" class="links" target="_blank">
                                                 <div class="Dribbble"><img src="./app/img/Dribbble.svg" alt="">Dribbble
                                                 </div>
 
@@ -293,11 +321,14 @@
                             <div class="header--actions">
                                 <a href="./contact.html">
                                     <button>Fill the form<img src="./app/img/send-plane.svg" alt="send"></button>
-                                </a>                                <div class="mail">or copy an email: 
-                                    <div class="mail--action" style="position: relative;" onclick="copyContent(document.getElementById('tooltip'))">
-                                        Hello@melon.studio 
+                                </a>
+                                <div class="mail">or copy an email:
+                                    <div class="mail--action" style="position: relative;"
+                                        onclick="copyContent(document.getElementById('tooltip'))">
+                                        Hello@melon.studio
                                         <img src="./app/img/copy.svg" alt="copy">
-                                        <div id="tooltip" style="display: none;" onclick="copyContent(this)">Mail has been copied</div>
+                                        <div id="tooltip" style="display: none;" onclick="copyContent(this)">Mail has
+                                            been copied</div>
                                     </div>
                                 </div>
                             </div>
@@ -340,7 +371,7 @@
                                         <div class="behance"><img src="./app/img/Behance.svg" alt="">Behance</div>
 
                                     </a>
-                                    <a href=" " class="links" target="_blank">
+                                    <a href="https://dribbble.com/MelonToPies" class="links" target="_blank">
                                         <div class="Dribbble"><img src="./app/img/Dribbble.svg" alt="">Dribbble</div>
 
                                     </a>
@@ -362,46 +393,46 @@
     <script src="./app/script/script.js"></script>
     <script>
         //////////////
-/// Formularz
-//////////////
-const form = document.getElementById('form');
-const result = document.getElementById('result');
+        /// Formularz
+        //////////////
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const object = Object.fromEntries(formData);
-  const json = JSON.stringify(object);
-  result.innerHTML = "Please wait..."
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.innerHTML = "Please wait..."
 
-    fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
-        })
-        .then(async (response) => {
-            let json = await response.json();
-            if (response.status == 200) {
-                result.innerHTML = "Form submitted successfully";
-            } else {
-                console.log(response);
-                result.innerHTML = json.message;
-            }
-        })
-        .catch(error => {
-            console.log(error);
-            result.innerHTML = "Something went wrong!";
-        })
-        .then(function() {
-            form.reset();
-            setTimeout(() => {
-                result.style.display = "none";
-            }, 3000);
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = "Form submitted successfully";
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function () {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = "none";
+                    }, 3000);
+                });
         });
-});
     </script>
     <script>
         let mm = gsap.matchMedia();
