@@ -2,15 +2,31 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSX9E0XTGK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Define dataLayer and the gtag function -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
 
-  gtag('config', 'G-JSX9E0XTGK');
-</script>
+        // Set default consent to 'denied' as a placeholder
+        // Determine actual values based on your own requirements
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSX9E0XTGK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+        gtag('config', 'G-JSX9E0XTGK');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melon Studio by Piotr Brzezinski</title>
@@ -70,6 +86,18 @@
 </head>
 
 <body>
+    <div class="popup-overlay" id="cookieBanner">
+        <div class="popup">
+            <div class="popup__text">Melon.studio uses cookies from Google to deliver and enhance the quality of its
+                services and to analyze traffic.
+                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img src="./app/img/Close.svg" alt=""></button>
+            </div>
+            <div class="popup__buttons">
+                <button class="acceptCookies" id="acceptCookies" onclick="consentGranted()">Ok, got it</button>
+                <button class="moreCookies"><a href="./cookie-policy.html">Learn more</a></button>
+            </div>
+        </div>
+    </div>
     <div class="wrapper insights-page">
         <div class="container">
             <section class="hero">

@@ -202,10 +202,10 @@ async function displayTrackInfo() {
         </a>
     `;
 
-    const isLiveContainer = trackInfo.querySelector('#isLiveContainer');
-    isLiveContainer.innerHTML = 'LIVE';
-    isLiveContainer.classList.add('live');
-      
+      const isLiveContainer = trackInfo.querySelector('#isLiveContainer');
+      isLiveContainer.innerHTML = 'LIVE';
+      isLiveContainer.classList.add('live');
+
       // trackInfo.innerHTML = `
       //   <div>
       //     <img src="${imageUrl}" alt="${trackName} Cover" style="max-width: 200px;">
@@ -227,7 +227,7 @@ async function displayTrackInfo() {
       const trackUrl = latestTrack.external_urls.spotify;
       const imageUrl = latestTrack.album.images[0].url;
 
-      
+
 
       trackInfo.innerHTML = `
         <div class="widgets__spotify--header">
@@ -251,99 +251,8 @@ async function displayTrackInfo() {
     console.error('Error displaying track info:', error.message);
   }
 }
-
 // Call the function to initially display track info
 displayTrackInfo();
-
-
-// async function getCurrentTrack() {
-//   try {
-//     const response = await fetch('/api/current-track');
-
-//     // Sprawdzenie, czy odpowiedź jest poprawna (status 200)
-//     if (!response.ok) {
-//       throw new Error('Nie można pobrać danych');
-//     }
-
-//     const data = await response.json();
-//     const currentTrackElement = document.getElementById('spotifyContainer');
-//     const isLiveContainer = document.getElementById('isLiveContainer');
-//     const spotifyLink = document.getElementById('spotifyLink');
-//     const widgets = document.getElementById('widgets');
-
-//     const songLink = data.item.external_urls.spotify;
-
-
-//     // spotifyLink.href = songLink;
-
-//     if (data.is_playing) {
-//       // Jeśli odtwarzana jest piosenka
-
-
-//     // Tworzymy nowy element div dla widgetu Spotify
-//     let widgets__spotify = document.createElement('div');
-//     widgets__spotify.classList.add('widgets__spotify');
-
-//     // Tworzymy zawartość widgetu Spotify
-//     widgets__spotify.innerHTML = `
-//         <div class="widgets__spotify--header">
-//             <div class="header">Listening</div>
-//             <div class="time" id="isLiveContainer"></div>
-//         </div>
-//         <a href="${data.item.external_urls.spotify}" target="_blank" id="spotifyLink">
-//             <div id="spotifyContainer" class="widgets__spotify--content">
-//                 <img src="${data.item.album.images[0].url}" id="imgContainer" alt="" height="60px" width="60px">
-//                 <div class="song">
-//                     <div class="song__title" id="titleContainer">${data.item.name}</div>
-//                     <div class="song__author" id="authorContainer">${data.item.artists[0].name}</div>
-//                 </div>
-//             </div>
-//         </a>
-//     `;
-
-//     // Dodajemy nowo utworzony element do kontenera o klasie "widgets"
-//     const widgetsContainer = document.querySelector('.widgets');
-//     widgetsContainer.appendChild(widgets__spotify);
-    
-//     const isLiveContainer = widgets__spotify.querySelector('#isLiveContainer');
-//     isLiveContainer.innerHTML = 'LIVE';
-//     isLiveContainer.classList.add('live');
-//     } else {
-//       const lastPlayedTimestamp = new Date(data.timestamp).getTime();
-//       const currentTime = new Date().getTime();
-//       const timeDifference = currentTime - lastPlayedTimestamp;
-
-//       const minute = 60 * 1000;
-//       const hour = 60 * minute;
-//       const day = 24 * hour;
-
-//       if (timeDifference < hour) {
-//         const minutesAgo = Math.floor(timeDifference / minute);
-//         isLiveContainer.innerHTML = `${minutesAgo} minutes ago`;
-//       } else if (timeDifference < day) {
-//         const hoursAgo = Math.floor(timeDifference / hour);
-//         isLiveContainer.innerHTML = `${hoursAgo} hours ago`;
-//       } else {
-//         const daysAgo = Math.floor(timeDifference / day);
-//         isLiveContainer.innerHTML = `${daysAgo} days ago`;
-//       }
-//     }
-//   } catch (error) {
-//     console.error('Błąd pobierania aktualnej piosenki:', error);
-
-//     // Obsługa błędów dla użytkownika (może być wyświetlony jakiś komunikat)
-//     // const errorMessage = document.createElement('div');
-//     // errorMessage.textContent = 'Wystąpił błąd podczas pobierania danych.';
-//     // document.body.appendChild(errorMessage);
-//   }
-// }
-
-// getCurrentTrack();
-
-
-
-
-
 
 
 //////////////////
@@ -410,9 +319,68 @@ function toggleAccordion() {
 items.forEach(item => item.addEventListener('click', toggleAccordion));
 
 
-/////////////////////
-///Move top on scroll
-/////////////////////
-// document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+//////////////////
+/// Google Consent
+//////////////////
 
-// document.body.scrollTop = 0; // For Safari
+function consentGranted() {
+  // Zapisujemy stan zgody w localStorage
+  localStorage.setItem('cookieConsent', 'true');
+  // Aktualizujemy stan zgody za pomocą gtag
+  gtag('consent', 'update', {
+    'ad_storage': 'granted',
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'analytics_storage': 'granted'
+  });
+  // Ukrywamy banner
+  document.getElementById('cookieBanner').style.display = 'none';
+}
+
+function consentDenied() {
+  // Zapisujemy stan zgody w localStorage
+  localStorage.setItem('cookieConsent', 'false');
+  console.log(localStorage.getItem('cookieConsent'));
+
+
+  // Aktualizujemy stan zgody za pomocą gtag
+  gtag('consent', 'update', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  // Ukrywamy banner
+  document.getElementById('cookieBanner').style.display = 'none';
+}
+
+// Sprawdzamy stan zgody przy ładowaniu strony
+window.addEventListener('load', function () {
+
+  try {
+      // Pobieramy stan zgody z localStorage
+      var cookieConsent = localStorage.getItem('cookieConsent');
+      console.log(cookieConsent);
+
+      // Jeśli zgoda została udzielona wcześniej, ukrywamy banner
+      if (cookieConsent === 'true') {
+          document.getElementById('cookieBanner').style.display = 'none';
+      }
+      // Jeśli zgoda została odmówiona wcześniej, ukrywamy banner i aktualizujemy stan zgody
+      else if (cookieConsent === 'false') {
+          consentDenied();
+          document.getElementById('cookieBanner').style.display = 'block';
+      }
+      // Jeśli nie ma zgody w localStorage, wyświetlamy popup
+      else {
+          document.getElementById('cookieBanner').style.display = 'block';
+      }
+  } catch (e) {
+      // Obsługa błędu dostępu do localStorage
+      console.error('Error accessing localStorage:', e);
+      // Wyświetlamy popup w przypadku błędu dostępu do localStorage
+      document.getElementById('cookieBanner').style.display = 'block';
+  }
+});
+
+

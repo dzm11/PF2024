@@ -2,44 +2,43 @@
 <html lang="en">
 
 <head>
-<!-- Define dataLayer and the gtag function -->
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    <!-- Define dataLayer and the gtag function -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
 
-    // Set default consent to 'denied' as a placeholder
-    // Determine actual values based on your own requirements
-    gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied'
-    });
-</script>
+        // Set default consent to 'denied' as a placeholder
+        // Determine actual values based on your own requirements
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSX9E0XTGK"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSX9E0XTGK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
 
-    gtag('js', new Date());
-    gtag('config', 'G-JSX9E0XTGK');
-</script>
-
+        gtag('js', new Date());
+        gtag('config', 'G-JSX9E0XTGK');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melon Studio by Piotr Brzezinski</title>
 
     <!-- Fav Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./../app/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./../app/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./../app/img/favicon-16x16.png">
-    <link rel="manifest" href="./../app/img/site.webmanifest">
-    <link rel="mask-icon" href="./../app/img/safari-pinned-tab.svg" color="#1d1f21">
-    <link rel="shortcut icon" href="./../app/img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./app/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./app/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./app/img/favicon-16x16.png">
+    <link rel="manifest" href="./app/img/site.webmanifest">
+    <link rel="mask-icon" href="./app/img/safari-pinned-tab.svg" color="#1d1f21">
+    <link rel="shortcut icon" href="./app/img/favicon.ico">
     <meta name="msapplication-TileColor" content="#1d1f21">
-    <meta name="msapplication-config" content="./../app/img/browserconfig.xml">
+    <meta name="msapplication-config" content="./app/img/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Meta Tags dla SEO -->
@@ -72,7 +71,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./../style.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -90,15 +89,16 @@
         <div class="popup">
             <div class="popup__text">Melon.studio uses cookies from Google to deliver and enhance the quality of its
                 services and to analyze traffic.
-                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img src="./../app/img/Close.svg" alt=""></button>
+                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img
+                        src="./app/img/Close.svg" alt=""></button>
             </div>
             <div class="popup__buttons">
                 <button class="acceptCookies" id="acceptCookies" onclick="consentGranted()">Ok, got it</button>
-                <button class="moreCookies"><a href="./../cookie-policy.html">Learn more</a></button>
+                <button class="moreCookies"><a href="./cookie-policy.html">Learn more</a></button>
             </div>
         </div>
     </div>
-    <div class="wrapper project-default">
+    <div class="wrapper txt-page">
         <div class="container">
             <section class="hero">
                 <header>
@@ -130,34 +130,34 @@
                     <nav>
                         <span id="nav-label" hidden>Navigation</span>
                         <button class="topnav__open" aria-expanded="false" aria-labelledby="nav-label" id="btnOpen">
-                            <img src="./../app/img/menu.svg" alt="Icon that opens the mobile menu" width="24px"
+                            <img src="./app/img/menu.svg" alt="Icon that opens the mobile menu" width="24px"
                                 height="24px">
                             <p>Menu</p>
                         </button>
                         <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
                             <button class="topnav__close">
-                                <img src="./../app/img/Close.svg" alt="Icon that close mobile menu" width="32px"
+                                <img src="./app/img/Close.svg" alt="Icon that close mobile menu" width="32px"
                                     height="32px" id="btnClose" aria-label="Close">
                             </button>
                             <ul>
                                 <li>
                                     <div class="list-container">
-                                        <a href="./../about-me">About me</a>
+                                        <a href="./about-me">About me</a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="list-container">
-                                        <a href="./../my-projects">Work <sup>(6)</sup></a>
+                                        <a href="./my-projects">Work <sup>(6)</sup></a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="list-container">
-                                        <a href="./../insight">Insight <sup>(2)</sup></a>
+                                        <a href="./insight">Insight <sup>(2)</sup></a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="list-container">
-                                        <a href="./../contact">Contact</a>
+                                        <a href="./contact">Contact</a>
                                     </div>
                                 </li>
                                 <li>
@@ -165,7 +165,7 @@
                                         onclick="copyContent(document.getElementById('tooltip-menu'))">
                                         <span id="tooltip-menu" style="display: none;" onclick="copyContent(this)">Mail
                                             has been copied</span>
-                                        <img src="./../app/img/copy.svg" alt="Icon that copy my adress e-mail">
+                                        <img src="./app/img/copy.svg" alt="Icon that copy my adress e-mail">
                                         Hello@melon.studio
                                     </div>
 
@@ -178,106 +178,102 @@
                 </header>
             </section>
             <main>
-                <section class="hero__content">
-                    <div class="project-title">
-                        <h1 class="hero__content--title">
-                            <div class="word-container">
-                                <span class="word empower">BKT </span>
-                            </div>
-                            <div class="word-container">
-                                <span class="word empower">Elektronik</span>
-                            </div>
-                        </h1>
-                        <h1 class="hero__content--date">
-                            <div class="word-container">
-                                <span class="word empower">
-                                    2024
-                                </span>
-                            </div>
-                        </h1>
-                    </div>
-                    <div class="project-category">
-                        <div class="project-category__category">
-                            <div class="word-container">
-                                <span class="word empower">Redesign </span>
-                            </div>
-                            <div class="word-container">
-                                <span class="word empower">of </span>
-                            </div>
-                            <div class="word-container">
-                                <span class="word empower">technology </span>
-                            </div>
-                            <div class="word-container">
-                                <span class="word empower">e-commerce </span>
-                            </div>
-                            <div class="word-container">
-                                <span class="word empower">homepage </span>
-                            </div>
-                            <div class="word-container">
-                                <span class="word empower">company.</span>
-                            </div>
+                <section class="text-page-hero">
+                    <h1 class="title">
+                        Privacy policy
+                    </h1>
+                </section>
+                <section class="section insight-content">
+                    <div class="insight-content__lead">
+                        <p class="paragraph-light">Last updated: April 14 2024
+                            <br>
+                            <br>
+                            We will guard and protect the digital traces you leave on our website. And we will never
+                            sell your data. In order for us to provide you with the best possible experience on our
+                            websites, we need to collect and process certain information, for the performance of the
+                            agreement and for Melon Studio legitimate interests.
+                            <br>
+                            Depending on your use of the Services, that may include:
+                        </p>
+                        <br>
 
-                        </div>
-                        <div class="project-category__icon">
-                            <div class="word-container">
-                                <div class="word"> Discover <img src="./../app/img/arrow-corner-right-down.svg" alt="">
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            Tracking </h4>
+                        <p class="paragraph-light">
+                            We use cookies (small data files transferred onto computers or devices by websites) and
+                            pixels (tiny images embedded in a webpage) for record-keeping purposes and to enhance
+                            functionality. You may deactivate or restrict the transmission of cookies by changing your
+                            web browser's settings. Cookies that are already stored may be deleted at any time.
+                        </p>
+                        <p class="paragraph-light">
+                            We use "functional cookies" and "non functional cookies" (or "tracking" cookies). The
+                            functional cookies are necessary for offering you a functioning website and do not require
+                            GDPR consent (General Data Protection Regulation of the Europen Union). These allow us to:
+                        </p>
+                        <p class="paragraph-light">
+                            Tracking cookies are subject to GDPR consent, and we use them only after you have given your
+                            consent, for the sole purpose of improving our platform and our offer. We use third-party
+                            services that help us to analyze our website audience and gather information about our
+                            audience's online navigation for statistical and marketing purposes, to improve our site and
+                            to recognize and stop any misuse.
+                        </p>
+                        <p class="paragraph-light"> - </p>
+                        <p class="paragraph-light">
+                            When you visit our website, subscribe to a newsletter, or purchase products or
+                            subscriptions, we use trusted third-party services, which may collect data. We will only
+                            work with services that commit to the GDPR and will not sell your data or make them
+                            available to third parties for other purposes than hereabove mentioned.
+                        </p>
+                    </div>
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            Data Retention
+                        </h4>
+                        <p class="paragraph-light">
+                            Users can request the deletion of their personal data at any time by contacting us at
+                            hello@melon.studio. Any personal data collected via Google Analytics is subject to Google's
+                            retention policies.
+                        </p>
+                    </div>
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            Changes To This Privacy Policy
+                        </h4>
+                        <p class="paragraph-light">
+                            This Privacy Policy is effective as of April 14th, 2024 and will remain in effect, except
+                            for
+                            any changes to its provisions in the future, which will take effect immediately upon being
+                            posted on this page. We reserve the right to update or change our Privacy Policy at any
+                            time. You should check this Privacy Policy periodically. Your continued use of the Service
+                            after we post any modifications to the Privacy Policy on this page will constitute your
+                            acknowledgment of the modifications and your consent to abide by the modified Privacy
+                            Policy. If we make any material changes to this Privacy Policy, we will notify you either
+                            through the email address you have provided us or by placing a prominent notice on our
+                            website.
+                        </p>
+                    </div>
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            Requests
+                        </h4>
+                        <p class="paragraph-light">
+                            Visitors have the right to request access to their personal data, rectification, deletion,
+                            restriction of processing, objection to processing, withdrawal of consent for processing,
+                            and the right to lodge a complaint with a supervisory authority.
+                        </p>
+                    </div>
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            Contact
+                        </h4>
+                        <p class="paragraph-light">
+                            If you have any questions about this Privacy Policy, please contact us at hello@melon.studio.
+                        </p>
                     </div>
                 </section>
-                <section class="section project-hero-image">
-                    <img src="./../app/img/projects/project-hero-image.webp" alt="">
-                </section>
-                <section class="section project-details">
-                    <div class="project-details">
-                        <div class="header">
-                            <h2>Project <span class="empower">Details</span></h2>
-                            <p class="big-paragraph">BKT Elektronik is a manufacturer and supplier of comprehensive
-                                solutions for the ICT industry.</p>
-                            <p>
-                                We offer cabling systems intended for the construction of telecommunications
-                                infrastructure and solutions used in the implementation of Data Center projects.</p>
-                            </p>
-                        </div>
-                        <div class="details">
-                            <div class="details__element">
-                                <div class="details__element--category">Client</div>
-                                <div class="details__element--text">BKT Elektronik</div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="details__element">
-                                <div class="details__element--category">Services</div>
-                                <div class="details__element--text">Homepage redesign</div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="details__element">
-                                <div class="details__element--category">Year</div>
-                                <div class="details__element--text">2023</div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="details__element">
-                                <div class="details__element--category">Site</div>
-                                <div class="details__element--text underline"><a href="#">Visit website <img
-                                            src="./../app/img/box-arrow.svg" alt=""></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="section project-gallery">
-                    <div class="project-gallery__row">
-                        <div class="col">
 
-                            <img src="./../app/img/projects/project-hero-image.webp" alt="">
-                        </div>
-                        <div class="col">
-                            <img src="./../app/img/projects/project-hero-image.webp" alt="">
-
-                        </div>
-                    </div>
-                    <img src="./../app/img/projects/project-hero-image.webp" alt="">
-
-                </section>
             </main>
             <footer class="section">
                 <div class="footer-bg">
@@ -287,14 +283,14 @@
                                 <span class="empower">Let's talk</span> about your&nbspproject
                             </div>
                             <div class="header--actions">
-                                <a href="./../contact">
-                                    <button>Fill the form<img src="./../app/img/send-plane.svg" alt="send"></button>
+                                <a href="./contact">
+                                    <button>Fill the form<img src="./app/img/send-plane.svg" alt="send"></button>
                                 </a>
                                 <div class="mail">or copy an email:
                                     <div class="mail--action" style="position: relative;"
                                         onclick="copyContent(document.getElementById('tooltip'))">
                                         Hello@melon.studio
-                                        <img src="./../app/img/copy.svg" alt="Icon that copy my adress e-mail">
+                                        <img src="./app/img/copy.svg" alt="Icon that copy my adress e-mail">
                                         <div id="tooltip" style="display: none;" onclick="copyContent(this)">Mail has
                                             been copied</div>
                                     </div>
@@ -309,8 +305,7 @@
                                 <div class="widgets__reading--header">
                                     <div class="header">Reading</div>
                                 </div>
-                                <div class="widgets__reading--content">
-                                    <img src="./../app/img/Reading-image.webp" alt="">
+                                <div class="widgets__reading--content"> <img src="./app/img/Reading-image.webp" alt="">
                                     <div class="book">
                                         <div class="book__title">The Umami Strategy</div>
                                         <div class="book__author">Aga Szóstek</div>
@@ -335,18 +330,18 @@
                                 <div class="header">Socials</div>
                                 <div class="links">
                                     <a href="https://www.behance.net/MelonToPies" class="links" target="_blank">
-                                        <div class="behance"><img src="./../app/img/Behance.svg"
+                                        <div class="behance"><img src="./app/img/Behance.svg"
                                                 alt="Icon to my Social Media Profile">Behance</div>
 
                                     </a>
                                     <a href="https://dribbble.com/MelonToPies" class="links" target="_blank">
-                                        <div class="Dribbble"><img src="./../app/img/Dribbble.svg"
+                                        <div class="Dribbble"><img src="./app/img/Dribbble.svg"
                                                 alt="Icon to my Social Media Profile">Dribbble</div>
 
                                     </a>
                                     <a href="https://www.linkedin.com/in/piotr-brzeziński-69a51115a/" class="links"
                                         target="_blank">
-                                        <div class="Linkedin"><img src="./../app/img/LinkedIn.svg"
+                                        <div class="Linkedin"><img src="./app/img/LinkedIn.svg"
                                                 alt="Icon to my Social Media Profile">Linkedin</div>
 
                                     </a>
@@ -360,76 +355,7 @@
             </footer>
         </div>
     </div>
-    <script src="./../app/script/script.js"></script>
-    <script>
-        let mm = gsap.matchMedia();
-        const overlay = document.querySelector(".overlay");
-
-        mm.revert();
-
-        // use a script tag or an external JS file
-        document.addEventListener("DOMContentLoaded", (event) => {
-            gsap.registerPlugin(ScrollTrigger)
-            // Animate From
-            $("header").each(function (index) {
-
-                gsap.from("h1 .word", 2.5, {
-                    delay: 0.5,
-                    rotation: 2,
-                    opacity: 0,
-                    y: 50,
-                    stagger: .05,
-                    ease: "expo.out",
-
-                });
-                gsap.from(".project-category__category .word, .project-category__icon .word", 1, {
-                    delay: 0.5,
-                    rotation: 5,
-                    opacity: 0,
-                    y: 50,
-                    stagger: .05,
-                    ease: "expo.out",
-
-                });
-
-                gsap.from("body .wrapper .container .hero header nav ul li", 1, {
-                    delay: 1,
-                    rotation: 20,
-                    y: 80,
-                    stagger: .12,
-                    ease: "power4.inOut"
-                });
-                gsap.from("#M, #E, #L, #O, #N", 1, {
-                    delay: 1,
-                    y: 60,
-                    opacity: 0,
-                    stagger: {
-                        amount: -.2,
-                    },
-                    ease: "power4.inOut"
-                });
-
-                gsap.from(".project-hero-image", 2, {
-                    delay: 1.4,
-                    clipPath: "inset(1000px 0px 0px 0px)",
-                    ease: "expo.out",
-                });
-                gsap.from(".topnav__open", 1, {
-                    delay: 1.5,
-                    y: 10,
-                    opacity: 0,
-                    ease: "power4.out",
-                });
-                gsap.to("body .wrapper .container .hero header nav ul", {
-                    delay: 4,
-                    overflow: "visible",
-                });
-            });
-        });
-        ScrollTrigger.defaults({
-            markers: false
-        });
-    </script>
+    <script src="./app/script/script.js"></script>
 </body>
 
 </html>
