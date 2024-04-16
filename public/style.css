@@ -347,7 +347,7 @@ span.empower {
 }
 @keyframes scroll {
   to {
-    transform: translate(-50%);
+    transform: translate(calc(-50% - 1.5rem));
   }
 }
 .overlay {
@@ -679,6 +679,7 @@ body .wrapper .container main section.section .worked-with h4 {
 body .wrapper .container main section.section .worked-with .logo-wrapper {
   max-width: 2000px;
   width: 100%;
+  overflow: hidden;
 }
 body .wrapper .container main section.section .worked-with .logo-wrapper .logos {
   gap: 3rem;
@@ -686,9 +687,13 @@ body .wrapper .container main section.section .worked-with .logo-wrapper .logos 
   flex-wrap: wrap;
   opacity: 0.4;
   align-items: center;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 body .wrapper .container main section.section .worked-with .logo-wrapper[data-animated=true] {
-  overflow: hidden;
+  width: -moz-max-content;
+  width: max-content;
   -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
           mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
 }
@@ -704,14 +709,11 @@ body .wrapper .container main section.section .worked-with .logo-wrapper[data-an
 body .wrapper .container main section.section .worked-with .logo-wrapper[data-animated=true] .logos {
   display: flex;
   flex-wrap: nowrap;
-  animation: scroll 30s reverse linear infinite;
+  animation: scroll 50s reverse linear infinite;
 }
 @media (max-width: 45rem) {
   body .wrapper .container main section.section .worked-with .logo-wrapper[data-animated=true] .logos {
     /* 720px */
-  }
-  body .wrapper .container main section.section .worked-with .logo-wrapper[data-animated=true] .logos {
-    animation: scroll 10s reverse linear infinite;
   }
   body .wrapper .container main section.section .worked-with .logo-wrapper[data-animated=true] .logos .logo img {
     height: 36px;
@@ -2854,7 +2856,8 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
     height: auto;
   }
 }
-.wrapper.contact .container main .header-h1 .word-container .word, .wrapper.contact .container main .description .word-container .word {
+.wrapper.contact .container main .header-h1 .word-container .word,
+.wrapper.contact .container main .description .word-container .word {
   display: inline-flex;
   overflow: hidden;
 }
@@ -2931,13 +2934,14 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 27px */
+  line-height: 150%;
+  /* 27px */
   letter-spacing: 0.18px;
   color: var(--62);
   display: flex;
   flex-wrap: wrap;
-  -moz-column-gap: 6px;
-       column-gap: 6px;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
   row-gap: 2px;
 }
 @media (max-width: 96rem) {

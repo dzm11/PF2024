@@ -21,7 +21,7 @@
 
 @keyframes scroll {
     to {
-        transform: translate(-50%);
+        transform: translate(calc(-50% - 1.5rem));
     }
     
 }

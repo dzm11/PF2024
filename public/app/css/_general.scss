@@ -372,6 +372,7 @@ body {
                         .logo-wrapper {
                             max-width: 2000px;
                             width: 100%;
+                            overflow: hidden;
 
                             .logos {
                                 gap: 3rem;
@@ -379,11 +380,13 @@ body {
                                 flex-wrap: wrap;
                                 opacity: .4;
                                 align-items: center;
+                                position: relative;
+                                width: fit-content;
                             }
                         }
 
                         .logo-wrapper[data-animated="true"] {
-                            overflow: hidden;
+                            width: max-content;
                             mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
 
                             @media (max-width: 45rem) {
@@ -398,14 +401,12 @@ body {
                             .logos {
                                 display: flex;
                                 flex-wrap: nowrap;
-                                animation: scroll 30s reverse linear infinite;
+                                animation: scroll 50s reverse linear infinite;
 
                                 @media (max-width: 45rem) {
 
                                     /* 720px */
                                     & {
-                                        animation: scroll 10s reverse linear infinite;
-
                                         .logo {
                                             img {
 
