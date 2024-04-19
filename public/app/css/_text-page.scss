@@ -77,6 +77,7 @@
                     line-height: 170%;
                     color: var(--62);
 
+
                     @media (max-width: 69rem) {
                         & {
                             font-size: clamp(0.875rem, 0.4890rem + 1.1029vw, 1.25rem);

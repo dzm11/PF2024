@@ -651,7 +651,6 @@ body .wrapper .container .hero__content--header span.inside .word:nth-child(1) {
   margin-inline-end: 0.2em;
 }
 body .wrapper .container .hero__content--header span.inside img {
-  margin-inline: 1rem;
   width: 1em;
   height: 1em;
 }
@@ -2780,6 +2779,7 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   font-weight: 300;
   line-height: 170%;
   color: var(--62);
+  margin-bottom: 16px;
 }
 @media (max-width: 69rem) {
   .wrapper.insight-default .container main .insight-content p.paragraph-light {
