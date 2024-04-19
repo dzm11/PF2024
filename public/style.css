@@ -3114,6 +3114,7 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   gap: 0.625rem;
   color: var(--82);
   font-size: 18px;
+  align-items: center;
 }
 @media (max-width: 27.5rem) {
   .wrapper.contact .container main .contact-overlay .contact-overlay-content .contact__row .contact__info--socials .links * {

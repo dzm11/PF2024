@@ -335,6 +335,8 @@ function consentGranted() {
   });
   // Ukrywamy banner
   document.getElementById('cookieBanner').style.display = 'none';
+  // Reload page after executing 
+  location.reload();
 }
 
 function consentDenied() {
