@@ -2,30 +2,49 @@
 <html lang="en">
 
 <head>
-<!-- Define dataLayer and the gtag function -->
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    <!-- Define dataLayer and the gtag function -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+    </script>
 
-    // Set default consent to 'denied' as a placeholder
-    // Determine actual values based on your own requirements
-    gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied'
-    });
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSX9E0XTGK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSX9E0XTGK"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('js', new Date());
-    gtag('config', 'G-JSX9E0XTGK');
-</script>
+      try {
+        // Pobieramy stan zgody z localStorage
+        var cookieConsent = localStorage.getItem('cookieConsent');
+  
+        // Jeśli zgoda została udzielona wcześniej, ukrywamy banner i aktualizujemy stan zgody
+        if (cookieConsent === 'true') {
+          // Aktualizujemy stan zgody tylko jeśli wcześniej została udzielona
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
+
+        }
+      } catch (e) {
+        // Obsługa błędu dostępu do localStorage
+        console.error('Error accessing localStorage:', e);
+
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+      }
+        gtag('config', 'G-JSX9E0XTGK');
+    </script>
+    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

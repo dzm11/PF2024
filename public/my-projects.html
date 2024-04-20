@@ -6,15 +6,6 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
-
-        // Set default consent to 'denied' as a placeholder
-        // Determine actual values based on your own requirements
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-        });
     </script>
 
     <!-- Google tag (gtag.js) -->
@@ -24,6 +15,33 @@
         function gtag() { dataLayer.push(arguments); }
 
         gtag('js', new Date());
+
+        try {
+            // Pobieramy stan zgody z localStorage
+            var cookieConsent = localStorage.getItem('cookieConsent');
+
+            // Jeśli zgoda została udzielona wcześniej, ukrywamy banner i aktualizujemy stan zgody
+            if (cookieConsent === 'true') {
+                // Aktualizujemy stan zgody tylko jeśli wcześniej została udzielona
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted',
+                    'analytics_storage': 'granted'
+                });
+
+            }
+        } catch (e) {
+            // Obsługa błędu dostępu do localStorage
+            console.error('Error accessing localStorage:', e);
+
+            gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied'
+            });
+        }
         gtag('config', 'G-JSX9E0XTGK');
     </script>
 
@@ -31,7 +49,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects - Melon Studio by Piotr Brzezinski</title>
-    
+
 
     <!-- Fav Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./app/img/apple-touch-icon.png">
