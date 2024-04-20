@@ -319,13 +319,83 @@ function toggleAccordion() {
 items.forEach(item => item.addEventListener('click', toggleAccordion));
 
 
+// //////////////////
+// /// Google Consent
+// //////////////////
+
+// function consentGranted() {
+//   // Zapisujemy stan zgody w localStorage
+//   localStorage.setItem('cookieConsent', 'true');
+//   // Aktualizujemy stan zgody za pomocą gtag
+//   gtag('consent', 'update', {
+//     'ad_storage': 'granted',
+//     'ad_user_data': 'granted',
+//     'ad_personalization': 'granted',
+//     'analytics_storage': 'granted'
+//   });
+//   // Ukrywamy banner
+//   document.getElementById('cookieBanner').style.display = 'none';
+//   // Reload page after executing 
+//   location.reload();
+// }
+
+// function consentDenied() {
+//   // Zapisujemy stan zgody w localStorage
+//   localStorage.setItem('cookieConsent', 'false');
+//   console.log(localStorage.getItem('cookieConsent'));
+
+
+//   // Aktualizujemy stan zgody za pomocą gtag
+//   gtag('consent', 'update', {
+//     'ad_storage': 'denied',
+//     'ad_user_data': 'denied',
+//     'ad_personalization': 'denied',
+//     'analytics_storage': 'denied'
+//   });
+//   // Ukrywamy banner
+//   document.getElementById('cookieBanner').style.display = 'none';
+// }
+
+// // Sprawdzamy stan zgody przy ładowaniu strony
+// window.addEventListener('load', function () {
+
+//   try {
+//       // Pobieramy stan zgody z localStorage
+//       var cookieConsent = localStorage.getItem('cookieConsent');
+//       console.log(cookieConsent);
+
+//       // Jeśli zgoda została udzielona wcześniej, ukrywamy banner
+//       if (cookieConsent === 'true') {
+//           document.getElementById('cookieBanner').style.display = 'none';
+//       }
+//       // Jeśli zgoda została odmówiona wcześniej, ukrywamy banner i aktualizujemy stan zgody
+//       else if (cookieConsent === 'false') {
+//           consentDenied();
+//           document.getElementById('cookieBanner').style.display = 'block';
+//       }
+//       // Jeśli nie ma zgody w localStorage, wyświetlamy popup
+//       else {
+//           document.getElementById('cookieBanner').style.display = 'block';
+//       }
+//   } catch (e) {
+//       // Obsługa błędu dostępu do localStorage
+//       console.error('Error accessing localStorage:', e);
+//       // Wyświetlamy popup w przypadku błędu dostępu do localStorage
+//       document.getElementById('cookieBanner').style.display = 'block';
+//   }
+// });
+
+
+
 //////////////////
 /// Google Consent
 //////////////////
 
+// Funkcja obsługująca zgodę udzieloną przez użytkownika
 function consentGranted() {
   // Zapisujemy stan zgody w localStorage
   localStorage.setItem('cookieConsent', 'true');
+
   // Aktualizujemy stan zgody za pomocą gtag
   gtag('consent', 'update', {
     'ad_storage': 'granted',
@@ -333,17 +403,18 @@ function consentGranted() {
     'ad_personalization': 'granted',
     'analytics_storage': 'granted'
   });
-  // Ukrywamy banner
+
+  // Ukrywamy banner z prośbą o zgodę
   document.getElementById('cookieBanner').style.display = 'none';
-  // Reload page after executing 
+
+  // Opcjonalnie: przeładuj stronę, aby zastosować zmiany
   location.reload();
 }
 
+// Funkcja obsługująca odmowę zgody przez użytkownika
 function consentDenied() {
   // Zapisujemy stan zgody w localStorage
   localStorage.setItem('cookieConsent', 'false');
-  console.log(localStorage.getItem('cookieConsent'));
-
 
   // Aktualizujemy stan zgody za pomocą gtag
   gtag('consent', 'update', {
@@ -352,37 +423,33 @@ function consentDenied() {
     'ad_personalization': 'denied',
     'analytics_storage': 'denied'
   });
-  // Ukrywamy banner
+
+  // Ukrywamy banner z prośbą o zgodę
   document.getElementById('cookieBanner').style.display = 'none';
 }
 
 // Sprawdzamy stan zgody przy ładowaniu strony
 window.addEventListener('load', function () {
-
   try {
-      // Pobieramy stan zgody z localStorage
-      var cookieConsent = localStorage.getItem('cookieConsent');
-      console.log(cookieConsent);
+    // Pobieramy stan zgody z localStorage
+    var cookieConsent = localStorage.getItem('cookieConsent');
 
-      // Jeśli zgoda została udzielona wcześniej, ukrywamy banner
-      if (cookieConsent === 'true') {
-          document.getElementById('cookieBanner').style.display = 'none';
-      }
-      // Jeśli zgoda została odmówiona wcześniej, ukrywamy banner i aktualizujemy stan zgody
-      else if (cookieConsent === 'false') {
-          consentDenied();
-          document.getElementById('cookieBanner').style.display = 'block';
-      }
-      // Jeśli nie ma zgody w localStorage, wyświetlamy popup
-      else {
-          document.getElementById('cookieBanner').style.display = 'block';
-      }
-  } catch (e) {
-      // Obsługa błędu dostępu do localStorage
-      console.error('Error accessing localStorage:', e);
-      // Wyświetlamy popup w przypadku błędu dostępu do localStorage
+    // Jeśli zgoda została udzielona wcześniej, ukrywamy banner
+    if (cookieConsent === 'true') {
+      document.getElementById('cookieBanner').style.display = 'none';
+    }
+    // Jeśli zgoda została odmówiona wcześniej, ukrywamy banner
+    else if (cookieConsent === 'false') {
+      document.getElementById('cookieBanner').style.display = 'none';
+    }
+    // Jeśli nie ma zgody w localStorage, wyświetlamy banner z prośbą o zgodę
+    else {
       document.getElementById('cookieBanner').style.display = 'block';
+    }
+  } catch (e) {
+    // Obsługa błędu dostępu do localStorage
+    console.error('Error accessing localStorage:', e);
+    // W przypadku błędu wyświetlamy banner
+    document.getElementById('cookieBanner').style.display = 'block';
   }
 });
-
-

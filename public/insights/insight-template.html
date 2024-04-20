@@ -6,15 +6,6 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
-
-        // Set default consent to 'denied' as a placeholder
-        // Determine actual values based on your own requirements
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-        });
     </script>
 
     <!-- Google tag (gtag.js) -->
@@ -24,8 +15,36 @@
         function gtag() { dataLayer.push(arguments); }
 
         gtag('js', new Date());
+
+      try {
+        // Pobieramy stan zgody z localStorage
+        var cookieConsent = localStorage.getItem('cookieConsent');
+  
+        // Jeśli zgoda została udzielona wcześniej, ukrywamy banner i aktualizujemy stan zgody
+        if (cookieConsent === 'true') {
+          // Aktualizujemy stan zgody tylko jeśli wcześniej została udzielona
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
+
+        }
+      } catch (e) {
+        // Obsługa błędu dostępu do localStorage
+        console.error('Error accessing localStorage:', e);
+
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+      }
         gtag('config', 'G-JSX9E0XTGK');
     </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insight - Melon Studio by Piotr Brzezinski</title>
@@ -90,7 +109,8 @@
         <div class="popup">
             <div class="popup__text">Melon.studio uses cookies from Google to deliver and enhance the quality of its
                 services and to analyze traffic.
-                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img src="./../app/img/Close.svg" alt=""></button>
+                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img
+                        src="./../app/img/Close.svg" alt=""></button>
             </div>
             <div class="popup__buttons">
                 <button class="acceptCookies" id="acceptCookies" onclick="consentGranted()">Ok, got it</button>
@@ -507,18 +527,18 @@
                                 <div class="header">Socials</div>
                                 <div class="links">
                                     <a href="https://www.behance.net/MelonToPies" class="links" target="_blank">
-                                        <div class="behance"><img src="./app/img/Behance.svg"
+                                        <div class="behance"><img src="./../app/img/Behance.svg"
                                                 alt="Icon to my Social Media Profile">Behance</div>
 
                                     </a>
                                     <a href="https://dribbble.com/MelonToPies" class="links" target="_blank">
-                                        <div class="Dribbble"><img src="./app/img/Dribbble.svg"
+                                        <div class="Dribbble"><img src="./../app/img/Dribbble.svg"
                                                 alt="Icon to my Social Media Profile">Dribbble</div>
 
                                     </a>
                                     <a href="https://www.linkedin.com/in/piotr-brzeziński-69a51115a/" class="links"
                                         target="_blank">
-                                        <div class="Linkedin"><img src="./app/img/LinkedIn.svg"
+                                        <div class="Linkedin"><img src="./../app/img/LinkedIn.svg"
                                                 alt="Icon to my Social Media Profile">Linkedin</div>
 
                                     </a>
