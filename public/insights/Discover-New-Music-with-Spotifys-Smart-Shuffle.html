@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSX9E0XTGK"></script>
     <script>
@@ -10,49 +11,48 @@
 
         gtag('js', new Date());
 
-      try {
-        // Pobieramy stan zgody z localStorage
-        var cookieConsent = localStorage.getItem('cookieConsent');
-  
-        // Jeśli zgoda została udzielona wcześniej, ukrywamy banner i aktualizujemy stan zgody
-        if (cookieConsent === 'true') {
-          // Aktualizujemy stan zgody tylko jeśli wcześniej została udzielona
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'analytics_storage': 'granted'
-          });
+        try {
+            // Pobieramy stan zgody z localStorage
+            var cookieConsent = localStorage.getItem('cookieConsent');
 
+            // Jeśli zgoda została udzielona wcześniej, ukrywamy banner i aktualizujemy stan zgody
+            if (cookieConsent === 'true') {
+                // Aktualizujemy stan zgody tylko jeśli wcześniej została udzielona
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted',
+                    'analytics_storage': 'granted'
+                });
+
+            }
+        } catch (e) {
+            // Obsługa błędu dostępu do localStorage
+            console.error('Error accessing localStorage:', e);
+
+            gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied'
+            });
         }
-      } catch (e) {
-        // Obsługa błędu dostępu do localStorage
-        console.error('Error accessing localStorage:', e);
-
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-        });
-      }
         gtag('config', 'G-JSX9E0XTGK');
     </script>
 
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights - Melon Studio by Piotr Brzezinski</title>
+    <title>Discover New Music with Spotify's Smart Shuffle - Melon Studio by Piotr Brzezinski</title>
 
     <!-- Fav Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./app/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./app/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./app/img/favicon-16x16.png">
-    <link rel="manifest" href="./app/img/site.webmanifest">
-    <link rel="mask-icon" href="./app/img/safari-pinned-tab.svg" color="#1d1f21">
-    <link rel="shortcut icon" href="./app/img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./../app/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./../app/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./../app/img/favicon-16x16.png">
+    <link rel="manifest" href="./../app/img/site.webmanifest">
+    <link rel="mask-icon" href="./../app/img/safari-pinned-tab.svg" color="#1d1f21">
+    <link rel="shortcut icon" href="./../app/img/favicon.ico">
     <meta name="msapplication-TileColor" content="#1d1f21">
-    <meta name="msapplication-config" content="./app/img/browserconfig.xml">
+    <meta name="msapplication-config" content="./../app/img/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Meta Tags dla SEO -->
@@ -86,7 +86,7 @@
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style.min.css">
+    <link rel="stylesheet" href="./../style.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -103,18 +103,18 @@
         <div class="popup">
             <div class="popup__text">Melon.studio uses cookies from Google to deliver and enhance the quality of its
                 services and to analyze traffic.
-                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img src="./app/img/Close.svg" alt=""></button>
+                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img
+                        src="./../app/img/Close.svg" alt=""></button>
             </div>
             <div class="popup__buttons">
                 <button class="acceptCookies" id="acceptCookies" onclick="consentGranted()">Ok, got it</button>
-                <button class="moreCookies"><a href="./cookie-policy.html">Learn more</a></button>
+                <button class="moreCookies"><a href="./../cookie-policy.html">Learn more</a></button>
             </div>
         </div>
     </div>
-    <div class="wrapper insights-page">
+    <div class="wrapper insight-default">
         <div class="container">
             <section class="hero">
-
                 <header>
                     <div class="menu-logo">
                         <a href="https://melon.studio">
@@ -144,34 +144,34 @@
                     <nav>
                         <span id="nav-label" hidden>Navigation</span>
                         <button class="topnav__open" aria-expanded="false" aria-labelledby="nav-label" id="btnOpen">
-                            <img src="./app/img/menu.svg" alt="Icon that opens the mobile menu" width="24px"
+                            <img src="./../app/img/menu.svg" alt="Icon that opens the mobile menu" width="24px"
                                 height="24px">
                             <p>Menu</p>
                         </button>
                         <div class="topnav__menu" role="dialog" aria-labelledby="nav-label">
                             <button class="topnav__close">
-                                <img src="./app/img/Close.svg" alt="Icon that close mobile menu" width="32px"
+                                <img src="./../app/img/Close.svg" alt="Icon that close mobile menu" width="32px"
                                     height="32px" id="btnClose" aria-label="Close">
                             </button>
                             <ul>
                                 <li>
                                     <div class="list-container">
-                                        <a href="./about-me">About me</a>
+                                        <a href="./../about-me">About me</a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="list-container">
-                                        <a href="./my-projects">Work <sup>(6)</sup></a>
+                                        <a href="./../my-projects">Work <sup>(6)</sup></a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="list-container">
-                                        <a href="./insight">Insight <sup>(4)</sup></a>
+                                        <a href="./../insight">Insight <sup>(4)</sup></a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="list-container">
-                                        <a href="./contact">Contact</a>
+                                        <a href="./../contact">Contact</a>
                                     </div>
                                 </li>
                                 <li>
@@ -179,7 +179,7 @@
                                         onclick="copyContent(document.getElementById('tooltip-menu'))">
                                         <span id="tooltip-menu" style="display: none;" onclick="copyContent(this)">Mail
                                             has been copied</span>
-                                        <img src="./app/img/copy.svg" alt="Icon that copy my adress e-mail">
+                                        <img src="./../app/img/copy.svg" alt="Icon that copy my adress e-mail">
                                         Hello@melon.studio
                                     </div>
 
@@ -193,201 +193,149 @@
             </section>
             <main>
                 <section class="hero__content">
-                    <h1 class="hero__content--header ">
-                        <div class="word-container">
-                            <span class="word">Check </span>
-                        </div>
-                        <div class="word-container">
-                            <span class="word">out </span>
-                        </div>
-                        <div class="word-container">
-                            <span class="word">what's </span>
-                        </div>
-                        <div class="word-container">
-                            <span class="word empower">on </span>
-                        </div>
-                        <div class="word-container">
-                            <span class="word empower">my </span>
-                        </div>
-                        <div class="word-container">
-                            <span class="word empower">mind.</span>
-                        </div>
-                    </h1>
-                    <h5>
-                        <div class="word-container">
-                            <span class="word">Below </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="word">you </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="word">will </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="word">find </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="empower word">case </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="empower word">studies </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="word">of </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="word">projects </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="word">I </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="word">created </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="word">as </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="word">well </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="word">as </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="empower word">my </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="empower word">thoughts </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="word">on </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="empower word">various </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="empower word">topics </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="empower word">related </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="empower word">to </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="empower word">UX/UI </span>
-
-                        </div>
-                        <div class="word-container">
-                            <span class="empower word">Design.</span>
-
-                        </div>
-                    </h5>
-                </section>
-                <section class="section">
-                    <div class="insights__section ">
-                        <div class="header">
-                            <h2>Latest <span class="empower">Insights</span></h2>
-                        </div>
-                        <div class="insights__section--carousel">
-                            <div class="insight">
-                                <a href="./insights/Discover-New-Music-with-Spotifys-Smart-Shuffle.html">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img src="./app/img/insights/Spotify-Smart-Shuffle-thumbnail.webp"
-                                                alt="Spotify logo and underneath spotify smart shuffle icon">
-                                        </div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">Discover New Music with Spotify's Smart Shuffle ✨</div>
-                                                <div class="category">Tech news</div>
-                                            </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </a>
+                    <div class="project-title">
+                        <h1 class="hero__content--title">
+                            <div class="word-container">
+                                <span class="word empower">WebGPU: </span>
                             </div>
-                            <div class="insight">
-                                <a href="./insights/kindekraft-insights-filtering-ui-ux-design">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img src="./app/img/Insight-1.webp"
-                                                alt="Thumbnail that display different screens of filtering for Kinderkraft company">
-                                        </div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">What does a properly designed filtration system look
-                                                    like? - Kinderkraft e-commerce</div>
-                                                <div class="category">Case Study</div>
-                                            </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </a>
+                            <div class="word-container">
+                                <span class="word empower">Discover </span>
                             </div>
-                            <div class="insight">
-                                <a href="./insights/webgpu-future-of-web-apps">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img
-                                                src="./app/img/insights/Webgpu-thumbnail.webp"
-                                                alt="Thumbnail present abstract GFX that should represent title of the blogpost">
-                                        </div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">WebGPU - The future of web applications</div>
-                                                <div class="category">Development</div>
-                                            </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </a>
+                            <div class="word-container">
+                                <span class="word empower">New </span>
                             </div>
-                            <div class="insight">
-                                <a href="./insights/Stable-Diffusion-3-vs-Midjourney-and-Dall-E-3">
-                                    <div class="insight__box">
-                                        <div class="insight__box--img"><img
-                                                src="./app/img/insights/AI-Image-thumbnail.webp"
-                                                alt="Thumbnail that present examples of different gfx made by AI">
-                                        </div>
-                                        <div class="insight__box--title">
-                                            <div class="content">
-                                                <div class="title">Stable Diffusion 3 vs Midjourney and Dall·E 3</div>
-                                                <div class="category">Artificial Intelligence</div>
-                                            </div>
-                                            <div class="insight__box--icon"><img src="./app/img/box-arrow.svg" alt="">
-                                            </div>
+                            <div class="word-container">
+                                <span class="word empower">Music </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">Spotify's </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">Smart </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">Shuffle </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">✨</span>
+                            </div>
+                        </h1>
+                        <h1 class="hero__content--date">
+                            <div class="word-container">
+                                <span class="word empower">
+                                    2024
+                                </span>
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="project-category">
+                        <div class="project-category__category">
+                            <div class="word-container">
+                                <span class="word empower">Music </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">that </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">perfectly </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">match </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">your </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">unique </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">vibe. </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">Discover </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">new </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">favorites!</span>
+                            </div>
 
-                                        </div>
-                                    </div>
-                                </a>
+                        </div>
+                        <div class="project-category__icon">
+                            <div class="word-container">
+                                <div class="word">
+                                    Discover <img src="./../app/img/arrow-corner-right-down.svg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
+                <section class="section project-hero-image">
+                    <img src="./../app/img/insights/Spotify-Smart-Shuffle-Hero-image.webp"
+                        alt="Hero image of abstract GFX that fits content">
+                </section>
+                <section class="section insight-content">
+                    <div class="insight-content__lead">
+                        <h2>
+                            Rediscover Music with Smart Shuffle in the Spotify App
+                        </h2>
+                        <p class="paragraph-light">Music accompanies us at every step. From moments of relaxation to
+                            intense workouts, the sounds of your favorite songs can evoke emotions, stimulate you to
+                            action or simply make your time more enjoyable. Spotify, among others, has become an
+                            integral part of our lives, offering us huge amounts of songs available everywhere.</p>
+                        <p class="paragraph-light">Spotify understands the importance of keeping your music experience
+                            fresh and diverse. Traditional song shuffling can sometimes result in us listening to the
+                            same songs in a similar order, which can become boring. This is where Smart Shuffle comes
+                            handy!</p>
+                    </div>
+
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            How does the Smart Shuffle work? </h4>
+                        <p class="paragraph-light">
+                            Spotify's Smart Shuffle uses advanced machine learning algorithms to analyze your music
+                            preferences, including your favorite genres, artists and recently played songs. This feature
+                            adds new, personalized songs to your playlist while maintaining the "vibe" of the original
+                            composition. If you want to go back to the original layout, just click the Smart Shuffle
+                            button again.
+                        </p>
+                    </div>
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            New Songs with Smart Shuffle</h4>
+                        <p class="paragraph-light">
+                            One of the most important benefits of Smart Shuffle is its ability to keep your playlist
+                            fresh. It adds new mood-matching songs that can upgrade your favorite playlists and make you
+                            discover new artists and songs. If you want to keep recommended songs permanently in your
+                            playlist, you can do it easily with one click.
+                        </p>
+                        <p class="paragraph-light">
+                            Recommendations added by Smart Shuffle are marked with a ✨ symbol, which allows you to
+                            quickly identify the added songs. If the recommended song doesn't meet your expectations,
+                            you can remove it by clicking the minus button in the "Now Playing" view, which will allow
+                            the system to learn your preferences.
+                        </p>
+                    </div>
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            Smart Shuffle for Premium & Free Users</h4>
+                        <p class="paragraph-light">
+                            Smart Shuffle is available to both Premium and free users. Premium users has feature that
+                            replaces Enhance, which was introduced in 2021 and is available globally on iOS and Android
+                            devices. For Free Smart Shuffle Users it is the default playback mode.
+                        </p>
+                    </div>
+                    <div class="insight-content__paragraph">
+                        <h4>Summary</h4>
+                        <p class="paragraph-light">
+                            Smart Shuffle is a fresh feature that is changing the way we discover and listen to music on
+                            Spotify. Its kind of recycling of our old playlists. Thanks to advanced technology, we can
+                            enjoy a personalized music experience that constantly surprise.
+                        </p>
+                    </div>
+                </section>
+
             </main>
             <footer class="section">
                 <div class="footer-bg">
@@ -397,14 +345,14 @@
                                 <span class="empower">Let's talk</span> about your&nbspproject
                             </div>
                             <div class="header--actions">
-                                <a href="./contact">
-                                    <button>Fill the form<img src="./app/img/send-plane.svg" alt="send"></button>
+                                <a href="./../contact">
+                                    <button>Fill the form<img src="./../app/img/send-plane.svg" alt="send"></button>
                                 </a>
-                                <div class="mail">or copy an email: <div class="mail--action"
-                                        style="position: relative;"
+                                <div class="mail">or copy an email:
+                                    <div class="mail--action" style="position: relative;"
                                         onclick="copyContent(document.getElementById('tooltip'))">
                                         Hello@melon.studio
-                                        <img src="./app/img/copy.svg" alt="Icon that copy my adress e-mail">
+                                        <img src="./../app/img/copy.svg" alt="Icon that copy my adress e-mail">
                                         <div id="tooltip" style="display: none;" onclick="copyContent(this)">Mail has
                                             been copied</div>
                                     </div>
@@ -419,8 +367,8 @@
                                 <div class="widgets__reading--header">
                                     <div class="header">Reading</div>
                                 </div>
-                                <div class="widgets__reading--content">
-                                    <img src="./app/img/Reading-image.webp" alt="Book that I read right now">
+                                <div class="widgets__reading--content"> <img src="./../app/img/Reading-image.webp"
+                                        alt="">
                                     <div class="book">
                                         <div class="book__title">The Umami Strategy</div>
                                         <div class="book__author">Aga Szóstek</div>
@@ -445,18 +393,18 @@
                                 <div class="header">Socials</div>
                                 <div class="links">
                                     <a href="https://www.behance.net/MelonToPies" class="links" target="_blank">
-                                        <div class="behance"><img src="./app/img/Behance.svg"
+                                        <div class="behance"><img src="./../app/img/Behance.svg"
                                                 alt="Icon to my Social Media Profile">Behance</div>
 
                                     </a>
                                     <a href="https://dribbble.com/MelonToPies" class="links" target="_blank">
-                                        <div class="Dribbble"><img src="./app/img/Dribbble.svg"
+                                        <div class="Dribbble"><img src="./../app/img/Dribbble.svg"
                                                 alt="Icon to my Social Media Profile">Dribbble</div>
 
                                     </a>
                                     <a href="https://www.linkedin.com/in/piotr-brzeziński-69a51115a/" class="links"
                                         target="_blank">
-                                        <div class="Linkedin"><img src="./app/img/LinkedIn.svg"
+                                        <div class="Linkedin"><img src="./../app/img/LinkedIn.svg"
                                                 alt="Icon to my Social Media Profile">Linkedin</div>
 
                                     </a>
@@ -470,7 +418,7 @@
             </footer>
         </div>
     </div>
-    <script src="./app/script/script.js"></script>
+    <script src="./../app/script/script.js"></script>
     <script>
         let mm = gsap.matchMedia();
         const overlay = document.querySelector(".overlay");
@@ -483,34 +431,34 @@
             // Animate From
             $("header").each(function (index) {
 
-                gsap.from("h1 .word", 1, {
+                gsap.from("h1 .word", 2.5, {
                     delay: 0.5,
-                    rotateX: -90,
+                    rotation: 2,
+                    opacity: 0,
+                    y: 50,
+                    stagger: .05,
+                    ease: "expo.out",
+
+                });
+                gsap.from(".project-category__category .word, .project-category__icon .word", 1, {
+                    delay: 0.5,
                     rotation: 5,
                     opacity: 0,
                     y: 50,
                     stagger: .05,
-                    ease: "power4.inOut",
-
-                });
-                gsap.from(".hero__content h5 .word", 1, {
-                    delay: 1,
-                    rotation: 5,
-                    opacity: 0,
-                    y: 50,
-                    stagger: .04,
                     ease: "expo.out",
 
                 });
+
                 gsap.from("body .wrapper .container .hero header nav ul li", 1, {
-                    delay: 2,
+                    delay: 1,
                     rotation: 20,
                     y: 80,
                     stagger: .12,
                     ease: "power4.inOut"
                 });
                 gsap.from("#M, #E, #L, #O, #N", 1, {
-                    delay: 2,
+                    delay: 1,
                     y: 60,
                     opacity: 0,
                     stagger: {
@@ -518,21 +466,14 @@
                     },
                     ease: "power4.inOut"
                 });
-                gsap.from("h2", 1, {
-                    delay: 2.5,
-                    y: 60,
-                    opacity: 0,
-                    ease: "expo.out"
-                });
-                gsap.from(".insight", 2, {
-                    delay: 2,
-                    clipPath: "inset(700px 0px 0px 0px)",
-                    ease: "power4.inOut",
-                    ease: "expo.out"
 
+                gsap.from(".project-hero-image", 2, {
+                    delay: 1.4,
+                    clipPath: "inset(1000px 0px 0px 0px)",
+                    ease: "expo.out",
                 });
                 gsap.from(".topnav__open", 1, {
-                    delay: 2.5,
+                    delay: 1.5,
                     y: 10,
                     opacity: 0,
                     ease: "power4.out",
@@ -541,7 +482,6 @@
                     delay: 4,
                     overflow: "visible",
                 });
-
             });
         });
         ScrollTrigger.defaults({
