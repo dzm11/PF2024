@@ -1951,6 +1951,14 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   width: auto;
 }
 
+.paragraph-experience {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  row-gap: 2px;
+}
+
 .wrapper.about-me .container .hero {
   height: -moz-min-content;
   height: min-content;

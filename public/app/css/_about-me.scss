@@ -1,3 +1,10 @@
+.paragraph-experience {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 4px;
+    row-gap: 2px;
+}
+
 .wrapper.about-me {
     .container {
         .hero {
@@ -31,12 +38,14 @@
         main {
             .hero__content {
                 padding-block: 128px;
+
                 @media (max-width: 69rem) {
                     & {
                         padding-block: 88px;
                         flex-direction: column;
                     }
                 }
+
                 .h1-container {
                     width: 100%;
                     max-width: 700px;
@@ -52,9 +61,10 @@
 
                     img {
                         height: 1em;
+
                         @media (max-width: 53rem) {
                             & {
-                        height: 1.25em;
+                                height: 1.25em;
                             }
                         }
                     }
@@ -67,6 +77,7 @@
                     row-gap: 2px;
                     color: var(--82);
                     line-height: 120%;
+
                     @media (max-width: 45rem) {
                         & {
                             font-size: 18px;
@@ -80,13 +91,15 @@
                         }
                     }
                 }
-                .paragraph-big{
+
+                .paragraph-big {
                     display: flex;
                     flex-wrap: wrap;
                     column-gap: 6px;
                     row-gap: 2px;
                     color: var(--82);
                     line-height: 120%;
+
                     .word-container {
                         .word {
                             display: inline-flex;
@@ -127,12 +140,14 @@
                                 align-items: flex-start;
                             }
                         }
+
                         @media (max-width: 69rem) {
                             & {
                                 flex-direction: row;
                                 align-items: center;
                             }
                         }
+
                         @media (max-width: 45rem) {
                             & {
                                 flex-direction: column;
@@ -149,7 +164,8 @@
                             color: var(--15);
                             background-color: var(--82);
                             align-items: center;
-                            &:hover{
+
+                            &:hover {
                                 background-color: var(--92);
                             }
                         }
@@ -159,6 +175,7 @@
                                 display: flex;
                                 align-items: center;
                                 gap: 32px;
+
                                 @media (max-width: 45rem) {
                                     & {
                                         flex-wrap: wrap;
@@ -189,7 +206,8 @@
 
             .services {
                 flex-direction: column;
-                &__section{
+
+                &__section {
                     @media (max-width: 64rem) {
 
                         /* 720px */
@@ -218,6 +236,7 @@
 
                 .faq__header {
                     width: 32%;
+
                     @media (max-width: 64rem) {
 
                         /* 1024px */
@@ -274,7 +293,8 @@
                             background-color: var(--82);
                             align-items: center;
                             margin-block-start: 16px;
-                            &:hover{
+
+                            &:hover {
                                 background-color: var(--92);
                             }
                         }
@@ -287,6 +307,7 @@
                     display: flex;
                     flex-direction: column;
                     gap: 8px;
+
                     @media (max-width: 64rem) {
 
                         /* 1024px */
@@ -305,7 +326,8 @@
                         width: 100%;
                         background-color: var(--15);
                         border-radius: 24px;
-                        &:hover{
+
+                        &:hover {
                             background-color: #292B2E;
 
                         }
@@ -336,6 +358,7 @@
                         border: none;
                         background: none;
                         outline: none;
+
                         @media (max-width: 64rem) {
 
                             /* 1024px */

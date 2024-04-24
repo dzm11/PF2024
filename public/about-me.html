@@ -430,10 +430,94 @@
                 <section class="section">
                     <div class="experience">
                         <div class="header">
-                            <h2>Experience</h2>
-                            <p>As a freelancer I worked on the UX / UI of websites from the cryptocurrency, e-commerce,
-                                CSR, RCP industries. I am also constantly expanding my knowledge in the front-end area
-                                and coding simple websites.</p>
+                            <h2>
+                                <div class="word-container">
+                                    <span class="word">Experience</span>
+                                </div></h2>
+                            <div class="paragraph-experience">
+                                <div class="word-container">
+                                    <span class="word">As a </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">freelancer </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">I worked </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">on </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">the </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">UX / UI </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">of </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">websites </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">from </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">the </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">cryptocurrency, </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">e-commerce, </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">CSR, </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">RCP industries. </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">I am </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">also </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">constantly </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">expanding </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">my </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">knowledge </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">in the </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">front-end </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">area </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">and </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">coding </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">simple </span>
+                                </div>
+                                <div class="word-container">
+                                    <span class="word">websites.</span>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="companies">
                             <div class="companies__element">
@@ -755,6 +839,15 @@
                     ease: "power4.inOut",
 
                 });
+                gsap.from(".experience .header h2 .word", 1, {
+                    delay: 2,
+                    rotation: 5,
+                    opacity: 0,
+                    y: 50,
+                    stagger: .05,
+                    ease: "power4.inOut",
+
+                });
                 gsap.from(".hero__content h5 .word", 1, {
                     delay: 1,
                     rotateX: -40,
@@ -767,6 +860,16 @@
                 });
                 gsap.from(".paragraph-big .word", 1, {
                     delay: 1,
+                    rotateX: -40,
+                    rotation: 5,
+                    opacity: 0,
+                    y: 50,
+                    stagger: .05,
+                    ease: "power4.inOut",
+
+                });
+                gsap.from(".paragraph-experience .word", 1, {
+                    delay: 2,
                     rotateX: -40,
                     rotation: 5,
                     opacity: 0,
@@ -801,25 +904,20 @@
                     },
                     ease: "power4.inOut"
                 });
-                gsap.from(".wrapper.about-me .container main .project-archive .header h2", 1, {
-                    delay: 2,
-                    y: 60,
-                    opacity: 0,
-                    stagger: {
-                        amount: -.2,
-                    },
-                    ease: "power4.inOut"
-                });
-                gsap.from(".project", 1.5, {
+                gsap.from(".experience .companies__element", 1.5, {
                     delay: 2.2,
                     clipPath: "inset(700px 0px 0px 0px)",
-                    ease: "power4.inOut",
+                    ease: "expo.out",
+                    stagger: .12,
                 });
                 gsap.from(".topnav__open", 1, {
                     delay: 2.5,
                     y: 10,
                     opacity: 0,
                     ease: "power4.out",
+                    stagger: {
+                        amount: -.5,
+                    }
                 });
                 gsap.to("body .wrapper .container .hero header nav ul", {
                     delay: 4,
