@@ -751,22 +751,26 @@ body .wrapper .container main section.section .latest-project .backdrop-shadow:h
   filter: blur(50px);
 }
 body .wrapper .container main section.section .latest-project .blured-1:hover:before {
-  background-image: url(./../../app/img/Project-1blured.jpg);
+  background-image: url(https://melon.studio/app/img/Project-1blured.webp);
 }
 body .wrapper .container main section.section .latest-project .blured-2:hover:before {
-  background-image: url(./../../app/img/Project-2blured.jpg);
+  background-image: url(https://melon.studio/app/img/Project-2blured.webp);
 }
 body .wrapper .container main section.section .latest-project .blured-3:hover:before {
-  background-image: url(./../../app/img/Project-3blured.jpg);
+  background-image: url(https://melon.studio/app/img/Project-3blured.webp);
 }
 body .wrapper .container main section.section .latest-project .blured-4:hover:before {
-  background-image: url(./../../app/img/Project-4blured.jpg);
+  background-image: url(https://melon.studio/app/img/Project-4blured.webp);
+  width: 80%;
+  height: 80%;
 }
 body .wrapper .container main section.section .latest-project .blured-5:hover:before {
-  background-image: url(./../../app/img/Project-5blured.jpg);
+  background-image: url(https://melon.studio/app/img/Project-5blured.webp);
+  width: 80%;
+  height: 80%;
 }
 body .wrapper .container main section.section .latest-project .blured-6:hover:before {
-  background-image: url(./../../app/img/Project-6blured.jpg);
+  background-image: url(https://melon.studio/app/img/Project-6blured.webp);
 }
 body .wrapper .container main section.section .latest-project .header {
   display: flex;
@@ -1200,21 +1204,21 @@ body .wrapper .container main section.section .insights__section {
 body .wrapper .container main section.section .insights__section--carousel {
   display: flex;
 }
-body .wrapper .container main section.section .insights__section--carousel .splide__slide:nth-child(3n) {
-  padding-inline-start: 1rem;
-}
-body .wrapper .container main section.section .insights__section--carousel .splide__slide:nth-child(3n+2) {
+body .wrapper .container main section.section .insights__section--carousel .splide__slide {
   padding-inline: 1rem;
 }
-body .wrapper .container main section.section .insights__section--carousel .splide__slide:nth-child(3n+1) {
-  padding-inline-end: 1rem;
+body .wrapper .container main section.section .insights__section--carousel .splide__slide:last-child {
+  padding-inline-end: 0;
+}
+body .wrapper .container main section.section .insights__section--carousel .splide__slide:first-child {
+  padding-inline-start: 0;
 }
 body .wrapper .container main section.section .insights__section--carousel .insight {
   width: 100%;
   border-radius: 1.5rem;
   overflow: hidden;
   z-index: 1;
-  will-change: scale;
+  will-change: scale, opacity;
   height: 100%;
 }
 body .wrapper .container main section.section .insights__section--carousel .insight__box {
@@ -1223,11 +1227,11 @@ body .wrapper .container main section.section .insights__section--carousel .insi
   height: 100%;
 }
 body .wrapper .container main section.section .insights__section--carousel .insight__box:hover .insight__box--img {
-  opacity: 0.6;
-  scale: 1.1;
+  opacity: 0.7;
+  scale: 1.03;
 }
 body .wrapper .container main section.section .insights__section--carousel .insight__box--img {
-  transition: scale 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 body .wrapper .container main section.section .insights__section--carousel .insight__box--img img {
   width: 100%;
@@ -3106,15 +3110,17 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
 }
 .wrapper.contact .container main .contact-overlay .contact-overlay-content .contact__row .contact__info--socials .links {
   display: flex;
-  flex-direction: column;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
   row-gap: 1.25rem;
   padding-left: 2px;
+  flex-direction: column;
+  align-items: start;
 }
 @media (max-width: 45rem) {
   .wrapper.contact .container main .contact-overlay .contact-overlay-content .contact__row .contact__info--socials .links {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 .wrapper.contact .container main .contact-overlay .contact-overlay-content .contact__row .contact__info--socials .links * {

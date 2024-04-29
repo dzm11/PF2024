@@ -808,13 +808,12 @@
             $("header").each(function (index) {
                 let triggerElement = $(this);
                 let targetElement = $(".menu-logo");
-                let targetElement2 = $(".menu-logo svg");
 
                 let tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: triggerElement,
                         // trigger element - viewport
-                        start: "bottom top",
+                        start: "top top",
                         end: "bottom bottom",
                         scrub: 1.5
                     }
@@ -822,14 +821,14 @@
                 mm.add("(min-width: 53rem) and (min-height: 930px)", () => {
 
                     tl.fromTo(targetElement, {
-                        y: "0%",
                         width: "100%",
-                        margin: "50px 0 0 0",
-                        duration: 1
+                        marginTop: "50px",
+                        duration: 1,
+                        ease: "expo.out"
                     },
                         {
                             width: "auto",
-                            margin: "0"
+                            marginTop: "0",
                         });
 
                 });

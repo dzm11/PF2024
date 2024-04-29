@@ -458,27 +458,31 @@ body {
                         
 
                         .blured-1:hover:before {
-                            background-image: url(./../../app/img/Project-1blured.jpg);
+                            background-image: url(https://melon.studio/app/img/Project-1blured.webp);
                         }
 
                         .blured-2:hover:before{
-                            background-image: url(./../../app/img/Project-2blured.jpg);
+                            background-image: url(https://melon.studio/app/img/Project-2blured.webp);
                         }
 
                         .blured-3:hover:before{
-                            background-image: url(./../../app/img/Project-3blured.jpg);
+                            background-image: url(https://melon.studio/app/img/Project-3blured.webp);
                         }
 
                         .blured-4:hover:before{
-                            background-image: url(./../../app/img/Project-4blured.jpg);
+                            background-image: url(https://melon.studio/app/img/Project-4blured.webp);
+                            width: 80%;
+                            height: 80%;
                         }
 
                         .blured-5:hover:before{
-                            background-image: url(./../../app/img/Project-5blured.jpg);
+                            background-image: url(https://melon.studio/app/img/Project-5blured.webp);
+                            width: 80%;
+                            height: 80%;
                         }
 
                         .blured-6:hover:before{
-                            background-image: url(./../../app/img/Project-6blured.jpg);
+                            background-image: url(https://melon.studio/app/img/Project-6blured.webp);
                         }
 
                         .header {
@@ -1031,19 +1035,26 @@ body {
                                 display: flex;
 
                                 .splide__slide {
+                                    padding-inline: 1rem;
+                                    &:last-child{
+                                        padding-inline-end: 0;
+                                    }
+                                    &:first-child{
+                                        padding-inline-start: 0;
+                                    }
 
                                     // padding: 1rem;
-                                    &:nth-child(3n) {
-                                        padding-inline-start: 1rem;
-                                    }
+                                    // &:nth-child(3n) {
+                                    //     padding-inline-start: 1rem;
+                                    // }
 
-                                    &:nth-child(3n + 2) {
-                                        padding-inline: 1rem;
-                                    }
+                                    // &:nth-child(3n + 2) {
+                                    //     padding-inline: 1rem;
+                                    // }
 
-                                    &:nth-child(3n + 1) {
-                                        padding-inline-end: 1rem;
-                                    }
+                                    // &:nth-child(3n + 1) {
+                                    //     padding-inline-end: 1rem;
+                                    // }
                                 }
 
                                 .insight {
@@ -1051,7 +1062,7 @@ body {
                                     border-radius: 1.5rem;
                                     overflow: hidden;
                                     z-index: 1;
-                                    will-change: scale;
+                                    will-change: scale, opacity;
                                     height: 100%;
 
                                     &__box {
@@ -1061,16 +1072,13 @@ body {
 
                                         &:hover {
                                             .insight__box--img {
-                                                opacity: .6;
-                                                scale: 1.1;
+                                                opacity: .7;
+                                                scale: 1.03;
                                             }
                                         }
 
                                         &--img {
-                                            // border-radius: 1.5rem;
-                                            // overflow: hidden;
-                                            // width: 100%;
-                                            transition: scale .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+                                            transition: all .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
                                             img {
                                                 width: 100%;
