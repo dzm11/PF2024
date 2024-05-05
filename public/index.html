@@ -10,32 +10,32 @@
 
         gtag('js', new Date());
 
-      try {
-        // Pobieramy stan zgody z localStorage
-        var cookieConsent = localStorage.getItem('cookieConsent');
-  
-        // Jeśli zgoda została udzielona wcześniej, ukrywamy banner i aktualizujemy stan zgody
-        if (cookieConsent === 'true') {
-          // Aktualizujemy stan zgody tylko jeśli wcześniej została udzielona
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'analytics_storage': 'granted'
-          });
+        try {
+            // Pobieramy stan zgody z localStorage
+            var cookieConsent = localStorage.getItem('cookieConsent');
 
+            // Jeśli zgoda została udzielona wcześniej, ukrywamy banner i aktualizujemy stan zgody
+            if (cookieConsent === 'true') {
+                // Aktualizujemy stan zgody tylko jeśli wcześniej została udzielona
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted',
+                    'analytics_storage': 'granted'
+                });
+
+            }
+        } catch (e) {
+            // Obsługa błędu dostępu do localStorage
+            console.error('Error accessing localStorage:', e);
+
+            gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied'
+            });
         }
-      } catch (e) {
-        // Obsługa błędu dostępu do localStorage
-        console.error('Error accessing localStorage:', e);
-
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-        });
-      }
         gtag('config', 'G-JSX9E0XTGK');
     </script>
 
@@ -101,8 +101,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"></noscript>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    </noscript>
 </head>
 
 <body>
@@ -110,7 +113,8 @@
         <div class="popup">
             <div class="popup__text">Melon.studio uses cookies from Google to deliver and enhance the quality of its
                 services and to analyze traffic.
-                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img src="./app/img/Close.svg" alt=""></button>
+                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img
+                        src="./app/img/Close.svg" alt=""></button>
             </div>
             <div class="popup__buttons">
                 <button class="acceptCookies" id="acceptCookies" onclick="consentGranted()">Ok, got it</button>
@@ -548,12 +552,14 @@
                                         <a href="./insights/Discover-New-Music-with-Spotifys-Smart-Shuffle">
                                             <div class="insight">
                                                 <div class="insight__box">
-                                                    <div class="insight__box--img"><img src="./app/img/insights/Spotify-Smart-Shuffle-thumbnail.webp"
+                                                    <div class="insight__box--img"><img
+                                                            src="./app/img/insights/Spotify-Smart-Shuffle-thumbnail.webp"
                                                             alt="Spotify logo and underneath spotify smart shuffle icon">
                                                     </div>
                                                     <div class="insight__box--title">
                                                         <div class="content">
-                                                            <div class="title">Discover New Music with Spotify's Smart Shuffle ✨</div>
+                                                            <div class="title">Discover New Music with Spotify's Smart
+                                                                Shuffle ✨</div>
                                                             <div class="category">Tech news</div>
                                                         </div>
                                                         <div class="insight__box--icon"><img
@@ -620,7 +626,8 @@
                                                     </div>
                                                     <div class="insight__box--title">
                                                         <div class="content">
-                                                            <div class="title">Stable Diffusion 3 vs Midjourney and Dall·E 3
+                                                            <div class="title">Stable Diffusion 3 vs Midjourney and
+                                                                Dall·E 3
                                                             </div>
                                                             <div class="category">Artificial Intelligence</div>
                                                         </div>
