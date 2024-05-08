@@ -11,32 +11,32 @@
 
         gtag('js', new Date());
 
-      try {
-        // Pobieramy stan zgody z localStorage
-        var cookieConsent = localStorage.getItem('cookieConsent');
-  
-        // Jeśli zgoda została udzielona wcześniej, ukrywamy banner i aktualizujemy stan zgody
-        if (cookieConsent === 'true') {
-          // Aktualizujemy stan zgody tylko jeśli wcześniej została udzielona
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'analytics_storage': 'granted'
-          });
+        try {
+            // Pobieramy stan zgody z localStorage
+            var cookieConsent = localStorage.getItem('cookieConsent');
 
+            // Jeśli zgoda została udzielona wcześniej, ukrywamy banner i aktualizujemy stan zgody
+            if (cookieConsent === 'true') {
+                // Aktualizujemy stan zgody tylko jeśli wcześniej została udzielona
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted',
+                    'analytics_storage': 'granted'
+                });
+
+            }
+        } catch (e) {
+            // Obsługa błędu dostępu do localStorage
+            console.error('Error accessing localStorage:', e);
+
+            gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied'
+            });
         }
-      } catch (e) {
-        // Obsługa błędu dostępu do localStorage
-        console.error('Error accessing localStorage:', e);
-
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-        });
-      }
         gtag('config', 'G-JSX9E0XTGK');
     </script>
 
@@ -84,7 +84,7 @@
     <meta name="twitter:image" content="https://melon.studio/app/img/Twitter-X-Card.png">
 
     <link rel=”canonical” href="https://melon.studio/contact">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -110,7 +110,8 @@
         <div class="popup">
             <div class="popup__text">Melon.studio uses cookies from Google to deliver and enhance the quality of its
                 services and to analyze traffic.
-                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img src="./app/img/Close.svg" alt=""></button>
+                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img
+                        src="./app/img/Close.svg" alt=""></button>
             </div>
             <div class="popup__buttons">
                 <button class="acceptCookies" id="acceptCookies" onclick="consentGranted()">Ok, got it</button>
