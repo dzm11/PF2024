@@ -1219,9 +1219,11 @@ body .wrapper .container main section.section .insights__section--carousel .insi
 }
 body .wrapper .container main section.section .insights__section--carousel .insight__box--img {
   transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  height: 100%;
 }
 body .wrapper .container main section.section .insights__section--carousel .insight__box--img img {
   width: 100%;
+  height: 100%;
 }
 body .wrapper .container main section.section .insights__section--carousel .insight__box--title {
   position: absolute;
