@@ -77,8 +77,8 @@
                     }
 
                     .insight {
-                        max-height: 520px;
-                        height: auto;
+                        max-height: 688px;
+                        height: 100%;
                         @media (max-width: 82.5rem) {
                             & {
                                 max-height: 480px;
@@ -88,6 +88,11 @@
                         &__box {
                             &--title {
                                 padding-inline: 1.5rem;
+                            }
+                            &--img{
+                                img{
+                                    object-fit: cover;
+                                }
                             }
                         }
                     }

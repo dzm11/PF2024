@@ -2380,8 +2380,8 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   }
 }
 .wrapper.insights-page .container main .insights__section .insights__section--carousel .insight {
-  max-height: 520px;
-  height: auto;
+  max-height: 688px;
+  height: 100%;
 }
 @media (max-width: 82.5rem) {
   .wrapper.insights-page .container main .insights__section .insights__section--carousel .insight {
@@ -2390,6 +2390,9 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
 }
 .wrapper.insights-page .container main .insights__section .insights__section--carousel .insight__box--title {
   padding-inline: 1.5rem;
+}
+.wrapper.insights-page .container main .insights__section .insights__section--carousel .insight__box--img img {
+  object-fit: cover;
 }
 
 .wrapper.project-default .word-container .word {
@@ -2679,6 +2682,9 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   row-gap: 2px;
   max-width: 850px;
 }
+.wrapper.insight-default .container main .hero__content .project-title h1 .word {
+  color: var(--82);
+}
 .wrapper.insight-default .container main .hero__content .project-category {
   display: flex;
   justify-content: space-between;
@@ -2699,6 +2705,9 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   flex-wrap: wrap;
   column-gap: 6px;
   row-gap: 2px;
+}
+.wrapper.insight-default .container main .hero__content .project-category__category .word {
+  color: var(--62);
 }
 @media (max-width: 69rem) {
   .wrapper.insight-default .container main .hero__content .project-category__category {
@@ -2751,6 +2760,26 @@ body .wrapper .container footer .footer-bg .additional-information .footer__soci
   display: flex;
   flex-direction: column;
   gap: 64px;
+}
+.wrapper.insight-default .container main .insight-content .link-underline {
+  text-decoration: underline;
+  margin-bottom: 4px;
+}
+.wrapper.insight-default .container main .insight-content .link-underline a {
+  color: var(--82);
+  font-size: 18px;
+}
+.wrapper.insight-default .container main .insight-content p.paragraph-bold {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 170%;
+  color: var(--62);
+}
+@media (max-width: 69rem) {
+  .wrapper.insight-default .container main .insight-content p.paragraph-bold {
+    font-size: clamp(0.875rem, 0.489rem + 1.1029vw, 1.25rem);
+  }
 }
 .wrapper.insight-default .container main .insight-content p.paragraph-light {
   font-size: 20px;

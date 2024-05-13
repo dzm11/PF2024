@@ -61,6 +61,9 @@
                         column-gap: 6px;
                         row-gap: 2px;
                         max-width: 850px;
+                        .word{
+                            color: var(--82);
+                        }
                     }
                 }
 
@@ -84,6 +87,9 @@
                         flex-wrap: wrap;
                         column-gap: 6px;
                         row-gap: 2px;
+                        .word{
+                            color: var(--62);
+                        }
 
                         @media (max-width: 69rem) {
                             & {
@@ -154,6 +160,30 @@
                 display: flex;
                 flex-direction: column;
                 gap: 64px;
+
+                .link-underline{
+                    text-decoration: underline;
+                    margin-bottom: 4px;
+                    a{
+                        color: var(--82);
+                        font-size: 18px;
+                    }
+                }
+
+                p.paragraph-bold{
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 170%;
+                    color: var(--62);
+                    // margin-bottom: 16px;
+
+                    @media (max-width: 69rem) {
+                        & {
+                            font-size: clamp(0.875rem, 0.4890rem + 1.1029vw, 1.25rem);
+                        }
+                    }
+                }
 
                 p.paragraph-light {
                     font-size: 20px;

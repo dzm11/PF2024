@@ -11,39 +11,38 @@
 
         gtag('js', new Date());
 
-      try {
-        // Pobieramy stan zgody z localStorage
-        var cookieConsent = localStorage.getItem('cookieConsent');
-  
-        // Jeśli zgoda została udzielona wcześniej, ukrywamy banner i aktualizujemy stan zgody
-        if (cookieConsent === 'true') {
-          // Aktualizujemy stan zgody tylko jeśli wcześniej została udzielona
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'analytics_storage': 'granted'
-          });
+        try {
+            // Pobieramy stan zgody z localStorage
+            var cookieConsent = localStorage.getItem('cookieConsent');
 
+            // Jeśli zgoda została udzielona wcześniej, ukrywamy banner i aktualizujemy stan zgody
+            if (cookieConsent === 'true') {
+                // Aktualizujemy stan zgody tylko jeśli wcześniej została udzielona
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted',
+                    'analytics_storage': 'granted'
+                });
+
+            }
+        } catch (e) {
+            // Obsługa błędu dostępu do localStorage
+            console.error('Error accessing localStorage:', e);
+
+            gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied'
+            });
         }
-      } catch (e) {
-        // Obsługa błędu dostępu do localStorage
-        console.error('Error accessing localStorage:', e);
-
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-        });
-      }
         gtag('config', 'G-JSX9E0XTGK');
     </script>
 
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project - Melon Studio by Piotr Brzezinski</title>
+    <title>How does modern website design attract more clients? - Melon Studio by Piotr Brzezinski</title>
 
     <!-- Fav Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./../app/img/apple-touch-icon.png">
@@ -82,7 +81,7 @@
         content="Hello, I'm UX/UI Designer. You can find here my latest projects of web apps, web designs as well as my thoughts and inisght from web overall.">
     <meta name="twitter:image" content="https://melon.studio/app/img/Twitter-X-Card.png">
 
-    <link rel=”canonical” href="#">
+    <link rel=”canonical” href="https://melon.studio/insights/Stable-Diffusion-3-vs-Midjourney-and-Dall-E-3">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,7 +106,8 @@
         <div class="popup">
             <div class="popup__text">Melon.studio uses cookies from Google to deliver and enhance the quality of its
                 services and to analyze traffic.
-                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img src="./../app/img/Close.svg" alt=""></button>
+                <button class="declineCookies" id="declineCookies" onclick="consentDenied()"><img
+                        src="./../app/img/Close.svg" alt=""></button>
             </div>
             <div class="popup__buttons">
                 <button class="acceptCookies" id="acceptCookies" onclick="consentGranted()">Ok, got it</button>
@@ -115,7 +115,7 @@
             </div>
         </div>
     </div>
-    <div class="wrapper project-default">
+    <div class="wrapper insight-default">
         <div class="container">
             <section class="hero">
                 <header>
@@ -199,10 +199,28 @@
                     <div class="project-title">
                         <h1 class="hero__content--title">
                             <div class="word-container">
-                                <span class="word empower">BKT </span>
+                                <span class="word empower">How </span>
                             </div>
                             <div class="word-container">
-                                <span class="word empower">Elektronik</span>
+                                <span class="word empower">does </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">modern </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">website </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">design </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">attract </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">more </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">clients?</span>
                             </div>
                         </h1>
                         <h1 class="hero__content--date">
@@ -216,85 +234,169 @@
                     <div class="project-category">
                         <div class="project-category__category">
                             <div class="word-container">
-                                <span class="word empower">Redesign </span>
+                                <span class="word empower">Conversion-leading </span>
                             </div>
                             <div class="word-container">
-                                <span class="word empower">of </span>
+                                <span class="word empower">design </span>
                             </div>
                             <div class="word-container">
-                                <span class="word empower">technology </span>
+                                <span class="word empower">differences </span>
                             </div>
                             <div class="word-container">
-                                <span class="word empower">e-commerce </span>
+                                <span class="word empower">strategies: </span>
                             </div>
                             <div class="word-container">
-                                <span class="word empower">homepage </span>
+                                <span class="word empower">Effective </span>
                             </div>
                             <div class="word-container">
-                                <span class="word empower">company.</span>
+                                <span class="word empower">Techniques </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">to </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">Capture </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">User </span>
+                            </div>
+                            <div class="word-container">
+                                <span class="word empower">Attention </span>
                             </div>
 
                         </div>
                         <div class="project-category__icon">
                             <div class="word-container">
-                                <div class="word"> Discover <img src="./../app/img/arrow-corner-right-down.svg" alt="">
+                                <div class="word">
+                                    Discover <img src="./../app/img/arrow-corner-right-down.svg" alt="">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
                 <section class="section project-hero-image">
-                    <img src="./../app/img/projects/project-hero-image.webp" alt="">
+                    <img src="./../app/img/insights/Modern-website-design-thumbnail-Hero-image.webp"
+                        alt="Hero image that present different screens from filtering design system">
                 </section>
-                <section class="section project-details">
-                    <div class="project-details">
-                        <div class="header">
-                            <h2>Project <span class="empower">Details</span></h2>
-                            <p class="big-paragraph">BKT Elektronik is a manufacturer and supplier of comprehensive
-                                solutions for the ICT industry.</p>
-                            <p>
-                                We offer cabling systems intended for the construction of telecommunications
-                                infrastructure and solutions used in the implementation of Data Center projects.</p>
-                            </p>
-                        </div>
-                        <div class="details">
-                            <div class="details__element">
-                                <div class="details__element--category">Client</div>
-                                <div class="details__element--text">BKT Elektronik</div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="details__element">
-                                <div class="details__element--category">Services</div>
-                                <div class="details__element--text">Homepage redesign</div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="details__element">
-                                <div class="details__element--category">Year</div>
-                                <div class="details__element--text">2023</div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="details__element">
-                                <div class="details__element--category">Site</div>
-                                <div class="details__element--text underline"><a href="#">Visit website <img
-                                            src="./../app/img/box-arrow.svg" alt=""></a></div>
-                            </div>
-                        </div>
+                <section class="section insight-content">
+                    <div class="insight-content__lead">
+                        <h2>
+                            From visualization to conversion: How modern design affects e-commerce success.</h2>
+                        <p class="paragraph-light">The modern market is extremely competitive, especially in the
+                            Internet, where every second and every pixel can decide whether you attract a customer or
+                            not. For companies that are considering a new website design or want to audit their current
+                            one, it is important to understand how these elements influence user interest and
+                            engagement. Here's a more in-depth look at the key aspects of modern website design.</p>
                     </div>
-                </section>
-                <section class="section project-gallery">
-                    <div class="project-gallery__row">
-                        <div class="col">
-
-                            <img src="./../app/img/projects/project-hero-image.webp" alt="">
-                        </div>
-                        <div class="col">
-                            <img src="./../app/img/projects/project-hero-image.webp" alt="">
-
-                        </div>
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            1. The first impression is the key </h4>
+                        <p class="paragraph-light">
+                            There are few things that are as important as the first impression. Studies show that the
+                            first 50 milliseconds are enough for the user to form an opinion about the website. Modern
+                            design that combines aesthetics with functionality can effectively increase interest and
+                            reduce the bounce rate.
+                        </p>
+                        <p class="paragraph-bold">
+                            Read more:
+                        </p>
+                        <ul>
+                            <li class="link-underline"><a
+                                    href="https://8ways.ch/en/digital-news/visual-design-why-first-impressions-matter">8ways.ch/en/digital-news/visual-design-why-first-impressions-matter</a>
+                            </li>
+                        </ul>
                     </div>
-                    <img src="./../app/img/projects/project-hero-image.webp" alt="">
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            2. Usability and accessibility </h4>
+                        <p class="paragraph-light">
+                            The design of the website must be not only attractive, but also functional. Easy-to-navigate
+                            pages with a clear visual layout evoke a positive emotional response in users. If users have
+                            to try too hard to find what they are looking for, they may become frustrated
+                        </p>
+                        <p class="paragraph-bold">
+                            Read more:
+                        </p>
+                        <ul>
+                            <li class="link-underline"><a
+                                    href="https://www.eyequant.com/resources/why-first-impressions-matter-for-your-website-design-ux/">www.eyequant.com/resources/why-first-impressions-matter-for-your-website-design-ux/</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            3. Responsiveness - the key to mobile customers </h4>
+                        <p class="paragraph-light">
+                            Ensuring that your website works smoothly on all devices is essential in the smartphone era.
+                            Google promotes a "mobile-first" approach, which means that pages are indexed from their
+                            mobile versions. Sites designed with mobile users in mind rank better in search results and
+                            are easier to navigate on any device https://www.gitwit.com/article/the-power-of-ux-research
+                        </p>
+                    </div>
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            4. Use of proper colors and fonts </h4>
+                        <p class="paragraph-light">
+                            Choice of colors and fonts are critical not only for aesthetics, but also for accessibility.
+                            Per WCAG 2.2 guidelines, the contrast between text and background should be at least 4.5:1
+                            for plain text to meet Level AA accessibility standards. For larger text, required contrast
+                            is 3:1. The higher AAA level requires even greater contrast, up to 7:1, which provides
+                            better readability for people with various vision limitations.
+                        </p>
+                        <p class="paragraph-light">
+                            Tools like Color Contrast Analyser can help you evaluate and chose appropriate colors, for
+                            increasing accessibility and comfort of using the website
+                        </p>
+                        <p class="paragraph-bold">
+                            Read more:
+                        </p>
+                        <ul>
+                            <li class="link-underline"><a
+                                    href="https://artversion.com/blog/the-impact-of-color-contrast-for-accessibility-and-inclusivity-in-ui-ux-design/">Artversion.com/blog/the-impact-of-color-contrast-for-accessibility-and-inclusivity-in-ui-ux-design/</a>
+                            </li>
+                            <li class="link-underline"><a
+                                    href="https://www.uxpin.com/studio/blog/evaluate-design-color-contrast/">Uxpin.com/studio/blog/evaluate-design-color-contrast/</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            5. SEO and online visibility </h4>
+                        <p class="paragraph-light">
+                            Modern design of the website affects its optimization for google search engines. Lighthouse
+                            tool, available in Google Chrome, allows user for a thorough analysis of many aspects of the
+                            website, such as performance, accessibility, best practices and SEO. Lighthouse generates
+                            reports that indicate where improvements need to be made to make the website faster, better
+                            suited to user needs, and more visible in search results. Accessibility, loading speed and
+                            responsiveness are key elements that are analyzed and have a direct impact on SEO.
+                        </p>
+                        <p class="paragraph-bold">
+                            Read more:
+                        </p>
+                        <ul>
+                            <li class="link-underline"><a
+                                    href="https://css-tricks.com/understanding-web-accessibility-color-contrast-guidelines-and-ratios/">Css-tricks.com/understanding-web-accessibility-color-contrast-guidelines-and-ratios/</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="insight-content__paragraph">
+                        <h4>
+                            Conclusion
+                        </h4>
+                        <p class="paragraph-light">
+                            Investing in a modern website design is an investment in the company's future. It not only
+                            enables a better first impression, but also improves functionality, accessibility and search
+                            engine optimization. Companies that attach importance to these elements may notice a
+                            significant increase in interest in their services, which translates into better financial
+                            results.
+                        </p>
+                    </div>
+
+
 
                 </section>
+
             </main>
             <footer class="section">
                 <div class="footer-bg">
@@ -326,8 +428,8 @@
                                 <div class="widgets__reading--header">
                                     <div class="header">Reading</div>
                                 </div>
-                                <div class="widgets__reading--content">
-                                    <img src="./../app/img/Reading-image.webp" alt="">
+                                <div class="widgets__reading--content"> <img src="./../app/img/Reading-image.webp"
+                                        alt="">
                                     <div class="book">
                                         <div class="book__title">The Umami Strategy</div>
                                         <div class="book__author">Aga Szóstek</div>
