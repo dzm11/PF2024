@@ -680,8 +680,9 @@ body {
                                         justify-content: space-between;
                                         padding: 1rem 1rem 1rem 2.5rem;
                                         border-radius: 76px;
-                                        background: radial-gradient(740.63% 225.28% at 7.95% 70.62%, rgba(28, 30, 32, 0.60) 0%, rgba(152, 158, 165, 0.60) 100%);
+                                        background: rgba(28, 30, 32, 0.60);
                                         backdrop-filter: blur(20px);
+                                        -webkit-backdrop-filter: blur(20px);
 
                                         @media (max-width: 82.5rem) {
                                             & {
