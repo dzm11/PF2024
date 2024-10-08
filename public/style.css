@@ -1331,6 +1331,15 @@ body .wrapper .container main section.section .experience .companies__element .d
     border-radius: 0.5rem;
   }
 }
+body .wrapper .container main section.section .experience .companies__element .details img.kinesso {
+  background-color: #fff;
+  padding: 12px;
+}
+@media (max-width: 53rem) {
+  body .wrapper .container main section.section .experience .companies__element .details img.kinesso {
+    padding: 14px 12px 18px 16px;
+  }
+}
 body .wrapper .container main section.section .experience .companies__element .details img.webmetric {
   background-color: #0C1E30;
   padding: 20px 16px 24px 20px;

@@ -206,16 +206,6 @@ async function displayTrackInfo() {
       isLiveContainer.innerHTML = 'LIVE';
       isLiveContainer.classList.add('live');
 
-      // trackInfo.innerHTML = `
-      //   <div>
-      //     <img src="${imageUrl}" alt="${trackName} Cover" style="max-width: 200px;">
-      //     <p>
-      //       <strong>${trackName}</strong> - ${artistName} (Played ${timeElapsedString})
-      //       <br>
-      //       <a href="${trackUrl}" target="_blank">Listen on Spotify</a>
-      //     </p>
-      //   </div>
-      // `;
     } else if (recentTracks && recentTracks.items.length > 0) {
       // Display latest recently played track
       const latestTrack = recentTracks.items[0].track;
